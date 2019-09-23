@@ -1,0 +1,23 @@
+@import "../../../core/constants/Colors";
+
+#basket-item-list {
+
+  .list-title {
+    padding: 8px 8px 16px 8px;
+  }
+
+  .basket-item {
+    margin: 0 0 16px 0;
+    display: block;
+  }
+
+  .add-another-item-button {
+    width: calc(100% - 32px);
+    margin: 2px 16px 16px;
+    line-height: 42px;
+    height: 42px;
+    box-shadow: 0 3px 6px $BLACK_OPACITY_16;
+    border-radius: 4px;
+  }
+
+}

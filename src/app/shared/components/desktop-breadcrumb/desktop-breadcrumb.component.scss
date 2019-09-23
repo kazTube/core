@@ -1,0 +1,22 @@
+@import "../../../core/constants/Colors";
+
+#breadcrumb-container {
+  padding: 8px;
+
+  .item-container {
+    button {
+      font-size: 105%;
+      color: $BLUE_800;
+      padding: 0 4px;
+      min-width: 48px;
+
+      &:disabled {
+        color: $GRAY_800;
+      }
+    }
+
+    mat-icon {
+      color: $BLUE_800;
+    }
+  }
+}

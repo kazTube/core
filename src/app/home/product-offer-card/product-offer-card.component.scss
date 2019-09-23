@@ -1,0 +1,90 @@
+@import "../../core/constants/Colors";
+
+#product-offer-card {
+  box-shadow: none;
+  background-color: $WHITE_OPACITY_0;
+  margin: 0;
+  padding: 0;
+
+  .mat-card-content {
+    height: 100%;
+    cursor: pointer;
+    .first-image {
+      background: $WHITE;
+      outline: none;
+      display: block;
+      padding: 0;
+      height: calc(100% - 156px);
+
+    }
+
+    .default-image {
+      height: calc(100% - 156px);
+      display: block;
+      width: 100%;
+      background-image: url("../../../assets/svgs/default_image.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .pharmacy-name {
+      display: inline-block;
+      padding: 0 16px 0 0;
+      font-size: 100%;
+      color: $GRAY_900;
+      margin-top: 8px;
+    }
+
+    .pharmacy-distance {
+      display: inline-block;
+      padding-right: 4px;
+      font-size: 85%;
+      color: $GRAY_900;
+    }
+
+    .product-text {
+      padding: 8px 16px;
+
+      .rate-star-container {
+        float: left;
+      }
+
+
+      .product-name {
+        font-size: 120%;
+        font-weight: bold;
+        width: 100%;
+      }
+
+      .old-price-and-discount {
+        width: 100%;
+
+        .product-discount-percent {
+          background-color: $RED_200;
+          display: inline-block;
+          padding: 0 8px;
+          border-radius: 24px;
+          color: $WHITE;
+        }
+
+        .product-old-price {
+          color: $RED_400;
+          text-decoration: line-through;
+          font-size: 130%;
+        }
+      }
+
+      .product-price {
+        width: 100%;
+        display: block;
+        text-align: left;
+        padding: 0 8px;
+        font-size: 130%;
+        color: $GREEN_200;
+      }
+
+    }
+  }
+
+}

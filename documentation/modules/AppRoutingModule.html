@@ -1,0 +1,247 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">مستند</a>
+    </li>
+    <li >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/routing/app-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="tab-pane fade active in" id="c-readme">
+        <p><div class="dp-doc-container"">
+
+<div class="dp-doc-tags">
+
+<div class="desktop-version"></div>
+<div class="mobile-version"></div>
+
+
+
+</div>
+
+<div class="dp-doc-body">
+
+<p>در این ماژول مسیرهای مربوط به application تعریف شده‌اند. با توجه به این که مسیرهای مربوط به نسخه‌ی دسکتاپ و موبایل با یکدیگر متفاوت هستند، مسیرهای مربوط به هر نسخه در کلاس‌های جداگانه تعریف شده است و در زمان اجرا، route‌های مناسب با توجه به بستری که application بر روی آن اجرا می‌شود بارگذاری می‌شود. </p>
+<p>route های نسخه ی دسکتاپ در کلاس
+ <a href="../classes/DesktopRoutes.html">DesktopRoutes</a>
+و route های مربوط به نسخه ی موبایل در کلاس
+ <a href="../classes/MobileRoutes.html">MobileRoutes</a>
+تعریف شده اند.</p>
+<p>در ارتباط با routeها چند نکته وجود دارد که در زیر به آنها اشاره می‌شود:</p>
+<ul>
+<li><p>به دلیل آنکه در این application هنگام تنظیم Router هنوز مشخص نیست که کدام routeها بایستی به Router داده شوند، در ابتدا Router با یک لیست خالی تنظیم می شود. هنگامی که application بارگذاری می شود، با توجه به اندازه‌ی صفحه ی نمایش  تشخیص داده می شود که نسخه ی دسکتاپ به کاربر نمایش داده شود یا نسخه ی موبایل (در سرویس appState). پس از مشخص شدن این موضوع، با استفاده از متد resetConfig موجود در Router، routeهای مناسب در router تنظیم می شوند.</p>
+</li>
+<li><p>در تنظیمات مربوط به تعریف برخی از مسیرها، کامپوننت مربوط به مسیر توسط فیلد component مشخص می شود. هنگامی که ماژول Router با متد forRoot تنظیم می شود، این کامپوننت ها به صورت خودکار به لیست کامپوننت های entryComponents اضافه می شوند. در این application به دلیل آنکه ماژول Router با یک لیست خالی تنظیم می شود؛ لازم است کامپوننت های استفاده شده در تعریف مسیرها به صورت دستی به لیست entryComponents ماژول های مربوطه اضافه شوند.</p>
+</li>
+<li><p>هنگامی که Router با متد forRoot تنظیم می شود، webpack به صورت خودکار یک map برای ماژول هایی که به صورت lazy بارگذاری می شوند ایجاد می کند و سپس با استفاده از این map ماژول ها را بارگذاری می کند. با توجه به این که در ابتدا Router با یک لیست خالی تنظیم می شود، لازم است تا لیست ماژول هایی که قرار است به صورت lazy بارگذاری شود به نحوی مشخص شود. برای مشخص کردن این ماژول ها، باید آدرس آن ها را در زیر کلید lazyModules در فایل angular.json اضافه کرد. توجه به این نکته ضروری است که Webpack از آدرس تعریف شده به عنوان کلید map استفاده می کند، بنابراین لازم است هنگام تعریف مسیر ماژول های lazy-load در تنظیمات مسیرها دقیقا از آدرسی که در این فایل تعریف شده است استفاده شود.</p>
+</li>
+</ul>
+<div class="dp-doc-ltr-container">
+
+
+<div><pre class="line-numbers"><code class="language-none">{
+    &quot;projects&quot;: {
+        &quot;daroopin-ui&quot;: {
+            &quot;architect&quot;: {
+                &quot;build&quot;: {
+                    &quot;options&quot;: {
+                        &quot;lazyModules&quot;: [
+                            &quot;src/app/login/login.module&quot;,
+                            &quot;src/app/home/desktop-home.module&quot;,
+                            ...
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}</code></pre></div></div>
+</div>
+
+</div> </p>
+    </div>
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {NgModule} from &#x27;@angular/core&#x27;;
+import {Router, RouterModule} from &#x27;@angular/router&#x27;;
+import {ProductListPageResolver} from &#x27;../product-list/product-list-page/product-list-page-resolver&#x27;;
+import {CommentListResolver} from &#x27;../comment/comment-list/comment-list.resolver&#x27;;
+import {BasketPageResolver} from &#x27;../basket/basket-page/basket-page-resolver&#x27;;
+import {BasketPageFinalizePurchaseResolver} from &#x27;../basket/basket-page/basket-page-finalize-purchase.resolver&#x27;;
+import {CancelPurchaseResolver} from &#x27;../basket/mobile-cancel-purchase-page/cancel-purchase.resolver&#x27;;
+import {UserHomePageResolver} from &#x27;../home/user-home-page/user-home-page.resolver&#x27;;
+import {CommentResolver} from &#x27;../comment/insert-comment-form/comment-resolver.service&#x27;;
+import {ProductDetailResolver} from &#x27;../product-detail/product-detail-page/product-detail.resolver&#x27;;
+import {OrderListResolver} from &#x27;../order/order-list/order-list.resolver&#x27;;
+import {OrderDetailResolver} from &#x27;../order/order-detail-page/order-detail.resolver&#x27;;
+import {PharmacyPageResolver} from &#x27;../pharmacy/pharmacy-page/pharmacy-page.resolver&#x27;;
+import {SpecialOfferProductDetailResolver} from &#x27;../product-detail/product-detail-page/special-offer-product-detail.resolver&#x27;;
+import {DesktopProductSuggestionPageResolver} from &#x27;../product-detail/desktop-product-suggestion-page/desktop-product-suggestion-page.resolver&#x27;;
+import {PurchaseFeedbackResolver} from &#x27;../basket/purchase-feedback/purchase-feedback.resolver&#x27;;
+import {DesktopRoutes} from &#x27;./desktop-routes&#x27;;
+import {MobileRoutes} from &#x27;./mobile-routes&#x27;;
+import {AppStateService} from &#x27;../core/services/app-state.service&#x27;;
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot([], {onSameUrlNavigation: &#x27;reload&#x27;})
+    ],
+    exports: [RouterModule],
+    providers: [
+        ProductListPageResolver,
+        ProductDetailResolver,
+        OrderListResolver,
+        OrderDetailResolver,
+        CommentListResolver,
+        BasketPageResolver,
+        BasketPageFinalizePurchaseResolver,
+        CancelPurchaseResolver,
+        UserHomePageResolver,
+        PharmacyPageResolver,
+        CommentResolver,
+        SpecialOfferProductDetailResolver,
+        DesktopProductSuggestionPageResolver,
+        PurchaseFeedbackResolver
+    ]
+})
+export class AppRoutingModule {
+
+    constructor(private appState: AppStateService, private router: Router) {
+        if (appState.isMobile()) {
+            router.resetConfig(MobileRoutes.routes);
+        } else {
+            router.resetConfig(DesktopRoutes.routes);
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

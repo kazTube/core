@@ -1,0 +1,13 @@
+<div id="order-detail-container">
+
+    <mat-toolbar>
+        <span>جزییات سفارش </span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="card-container">
+        <app-mobile-order-detail-card [orderDetail]="orderDetail"></app-mobile-order-detail-card>
+    </div>
+</div>

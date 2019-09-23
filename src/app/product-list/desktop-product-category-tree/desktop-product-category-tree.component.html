@@ -1,0 +1,27 @@
+<div id="product-category-container">
+    <div id="title">
+        دسته بندی محصولات
+    </div>
+    <div id="content">
+        <div *ngIf="dataSource.data.length===0" class="no-category">دسته بندی پیدا نشد</div>
+        <mat-tree *ngIf="dataSource.data.length>0" [dataSource]="dataSource" [treeControl]="treeControl">
+            <!-- This is the tree node template for leaf nodes -->
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="16">
+                <!-- use a disabled button to provide padding for tree leaf -->
+                <button mat-icon-button disabled></button>
+                <button class="category-button" [routerLink]="'/product/list/'+node.categoryId"  mat-button>{{node.categoryName}}</button>
+            </mat-tree-node>
+            <!-- This is the tree node template for expandable nodes -->
+            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodePaddingIndent="16">
+                <button mat-icon-button matTreeNodeToggle
+                        [attr.aria-label]="'toggle ' + node.categoryName">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                </button>
+                <button mat-button [routerLink]="'/product/list/'+node.categoryId"  class="category-button">{{node.categoryName}}</button>
+            </mat-tree-node>
+        </mat-tree>
+
+    </div>
+</div>

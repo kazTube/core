@@ -1,0 +1,29 @@
+<div [ngClass]="{'green-background':greenMode}"
+     id="desktop-order-product-summary-card"
+     fxLayout="row nowrap"
+     fxLayoutAlign="start center"
+     fxLayoutGap="8px"
+>
+    <div *ngIf="!svgIconName" class="product-image" fxFlex="0 0 calc(15% - 8px)">
+        <app-img-with-loading *ngIf="productImageExist"
+                              [src]="OrderProductSummary.imageUrlList[0]"></app-img-with-loading>
+        <mat-icon *ngIf="!productImageExist" svgIcon="svg_default_image"></mat-icon>
+    </div>
+    <div *ngIf="svgIconName" class="product-icon" fxFlex="0 0 calc(15% - 8px)">
+        <mat-icon [svgIcon]="svgIconName"></mat-icon>
+    </div>
+    <div (click)="goToProductDetailPage()"
+         [ngClass]="{'clickable-text': OrderProductSummary.productCode}"
+         fxFlex="0 0 calc(40% - 8px)">
+        {{OrderProductSummary.productNameFa}}
+    </div>
+
+    <div fxFlex="0 0 calc(20% - 8px)">
+        <span>{{OrderProductSummary.count}}</span>
+        <span> {{OrderProductSummary.unitName}} </span>
+    </div>
+
+    <div class="price-text" fxFlex="0 0 calc(25% - 8px)">
+        <span [ngClass]="{'green-text':greenMode}">{{OrderProductSummary.itemPrice | friendlyPrice}}</span>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+@import "../../../core/constants/Colors";
+
+#desktop-basket-stepper-container {
+  padding: 24px;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  #content {
+    app-basket-stepper-control{
+      display: block;
+      width: calc(100% - 16px);
+      margin-right: 8px;
+    }
+    #basket-stepper {
+      width: 100%;
+
+      /deep/ .mat-stepper-horizontal-line {
+        border-top-width: 0;
+      }
+
+      /deep/ .mat-horizontal-stepper-header {
+        padding: 0;
+        height: 0;
+      }
+
+      /deep/ .mat-horizontal-stepper-header-container {
+        .mat-horizontal-stepper-header::before, .mat-horizontal-stepper-header::after {
+          border-top-width: 0;
+        }
+      }
+
+      /deep/ .mat-step-icon {
+        width: 0;
+        height: 0;
+        font-size: 0;
+
+        .mat-icon {
+          font-size: 0;
+        }
+      }
+
+      /deep/ .mat-horizontal-content-container {
+        background-image: linear-gradient($BLUE_100, $WHITE);
+        padding: 16px 8px 8px;
+      }
+
+
+    }
+  }
+
+  #left-side {
+    #action-card {
+      padding: 16px;
+      #warning-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .warning-text {
+        font-size: 80%;
+        text-align: justify;
+        color: $GRAY_700;
+
+        #step-3-warning {
+          margin-bottom: 24px;
+        }
+      }
+
+      #order-price, #transport-price {
+        width: 100%;
+        color: $GRAY_700;
+        font-size: 80%;
+      }
+      #total-price{
+        #total-price-label{
+          font-size: 80%;
+          font-weight: bold;
+        }
+        #total-price-value{
+          font-size: 160%;
+          font-weight: bold;
+          color: $GREEN_200;
+        }
+      }
+
+      mat-divider {
+        width: calc(100% + 32px);
+        position: relative;
+      }
+
+      #pay-button{
+        width: 80%;
+      }
+      #cancel-pay-button{
+        width: 70%;
+        padding: 0 !important;
+      }
+      .stepper-action-button {
+        width: 100%;
+        font-weight: bold;
+        font-size: 80%;
+
+        &:disabled {
+          background-color: $ORANGE_200 !important;
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}

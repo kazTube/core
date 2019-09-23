@@ -1,0 +1,62 @@
+@import "../../../core/constants/Colors";
+
+#menu-content {
+  #side-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 128px;
+    background-color: $BLUE_500;
+    background-image: url("../../../../assets/svgs/menu_background.svg");
+
+    #logo-in-menu {
+      width: 75px;
+      height: auto;
+    }
+  }
+
+  #menu-items {
+    mat-expansion-panel {
+      box-shadow: none;
+      border-bottom: 1px solid $WHITE;
+      border-top: 1px solid $WHITE;
+    }
+
+    mat-expansion-panel-header {
+      color: $BLACK;
+      cursor: pointer;
+      background-color: $BLUE_50;
+
+      .menu-item-text {
+        margin: 0 15px;
+      }
+
+    }
+
+    /deep/ .mat-expansion-panel-content {
+      margin-top: 2px;
+    }
+
+    /deep/ .mat-expansion-indicator::after {
+      color: $BLUE_500;
+    }
+
+    //to disable hover effect
+    .mat-expansion-panel .mat-expansion-panel-header:hover,
+    .mat-expansion-panel .mat-expansion-panel-header:focus {
+      background-color: $BLUE_50;
+
+    }
+
+    &.level-3 {
+      background-color: $LIGHT_BLUE_400;
+    }
+
+    &.level-4 {
+      background-color: $LIGHT_BLUE_500;
+
+    }
+  }
+}
+

@@ -1,0 +1,50 @@
+<div [ngClass.lt-sm]="{'small-screen':true, 'is-for-desktop':appStateService.isDesktop()}" id="comment-list-container">
+    <mat-toolbar *ngIf="appStateService.isMobile()" fxHide.gt-xs>
+        <span>نظرات کاربران</span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-toolbar fxHide.lt-sm [fxLayout]="'row wrap'" [fxLayoutAlign]="'start center'" [fxLayoutGap]="'4%'">
+        <span>امتیاز کاربران به این محصول</span>
+        <star-rating [labelText]="'امتیاز '+totalRate+' از '+commentsCount+' نظر '" [rating]="totalRate"
+                     [starType]="'svg'"
+                     direction="ltr" fxFlex
+                     hoverEnabled="true"
+                     labelPosition="right" readOnly="true" size="small"
+                     staticColor="ok"></star-rating>
+        <button (click)="insertComment()" id="add-new-comment-header-button" mat-raised-button>
+            <mat-icon svgIcon="svg_add_comment"></mat-icon>
+            <span>ثبت نظر جدید</span>
+        </button>
+
+    </mat-toolbar>
+    <div id="comment-list-content">
+        <button fxHide.gt-xs (click)="insertComment()" id="add-new-comment-button" mat-raised-button>
+            <mat-icon svgIcon="svg_add_comment"></mat-icon>
+            <span>ثبت نظر جدید</span>
+        </button>
+        <div id="title" fxHide.lt-sm>نظرات کاربران</div>
+
+        <div *ngIf="!thisUserComment && (!commentList || commentList.length==0)" id="no-comment">
+            نظری برای این محصول وارد نشده است
+        </div>
+        <app-comment-card (delete)="onDelete($event)"
+                          (edit)="onEdit($event)"
+                          *ngIf="thisUserComment"
+                          [comment]="thisUserComment"
+                          [isLoading]="isCommentLoading(thisUserComment.userProductCommentId)"
+                          [isUserComment]="true"></app-comment-card>
+
+        <ng-container *ngFor="let comment of commentList">
+            <app-comment-card (dislike)="onDislike($event)"
+                              (like)="onLike($event)"
+                              [comment]="comment"
+                              [isLoading]="isCommentLoading(comment.userProductCommentId)"></app-comment-card>
+        </ng-container>
+
+        <mat-spinner-button (click)="loadMoreComments()" *ngIf="hasMoreComment" [options]="loadMoreButtonOptions"
+                            id="load-more"></mat-spinner-button>
+    </div>
+</div>

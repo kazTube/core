@@ -1,0 +1,53 @@
+@import "../../../core/constants/Colors";
+
+#order-detail {
+  .order-info-list {
+    .order-info-header {
+      background-color: $GRAY_100;
+      border-radius: 8px;
+      padding: 8px 0 8px 0;
+      font-size: 9px;
+      margin-top: 16px;
+      text-align: center;
+
+      span {
+        padding-right: 8px;
+      }
+    }
+  }
+
+  app-desktop-address-card {
+    display: block;
+    margin-bottom: 32px !important;
+  }
+
+  .order-product-summary-list {
+    .order-product-summary-list-header {
+      background-color: $GRAY_100;
+      border-radius: 8px;
+      padding: 8px 0 8px 0;
+      font-size: 9px;
+      text-align: center;
+
+      span {
+        padding-right: 8px;
+      }
+    }
+
+    .transport-card {
+      display: block;
+      margin-top: 24px;
+    }
+
+    .total-payment-card {
+      display: block;
+      margin-top: 32px;
+    }
+  }
+
+  .cancel-order-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 32px auto 0 auto
+  }
+}

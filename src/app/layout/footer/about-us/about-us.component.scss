@@ -1,0 +1,76 @@
+@import "../../../core/constants/Colors";
+
+#about-us {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  .mat-toolbar {
+    background-color: $BLUE_200;
+    color: $BLUE_800;
+    direction: rtl;
+    font-size: 88%;
+    font-weight: bold;
+    padding-left: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .mat-button {
+      margin-right: auto;
+      padding-left: 4px;
+
+      .mat-icon {
+        color: $BLUE_600;
+      }
+    }
+  }
+
+  #title {
+    color: $BLUE_800;
+    font-size: 150%;
+    margin: 3%;
+  }
+
+  #content-container {
+    margin: 4% 4% 12%;
+    direction: rtl;
+    padding: 8% 8% 15%;
+    overflow: auto;
+    background-color: $WHITE;
+
+    &.small-screen {
+      margin: 0;
+      padding-bottom: 24%;
+      box-shadow: none;
+    }
+
+    .header-text {
+      direction: rtl;
+      padding: 2% 3% 1% 3%;
+      font-size: 100%;
+      font-weight: bold;
+      color: $BLUE_800;
+    }
+
+    .body-text {
+      font-size: 86%;
+      text-align: justify;
+      direction: rtl;
+      color: $GRAY_800;
+      margin: 0;
+      padding: 0 3%;
+      position: relative;
+
+      .phone-number {
+        color: $BLUE_700;
+      }
+    }
+
+    .last-section {
+      margin-top: 3%;
+    }
+
+  }
+
+}

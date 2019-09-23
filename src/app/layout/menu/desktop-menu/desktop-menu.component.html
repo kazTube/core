@@ -1,0 +1,25 @@
+<mat-toolbar id="menu-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'start stretch'" [fxHide.lt-sm]="true">
+  <ng-container *ngFor="let category of menuCategoryList">
+    <ng-container *ngIf="category.subCategory && category.subCategory.length>0">
+      <button (click)="onMenuClick($event ,category.categoryId, subMenu);"
+              [ngClass]="{'menu-button':true, 'is-open':selectedMenuId===category.categoryId}" mat-button
+              [matMenuTriggerFor]="subMenu">
+        {{category.categoryName}}
+        <mat-icon class="dropdown-icon">keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #subMenu="matMenu" [className]="category.categoryId" (closed)="onMenuClose($event)"
+                [overlapTrigger]="false" [hasBackdrop]="false">
+          <app-desktop-sub-menu [menuCategory]="category"></app-desktop-sub-menu>
+      </mat-menu>
+    </ng-container>
+    <ng-container *ngIf="!(category.subCategory && category.subCategory.length>0)">
+      <button mat-button class="menu-button"
+              [routerLink]="'/product/list/'+category.categoryId"
+              *ngIf="!(category.subCategory && category.subCategory.length>0)">
+        {{category.categoryName}}
+      </button>
+    </ng-container>
+
+  </ng-container>
+
+</mat-toolbar>

@@ -1,0 +1,25 @@
+<mat-card id="mobile-order-product-summary-card">
+    <mat-card-content>
+        <div class="product-image">
+            <app-img-with-loading *ngIf="productImageExist"
+                                  [src]="OrderProductSummary.imageUrlList[0]"></app-img-with-loading>
+            <mat-icon *ngIf="!productImageExist" svgIcon="svg_default_image"></mat-icon>
+        </div>
+        <div class="product-text">
+
+            <div (click)="goToProductDetailPage()"
+                 [ngClass]="{'clickable-text': OrderProductSummary.productCode, 'product-name':true}">
+                {{OrderProductSummary.productNameFa}}
+            </div>
+
+            <div class="product-quantity">
+                <span> تعداد: </span>
+                <span>{{OrderProductSummary.count}}</span>
+                <span> {{OrderProductSummary.unitName}} </span>
+            </div>
+            <div class="price-container">
+                <span class="price-text">{{OrderProductSummary.itemPrice | friendlyPrice}}</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

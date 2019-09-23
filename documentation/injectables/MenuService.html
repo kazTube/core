@@ -1,0 +1,953 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>MenuService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/layout/menu/menu.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#flatMenuCategoryList">flatMenuCategoryList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#menuCategoryList">menuCategoryList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#topCategoryList">topCategoryList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addHierarchyAndMakeFlat">addHierarchyAndMakeFlat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#convertMenuCategoryListToFlatCategoryList">convertMenuCategoryListToFlatCategoryList</a>
+                            </li>
+                            <li>
+                                <a href="#getFlatCategoryById">getFlatCategoryById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFlatCategoryList">getFlatCategoryList</a>
+                            </li>
+                            <li>
+                                <a href="#getMenuCategoryList">getMenuCategoryList</a>
+                            </li>
+                            <li>
+                                <a href="#getMenuCategoryListFromServer">getMenuCategoryListFromServer</a>
+                            </li>
+                            <li>
+                                <a href="#getTopCategoryList">getTopCategoryList</a>
+                            </li>
+                            <li>
+                                <a href="#getTopCategoryListFromServer">getTopCategoryListFromServer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#makeCategoryFlat">makeCategoryFlat</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(httpClient: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/layout/menu/menu.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>httpClient</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addHierarchyAndMakeFlat"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            addHierarchyAndMakeFlat
+                        </b>
+                        <a href="#addHierarchyAndMakeFlat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addHierarchyAndMakeFlat(categoryList: <a href="../classes/MenuCategoryDTO.html">MenuCategoryDTO[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>categoryList</td>
+                                    <td>
+                                                <code><a href="../classes/MenuCategoryDTO.html" target="_self" >MenuCategoryDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertMenuCategoryListToFlatCategoryList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            convertMenuCategoryListToFlatCategoryList
+                        </b>
+                        <a href="#convertMenuCategoryListToFlatCategoryList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertMenuCategoryListToFlatCategoryList(menuCategoryList: <a href="../classes/MenuCategoryDTO.html">MenuCategoryDTO[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>menuCategoryList</td>
+                                    <td>
+                                                <code><a href="../classes/MenuCategoryDTO.html" target="_self" >MenuCategoryDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFlatCategoryById"></a>
+                    <span class="name">
+                        <b>
+                            getFlatCategoryById
+                        </b>
+                        <a href="#getFlatCategoryById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFlatCategoryById(categoryId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>categoryId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFlatCategoryList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getFlatCategoryList
+                        </b>
+                        <a href="#getFlatCategoryList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFlatCategoryList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO[]</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMenuCategoryList"></a>
+                    <span class="name">
+                        <b>
+                            getMenuCategoryList
+                        </b>
+                        <a href="#getMenuCategoryList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenuCategoryList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/MenuCategoryDTO.html" target="_self" >MenuCategoryDTO[]</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMenuCategoryListFromServer"></a>
+                    <span class="name">
+                        <b>
+                            getMenuCategoryListFromServer
+                        </b>
+                        <a href="#getMenuCategoryListFromServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMenuCategoryListFromServer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/MenuCategoryDTO.html" target="_self" >Observable&lt;MenuCategoryDTO[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTopCategoryList"></a>
+                    <span class="name">
+                        <b>
+                            getTopCategoryList
+                        </b>
+                        <a href="#getTopCategoryList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTopCategoryList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/TopCategoryDTO.html" target="_self" >TopCategoryDTO[]</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTopCategoryListFromServer"></a>
+                    <span class="name">
+                        <b>
+                            getTopCategoryListFromServer
+                        </b>
+                        <a href="#getTopCategoryListFromServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTopCategoryListFromServer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/TopCategoryDTO.html" target="_self" >Observable&lt;TopCategoryDTO[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeCategoryFlat"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            makeCategoryFlat
+                        </b>
+                        <a href="#makeCategoryFlat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>makeCategoryFlat(category: <a href="../classes/FlatCategoryDTO.html">FlatCategoryDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/layout/menu/menu.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>category</td>
+                                    <td>
+                                                <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="flatMenuCategoryList"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            flatMenuCategoryList</b>
+                            <a href="#flatMenuCategoryList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/FlatCategoryDTO.html" target="_self" >FlatCategoryDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/layout/menu/menu.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuCategoryList"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            menuCategoryList</b>
+                            <a href="#menuCategoryList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/MenuCategoryDTO.html" target="_self" >MenuCategoryDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/layout/menu/menu.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="topCategoryList"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            topCategoryList</b>
+                            <a href="#topCategoryList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/TopCategoryDTO.html" target="_self" >TopCategoryDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/menu/menu.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
+import {shareReplay} from &#x27;rxjs/operators&#x27;;
+import {MenuCategoryDTO} from &#x27;../../dto/MenuCategoryDTO&#x27;;
+import {FlatCategoryDTO} from &#x27;../../dto/FlatCategoryDTO&#x27;;
+import {TopCategoryDTO} from &#x27;../../dto/TopCategoryDTO&#x27;;
+import {RestAddresses} from &#x27;../../core/constants/RestAddresses&#x27;;
+
+@Injectable({
+    providedIn: &#x27;root&#x27;
+})
+export class MenuService {
+
+    private menuCategoryList: MenuCategoryDTO[] &#x3D; [];
+    private topCategoryList: TopCategoryDTO[] &#x3D; [];
+    private flatMenuCategoryList: FlatCategoryDTO[] &#x3D; null;
+
+    constructor(private httpClient: HttpClient) {
+    }
+
+
+    getMenuCategoryListFromServer(): Observable&lt;MenuCategoryDTO[]&gt; {
+        const observable &#x3D; this.httpClient.post&lt;MenuCategoryDTO[]&gt;(RestAddresses.GET_CATEGORY_MENU, null).pipe(shareReplay(1));
+        observable.subscribe(menu &#x3D;&gt; {
+            this.menuCategoryList &#x3D; menu;
+        });
+        return observable;
+    }
+
+    getTopCategoryListFromServer(): Observable&lt;TopCategoryDTO[]&gt; {
+        const observable &#x3D; this.httpClient.post&lt;TopCategoryDTO[]&gt;(RestAddresses.GET_TOP_CATEGORY_LIST,
+            {itemCount: 9}).pipe(
+            shareReplay(1),
+        );
+        observable.subscribe(menu &#x3D;&gt; {
+            this.topCategoryList &#x3D; menu;
+        });
+        return observable;
+    }
+
+    getTopCategoryList(): TopCategoryDTO[] {
+        return this.topCategoryList;
+    }
+
+    getMenuCategoryList(): MenuCategoryDTO[] {
+        return this.menuCategoryList;
+    }
+
+    getFlatCategoryById(categoryId: number): FlatCategoryDTO {
+        for (const category of this.getFlatCategoryList()) {
+            if (category.id &#x3D;&#x3D;&#x3D; categoryId) {
+                return category;
+            }
+        }
+        return null;
+    }
+
+    private getFlatCategoryList(): FlatCategoryDTO[] {
+        if (this.flatMenuCategoryList &#x3D;&#x3D;&#x3D; null) {
+            this.flatMenuCategoryList &#x3D; this.addHierarchyAndMakeFlat(this.menuCategoryList);
+        }
+        return this.flatMenuCategoryList;
+
+    }
+
+    private addHierarchyAndMakeFlat(categoryList: MenuCategoryDTO[]): FlatCategoryDTO[] {
+        let result: FlatCategoryDTO[] &#x3D; [];
+        for (const category of categoryList) {
+            const flatCategory &#x3D; new FlatCategoryDTO(category.categoryId, category.categoryName,
+                this.convertMenuCategoryListToFlatCategoryList(category.subCategory), []);
+            result &#x3D; result.concat(this.makeCategoryFlat(flatCategory));
+        }
+
+        return result;
+    }
+
+    private makeCategoryFlat(category: FlatCategoryDTO) {
+        let result: FlatCategoryDTO[] &#x3D; [category];
+        if (category.subCategoryList &amp;&amp; category.subCategoryList.length &gt; 0) {
+            for (const subCategory of category.subCategoryList) {
+                subCategory.parentCategoryList &#x3D; category.parentCategoryList.concat(category);
+                result &#x3D; result.concat(this.makeCategoryFlat(subCategory));
+            }
+        }
+        return result;
+    }
+
+    private convertMenuCategoryListToFlatCategoryList(menuCategoryList: MenuCategoryDTO[]): FlatCategoryDTO[] {
+        const result: FlatCategoryDTO[] &#x3D; [];
+        for (const category of menuCategoryList) {
+            result.push(new FlatCategoryDTO(category.categoryId, category.categoryName,
+                this.convertMenuCategoryListToFlatCategoryList(category.subCategory), []));
+        }
+        return result;
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

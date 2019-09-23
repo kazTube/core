@@ -1,0 +1,55 @@
+@import "../../../core/constants/Colors";
+
+#product-detail-container {
+  padding: 2%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  app-desktop-product-description-card {
+    width: 100%;
+  }
+
+  app-product-carousel {
+    width: 100%;
+  }
+
+  #attribute-comments-card {
+    width: 100%;
+
+    padding: 0;
+
+    /deep/ mat-tab-group {
+      width: 100%;
+
+      #comment-list-loading{
+        padding: 4%;
+        width: 100%;
+        min-height: 64px;
+      }
+      .mat-tab-header {
+        border-bottom: 2px solid $CYAN_300;
+      }
+
+      /deep/ .mat-tab-header-pagination{
+        display: none;
+      }
+      .mat-tab-list {
+        padding-right: 3%;
+      }
+
+      .mat-tab-label {
+        color: $BLUE_800;
+        background-color: $BLUE_200;
+        opacity: 1;
+      }
+
+      .mat-tab-label-active {
+        background-color: $CYAN_300;
+        color: $WHITE;
+      }
+
+      .mat-ink-bar {
+        display: none;
+      }
+    }
+  }
+}

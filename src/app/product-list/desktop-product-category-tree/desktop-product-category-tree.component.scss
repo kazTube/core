@@ -1,0 +1,39 @@
+@import "../../core/constants/Colors";
+
+#product-category-container {
+  min-width: 196px;
+  border-radius: 4px;
+  border: 1px solid $GRAY_600;
+  overflow: hidden;
+
+  #title {
+    color: $BLACK_300;
+    padding: 16px;
+    background-color: $GRAY_100;
+    border-bottom: 1px solid $GRAY_600;
+    font-size: 110%;
+    font-weight: bold;
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  #content {
+    padding: 16px;
+    height: calc(100% - 88px);
+    overflow: auto;
+
+    button {
+      color: $BLACK_300;
+    }
+    .category-button {
+      padding: 0;
+      margin-right: -8px;
+    }
+    .no-category{
+      font-size: 80%;
+      padding-right:16px ;
+      color: $GRAY_800;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../core/constants/Colors";
+
+#cancel-purchase-page {
+  padding: 16px 16px 32px;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  app-cancel-purchase {
+    padding: 16px;
+    display: block;
+  }
+}

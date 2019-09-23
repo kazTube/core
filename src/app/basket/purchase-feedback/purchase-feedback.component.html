@@ -1,0 +1,41 @@
+<div id="purchase-feedback-container">
+    <mat-card class="feedback-card">
+        <mat-card-content class="card-content">
+            <mat-icon svgIcon="svg_rate" id="rate-icon"></mat-icon>
+            <div id="title">از اینکه مارا در بهبود کیفیت خدمت رسانی یاری می کنید از شما سپاسگزاریم</div>
+            <div id="rate-title">امتیاز شما به سرویس دهی داروخانه تامین کننده</div>
+            <app-rate-star-bar (select)="setRate($event)"></app-rate-star-bar>
+            <form *ngIf="rate!==-1"
+                  [@showForm]="rate===-1?'hide':'show'"
+                  [formGroup]="purchaseFeedbackForm"
+                  class="comment-form"
+                  fxLayout="column nowrap">
+                <div *ngIf="rate!==-1" id="question">علت انتخاب این امتیاز برای تامین کننده را چه می دانید؟</div>
+                <div class="predefined-reason" formArrayName="reasons" fxLayout="column nowrap">
+                    <ng-container *ngFor="let reason of preDefinedCommentList[rate]; let i=index">
+                        <mat-checkbox [formControlName]="i"
+                                      [value]="reason.predefinedCommentId">{{reason.text}}</mat-checkbox>
+                    </ng-container>
+                </div>
+                <div id="other-reasons-text">توضیحات دیگر</div>
+                <mat-form-field appDpFormField appearance="outline" id="other-reasons">
+                    <textarea formControlName="otherReasons" matInput
+                              placeholder="اگر دلیل دیگری به جز موارد بالا دارید در این قسمت وارد کنید"
+                              rows="3"></textarea>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+            <button #sendBtn
+                    (click)="sendFeedback()"
+                    [@moveButton]="{value: rate===-1?'center':'leftSide', params:{xMove:getButtonTranslateX()}}"
+                    [disabled]="isCancelDisabled()"
+                    appDpButton="blue"
+                    id="cancel-purchase"
+                    mat-raised-button>
+                <span *ngIf="!isSendingFeedback">ثبت امتیاز</span>
+                <mat-spinner *ngIf="isSendingFeedback" diameter="32" strokeWidth="3"></mat-spinner>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

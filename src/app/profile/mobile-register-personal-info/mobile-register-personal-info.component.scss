@@ -1,0 +1,94 @@
+@import "../../core/constants/Colors";
+
+#user-personal-info-container {
+
+  position: relative;
+  padding-bottom: 16px;
+  padding-top: 78px;
+  overflow: hidden;
+  margin-top: -48px;
+  background-color: $GRAY_50;
+  min-height: 100%;
+
+  .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  /deep/ #user-personal-info-card {
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+
+
+    .mat-card-header {
+      background: $BLUE_200;
+      margin: auto;
+      border-bottom: 1px solid $GRAY_600;
+
+      .mat-card-header-text {
+        margin-right: auto;
+        margin-left: auto;
+
+        .mat-card-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+
+    .personal-info-form {
+      margin-top: 24px;
+      display: block;
+    }
+
+    mat-divider {
+      margin-top: 8px;
+    }
+
+    #rule-confirm {
+      padding: 8px 4% 16px 4%;
+      display: flex;
+      line-height: 24px;
+      direction: rtl;
+      border-top: 1px solid $GRAY_600;
+      align-items: center;
+
+      span {
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      .link {
+        color: $BLUE_700;
+      }
+
+      .mat-checkbox {
+        margin-top: -1px;
+        margin-left: 8px;
+      }
+
+    }
+
+    .confirm-button {
+      width: calc(100% - 80px);
+      margin: 32px 40px 32px;
+    }
+
+  }
+
+  /deep/ .mat-checkbox-frame {
+    border-color: $BLUE_700;
+  }
+
+  /deep/ .mat-checkbox-checked {
+    .mat-checkbox-background {
+      background-color: $BLUE_700;
+    }
+  }
+}

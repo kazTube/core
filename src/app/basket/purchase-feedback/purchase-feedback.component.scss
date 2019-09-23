@@ -1,0 +1,108 @@
+@import "../../core/constants/Colors";
+
+#purchase-feedback-container {
+  width: 100%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+  padding-top: 1px;
+  margin-top: -1px;
+
+  .feedback-card {
+    width: 80%;
+    margin: 16px auto;
+    max-width: 700px;
+
+    .card-content {
+      max-width: 650px;
+      margin: 0 auto;
+
+      #rate-icon {
+        width: 48px;
+        height: 48px;
+        display: block;
+        margin: 16px auto 24px;
+      }
+
+      #title {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      #rate-title {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+
+      app-rate-star-bar {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .comment-form {
+        overflow: hidden;
+        padding: 0 24px;
+
+        #question {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 4px;
+          text-align: right;
+          margin-top: 24px;
+        }
+
+        .predefined-reason {
+          font-size: 13px;
+
+          .mat-checkbox {
+            line-height: 40px;
+
+            /deep/ .mat-checkbox-layout {
+              white-space: normal;
+            }
+
+            /deep/ &.mat-checkbox-checked {
+              .mat-checkbox-background {
+                background-color: $ORANGE_300;
+              }
+            }
+          }
+        }
+
+        #other-reasons-text {
+          margin-top: 16px;
+          font-size: 12px;
+        }
+
+        #other-reasons {
+          width: 100%;
+
+          textarea {
+            line-height: 24px;
+          }
+
+          textarea::placeholder {
+            color: $BLUE_700;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .card-actions {
+      width: calc(100% - 48px);
+      position: relative;
+      margin: 0 auto;
+      max-width: 602px;
+
+      button {
+        width: 80%;
+        max-width: 200px;
+        margin: 0 auto 16px;
+        display: block;
+      }
+    }
+  }
+}

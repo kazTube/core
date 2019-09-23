@@ -1,0 +1,55 @@
+@import "../../../core/constants/Colors";
+
+/deep/ #order-summary-card {
+  padding: 0;
+  margin: 8px 8px 16px;
+
+
+  .mat-card-header {
+    padding: 4px 0;
+    background: $LIGHT_BLUE_50;
+    border: 1px solid $GRAY_300;
+
+    .mat-card-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+
+  .mat-card-content {
+    margin-bottom: 0;
+  }
+
+  .card-text-container {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 28px;
+    color: $BLACK_300;
+
+    .is-green {
+      color: $GREEN_500;
+    }
+
+    .is-orange {
+      color: $ORANGE_300;
+    }
+  }
+
+  .mat-card-actions {
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid $GRAY_400;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: $BLUE_700;
+    font-weight: bold;
+    padding-bottom: 8px;
+
+    button {
+      margin-left: 8px;
+    }
+  }
+}

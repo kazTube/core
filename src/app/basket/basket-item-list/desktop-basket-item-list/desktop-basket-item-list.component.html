@@ -1,0 +1,14 @@
+<div id="desktop-basket-item-list" [fxLayout]="'column'" [fxLayoutGap]="'4%'">
+  <div id="list-title" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+    <div>سبد خرید</div>
+    <div>{{basketService.basketItemList.length + " محصول"}}</div>
+  </div>
+  <app-desktop-basket-item-card
+          (countChange)="onCountChange($event)"
+          (delete)="onProductDelete($event)"
+          (unitChange)="onUnitChange($event)"
+          *ngFor="let item of basketService.basketItemList"
+          [basketItem]="item"
+          class="basket-item"
+  ></app-desktop-basket-item-card>
+</div>

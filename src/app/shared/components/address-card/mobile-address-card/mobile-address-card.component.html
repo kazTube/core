@@ -1,0 +1,38 @@
+<mat-card [ngClass]="{'selected':isSelected}" id="mobile-address-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title></mat-card-title>
+            <mat-radio-button (change)="onSelect()"
+                              [checked]="isSelected"
+                              name="address-option">
+                <span *ngIf="isSelected">سفارش به این آدرس ارسال می شود</span>
+                <span *ngIf="!isSelected">ارسال سفارش به این آدرس</span>
+            </mat-radio-button>
+            <button (click)="onEdit()" class="edit-button" mat-icon-button>
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="onDelete()" class="delete-button" mat-icon-button>
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </mat-card-header>
+        <div class="card-text-container">
+            <div>
+                <span>نام تحویل گیرنده: </span>
+                <span>{{address.receiverName}}</span>
+            </div>
+            <div>
+                <span>شماره تماس: </span>
+                <span>{{address.receiverPhone}}</span>
+            </div>
+            <div>
+                <span>کد پستی: </span>
+                <span>{{address.postalCode}}</span>
+            </div>
+            <div>
+                <span>آدرس: </span>
+                <span>{{address.addressText}}</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

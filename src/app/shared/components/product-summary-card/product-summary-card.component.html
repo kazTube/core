@@ -1,0 +1,68 @@
+<mat-card id="product-summary-card" [fxLayout]="cardFlexDirection"
+          [ngClass]="{'horizontal': cardLayout=== productTileCardLayout.Horizontal, 'vertical': cardLayout=== productTileCardLayout.Vertical }">
+
+    <div id="card-image" [fxFlex]="imageFlexValue" (click)="goToProductDetail()">
+        <app-img-with-loading *ngIf="isProductImageExist"
+                              [src]="productSummary.imageUrlList[0]"></app-img-with-loading>
+        <div class="default-image" *ngIf="!isProductImageExist"></div>
+        <div *ngIf="cardType === productTileCardType.SpecialOfferProduct"
+             class="discount-percentage">
+            <span *ngIf="productSummary.discountPercentage && productSummary.discountPercentage>-1">{{productSummary.discountPercentage}}
+                %</span>
+        </div>
+    </div>
+    <mat-card-content id="card-content" [fxFlex]="contentFlexValue" [fxLayout]="'column'"
+                      [fxLayoutAlign]="'space-between'"
+                      (click)="goToProductDetail()">
+        <star-rating *ngIf="cardType === productTileCardType.Summary" [labelText]="productSummary.rate"
+                     [rating]="productSummary.rate" [starType]="'svg'"
+                     direction="ltr"
+                     hoverEnabled="true"
+                     labelPosition="right" readOnly="true" size="small"
+                     staticColor="ok"></star-rating>
+
+        <div class="product-name text-overflow">{{productSummary.productNameFa}}</div>
+
+        <ng-container *ngIf="cardType === productTileCardType.Attribute || cardType === productTileCardType.Summary">
+            <ng-container *ngIf="productSummary.attributeList && productSummary.attributeList.length>0">
+                <div *ngFor="let attribute of productSummary.attributeList.slice(0,2)"
+                     class="product-attribute text-overflow">
+                    {{
+                    attribute.attributeName && attribute.attributeName.length > 0 ?
+                        attribute.attributeName + ' : ' + attribute.attributeValue
+                        :
+                        attribute.attributeValue
+                    }}
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <div *ngIf="cardType === productTileCardType.Description" class="product-description text-overflow">
+            {{productSummary.description}}
+        </div>
+
+        <ng-container *ngIf="cardType === productTileCardType.SpecialOfferProduct">
+            <div *ngIf="productSummary.pharmacyName &&productSummary.pharmacyName.length>0"
+                 class="pharmacy-name text-overflow">
+                {{utilService.normalizePharmacyName(productSummary.pharmacyName)}}
+            </div>
+            <div class="price text-overflow">
+                {{productSummary.newPrice | friendlyPrice}}
+            </div>
+        </ng-container>
+
+    </mat-card-content>
+    <mat-card-actions [fxFlex]="'24%'" [fxLayout]="'column'" [fxLayoutAlign]="'center center'" id="card-actions"
+                      *ngIf="cardType === productTileCardType.SpecialOfferProduct">
+        <button [fxLayout]="'row'" [fxLayoutAlign]="'center center'" (click)="addSpecialOfferProductToBasket()"
+                [disabled]="isAddingToBasket"
+                id="add-to-basket-button"
+                appDpButton="orange-outline"
+                mat-button>
+            <mat-spinner *ngIf="isAddingToBasket" diameter="32" strokeWidth="3"></mat-spinner>
+            <mat-icon *ngIf="!isAddingToBasket" svgIcon="svg_add_to_basket_mini"></mat-icon>
+            <span *ngIf="cardLayout===productTileCardLayout.Vertical && !isAddingToBasket">اضافه به سبد خرید</span>
+        </button>
+    </mat-card-actions>
+
+</mat-card>

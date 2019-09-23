@@ -1,0 +1,24 @@
+<mat-card id="inquiry-form-pharmacy-card">
+    <mat-card-content [fxLayout]="'column'" [fxLayoutAlign]="'space-around center'">
+        <lottie-animation-view
+                [options]="lottieConfig"
+                [width]="animationWidth"
+                [height]="animationHeight"
+               >
+        </lottie-animation-view>
+
+        <div class="text">
+            سفارش شما برای داروخانه های اطراف ارسال شد
+        </div>
+        <div class="text">
+            به زودی نتیجه استعلام از طریق پیامک به شما اعلام خواهد شد
+        </div>
+
+        <button
+                [routerLink]="orderListPath"
+                appDpButton="blue-outline"
+                class="order-list-button"
+                mat-raised-button>لیست سفارشات
+        </button>
+    </mat-card-content>
+</mat-card>

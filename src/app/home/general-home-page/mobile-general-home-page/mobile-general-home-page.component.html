@@ -1,0 +1,9 @@
+<div [ngClass]="{'top-margin':headerService.showSearchBox}" id="general-home-page-container">
+    <img class="background-img" src="assets/images/Image_background.png"/>
+    <div *ngIf="!headerService.showSearchBox"
+         class="search-component">
+        <app-search-box></app-search-box>
+    </div>
+    <app-home-page-info></app-home-page-info>
+</div>
+

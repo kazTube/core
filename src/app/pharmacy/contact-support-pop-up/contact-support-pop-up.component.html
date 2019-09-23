@@ -1,0 +1,10 @@
+<div [fxLayoutAlign]="'stretch center'" [fxLayout]="'column'" id="change-pharmacy-dialog">
+    <mat-icon id="danger_icon" svgIcon="svg_danger"></mat-icon>
+    <div class="dialog-content" mat-dialog-content>
+        {{data.msg}}
+    </div>
+    <div class="dialog-actions" mat-dialog-actions>
+        <button [mat-dialog-close]="true" [routerLink]="'/pharmacy/contact/support/'+data.hixCode" class="contact-button" mat-button>تماس با پشتیبانی</button>
+        <button (click)="cancel()" cdkFocusInitial class="cancel-button" mat-button>انصراف</button>
+    </div>
+</div>

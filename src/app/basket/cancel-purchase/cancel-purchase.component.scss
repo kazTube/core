@@ -1,0 +1,74 @@
+@import "../../core/constants/Colors";
+
+#cancel-purchase-container {
+  .content {
+
+    .predefined-reason {
+      font-size: 13px;
+    }
+
+    #sad-icon {
+      width: 48px;
+      height: 48px;
+      display: block;
+      margin: 16px auto 24px;
+    }
+
+    #question {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .mat-checkbox {
+      line-height: 40px;
+
+      /deep/ .mat-checkbox-layout {
+        white-space: normal;
+      }
+
+      /deep/ &.mat-checkbox-checked {
+        .mat-checkbox-background {
+          background-color: $ORANGE_300;
+        }
+      }
+    }
+
+    #other-reasons-text {
+      margin-top: 16px;
+      font-size: 12px;
+    }
+
+    #other-reasons {
+      width: 100%;
+
+      textarea {
+        line-height: 24px;
+      }
+
+      textarea::placeholder {
+        color: $BLUE_700;
+        font-size: 10px;
+      }
+    }
+  }
+
+
+  .action-bar {
+    width: 100%;
+    margin: 24px auto 0;
+    max-width: 500px;
+
+    #return-to-basket {
+      flex-grow: 1;
+      margin: 0 8px 16px;
+    }
+
+    #cancel-purchase {
+      min-width: 60%;
+      flex-grow: 4;
+      margin: 0 8px 16px;
+    }
+  }
+
+}

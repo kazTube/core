@@ -1,0 +1,88 @@
+@import "../../../core/constants/Colors";
+
+/deep/ #order-detail-card {
+  padding: 0;
+  margin: 8px 8px 16px;
+
+
+  .mat-card-header {
+    padding: 4px 0;
+    background: $LIGHT_BLUE_50;
+    border: 1px solid $GRAY_300;
+
+    .mat-card-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+
+  .mat-card-content {
+    margin-bottom: 0;
+  }
+
+  .card-text-container {
+    padding: 8px 16px 0;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 28px;
+    color: $BLACK_300;
+
+    .is-green {
+      color: $GREEN_500;
+    }
+
+    .is-orange {
+      color: $ORANGE_300;
+    }
+
+    #order-address-detail {
+      background-color: $GRAY_50;
+      border: 1px solid $GRAY_400;
+      border-radius: 4px;
+      margin: 32px 0 16px;
+      padding: 16px;
+      font-weight: normal;
+
+    }
+
+  }
+
+  #order-detail {
+
+    #provider-info {
+      padding: 16px;
+    }
+
+    /deep/ .order-product-summary {
+      &:last-child {
+        .mat-card {
+          border-bottom: 1px solid $GRAY_400;
+        }
+
+      }
+    }
+
+    .order-bill {
+      .mat-card {
+        border-top: 1px solid $GRAY_400;
+      }
+    }
+  }
+
+  .mat-card-actions {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 8px;
+
+    button {
+      min-width: 128px;
+      margin: 8px 16px 16px;
+      min-height: 48px;
+    }
+  }
+}

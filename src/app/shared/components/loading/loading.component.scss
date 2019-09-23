@@ -1,0 +1,21 @@
+@import "../../../core/constants/Colors";
+
+#loading-container {
+  position: absolute;
+
+  &.is-fixed {
+    position: fixed;
+  }
+
+  padding: 16px;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  top: 0;
+  right: 0;
+  background-color: $GRAY_OPACITY_50;
+  z-index: 12;
+
+  /deep/ circle {
+    stroke: $BLUE_700;
+  }
+}

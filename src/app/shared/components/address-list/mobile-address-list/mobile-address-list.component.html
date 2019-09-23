@@ -1,0 +1,30 @@
+<div #addressListTopAnchor></div>
+<div id="basket-address-list-container">
+    <div class="list-title">
+        <span class="title-text">{{title}}</span>
+        <button [routerLink]="'/profile/address/add'"
+                class="address-add-btn"
+                mat-raised-button>
+            <mat-icon
+                    class="address-add-icon" svgIcon="svg_map-add">mic
+            </mat-icon>
+            <span class="address-btn-text">ثبت آدرس جدید</span>
+        </button>
+    </div>
+    <div class="address-card-container">
+        <div #addressCard
+             *ngFor="let address of addressList; let i=index"
+             [@listAnimation]="{value: getAnimationState(i,address.addressId), params:{top: selectedItemTop, moveDown:moveDown}}"
+             (@listAnimation.start)="animationStarted($event)"
+             (@listAnimation.done)="animationDone(i,$event)"
+             [ngClass]="selectedAddressId===address.addressId?'address-card selectedRow':'address-card'">
+            <app-mobile-address-card
+                    (delete)="removeAddress($event)"
+                    (edit)="editAddress($event)"
+                    (select)="onAddressSelect(i,addressCard,16,$event)"
+                    [address]="address"
+                    [isSelected]="selectedAddressId===address.addressId">
+            </app-mobile-address-card>
+        </div>
+    </div>
+</div>

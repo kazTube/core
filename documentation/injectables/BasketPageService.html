@@ -1,0 +1,1788 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>BasketPageService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/basket/basket-page/basket-page.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#basketItemList">basketItemList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#basketItemListVersion">basketItemListVersion</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#basketItemsCount">basketItemsCount</a>
+                            </li>
+                            <li>
+                                <a href="#basketItemsCount$">basketItemsCount$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addItemToBasket">addItemToBasket</a>
+                            </li>
+                            <li>
+                                <a href="#addSpecialOfferItemToBasket">addSpecialOfferItemToBasket</a>
+                            </li>
+                            <li>
+                                <a href="#clearBasket">clearBasket</a>
+                            </li>
+                            <li>
+                                <a href="#getBasketItemsCount">getBasketItemsCount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getItemToAddToBasket">getItemToAddToBasket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getUserBasketFromServer">getUserBasketFromServer</a>
+                            </li>
+                            <li>
+                                <a href="#hasUserOpenOrder">hasUserOpenOrder</a>
+                            </li>
+                            <li>
+                                <a href="#insertOrder">insertOrder</a>
+                            </li>
+                            <li>
+                                <a href="#loadBasket">loadBasket</a>
+                            </li>
+                            <li>
+                                <a href="#payPayment">payPayment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeBasketItemFromLocalBasket">removeBasketItemFromLocalBasket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeBasketItemFromServerBasket">removeBasketItemFromServerBasket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeBasketItemListFromLocalStorage">removeBasketItemListFromLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#removeItemFromBasket">removeItemFromBasket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#saveBasketItemListToLocalStorage">saveBasketItemListToLocalStorage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#syncLocalBasketItemList">syncLocalBasketItemList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#syncWithServerBasket">syncWithServerBasket</a>
+                            </li>
+                            <li>
+                                <a href="#updateItemInBasket">updateItemInBasket</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(httpClient: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, loginService: <a href="../injectables/LoginService.html">LoginService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>httpClient</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loginService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addItemToBasket"></a>
+                    <span class="name">
+                        <b>
+                            addItemToBasket
+                        </b>
+                        <a href="#addItemToBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addItemToBasket(product: <a href="../classes/ProductSummaryDTO.html">ProductSummaryDTO</a>, productUnitList: <a href="../classes/ProductUnitDTO.html">ProductUnitDTO[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:71</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../classes/ProductSummaryDTO.html" target="_self" >ProductSummaryDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>productUnitList</td>
+                                    <td>
+                                                <code><a href="../classes/ProductUnitDTO.html" target="_self" >ProductUnitDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSpecialOfferItemToBasket"></a>
+                    <span class="name">
+                        <b>
+                            addSpecialOfferItemToBasket
+                        </b>
+                        <a href="#addSpecialOfferItemToBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addSpecialOfferItemToBasket(product: <a href="../classes/SpecialOfferProductSummaryDTO.html">SpecialOfferProductSummaryDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../classes/SpecialOfferProductSummaryDTO.html" target="_self" >SpecialOfferProductSummaryDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearBasket"></a>
+                    <span class="name">
+                        <b>
+                            clearBasket
+                        </b>
+                        <a href="#clearBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearBasket()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBasketItemsCount"></a>
+                    <span class="name">
+                        <b>
+                            getBasketItemsCount
+                        </b>
+                        <a href="#getBasketItemsCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBasketItemsCount()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemToAddToBasket"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getItemToAddToBasket
+                        </b>
+                        <a href="#getItemToAddToBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getItemToAddToBasket(product: ProductSummaryDTO | SpecialOfferProductSummaryDTO, productUnitList: <a href="../classes/ProductUnitDTO.html">ProductUnitDTO[]</a>, isSpecialOfferProduct: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                            <code>ProductSummaryDTO | SpecialOfferProductSummaryDTO</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>productUnitList</td>
+                                    <td>
+                                                <code><a href="../classes/ProductUnitDTO.html" target="_self" >ProductUnitDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isSpecialOfferProduct</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/BasketItemDTO.html" target="_self" >BasketItemDTO</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserBasketFromServer"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getUserBasketFromServer
+                        </b>
+                        <a href="#getUserBasketFromServer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUserBasketFromServer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/BasketItemDTO.html" target="_self" >Observable&lt;BasketItemDTO[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasUserOpenOrder"></a>
+                    <span class="name">
+                        <b>
+                            hasUserOpenOrder
+                        </b>
+                        <a href="#hasUserOpenOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasUserOpenOrder()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/OpenOrderResponseDTO.html" target="_self" >Observable&lt;OpenOrderResponseDTO&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertOrder"></a>
+                    <span class="name">
+                        <b>
+                            insertOrder
+                        </b>
+                        <a href="#insertOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>insertOrder(addressId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>addressId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadBasket"></a>
+                    <span class="name">
+                        <b>
+                            loadBasket
+                        </b>
+                        <a href="#loadBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadBasket()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="payPayment"></a>
+                    <span class="name">
+                        <b>
+                            payPayment
+                        </b>
+                        <a href="#payPayment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>payPayment(orderId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, hixCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>orderId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>hixCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>amount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeBasketItemFromLocalBasket"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            removeBasketItemFromLocalBasket
+                        </b>
+                        <a href="#removeBasketItemFromLocalBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeBasketItemFromLocalBasket(productCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeBasketItemFromServerBasket"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            removeBasketItemFromServerBasket
+                        </b>
+                        <a href="#removeBasketItemFromServerBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeBasketItemFromServerBasket(productCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeBasketItemListFromLocalStorage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            removeBasketItemListFromLocalStorage
+                        </b>
+                        <a href="#removeBasketItemListFromLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeBasketItemListFromLocalStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeItemFromBasket"></a>
+                    <span class="name">
+                        <b>
+                            removeItemFromBasket
+                        </b>
+                        <a href="#removeItemFromBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeItemFromBasket(productCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveBasketItemListToLocalStorage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            saveBasketItemListToLocalStorage
+                        </b>
+                        <a href="#saveBasketItemListToLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveBasketItemListToLocalStorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="syncLocalBasketItemList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            syncLocalBasketItemList
+                        </b>
+                        <a href="#syncLocalBasketItemList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>syncLocalBasketItemList(newItem: <a href="../classes/BasketItemDTO.html">BasketItemDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newItem</td>
+                                    <td>
+                                                <code><a href="../classes/BasketItemDTO.html" target="_self" >BasketItemDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="syncWithServerBasket"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            syncWithServerBasket
+                        </b>
+                        <a href="#syncWithServerBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>syncWithServerBasket(basketItemList: <a href="../classes/BasketItemDTO.html">BasketItemDTO[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>basketItemList</td>
+                                    <td>
+                                                <code><a href="../classes/BasketItemDTO.html" target="_self" >BasketItemDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateItemInBasket"></a>
+                    <span class="name">
+                        <b>
+                            updateItemInBasket
+                        </b>
+                        <a href="#updateItemInBasket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateItemInBasket(basketItem: <a href="../classes/BasketItemDTO.html">BasketItemDTO</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>basketItem</td>
+                                    <td>
+                                                <code><a href="../classes/BasketItemDTO.html" target="_self" >BasketItemDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="basketItemList"></a>
+                        <span class="name">
+                            <b>
+                            basketItemList</b>
+                            <a href="#basketItemList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/BasketItemDTO.html" target="_self" >BasketItemDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="basketItemListVersion"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            basketItemListVersion</b>
+                            <a href="#basketItemListVersion"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>2</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="basketItemsCount"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            basketItemsCount</b>
+                            <a href="#basketItemsCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject(0)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="basketItemsCount$"></a>
+                        <span class="name">
+                            <b>
+                            basketItemsCount$</b>
+                            <a href="#basketItemsCount$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.basketItemsCount.asObservable()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/basket/basket-page/basket-page.service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {ProductSummaryDTO} from &#x27;../../dto/product/ProductSummaryDTO&#x27;;
+import {BasketItemDTO} from &#x27;../../dto/basket/BasketItemDTO&#x27;;
+import {BehaviorSubject, Observable, of} from &#x27;rxjs&#x27;;
+import {ProductUnitDTO} from &#x27;../../dto/product/ProductUnitDTO&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {OpenOrderResponseDTO} from &#x27;../../dto/basket/OpenOrderResponseDTO&#x27;;
+import {flatMap, shareReplay} from &#x27;rxjs/operators&#x27;;
+import {RestAddresses} from &#x27;../../core/constants/RestAddresses&#x27;;
+import {LoginService} from &#x27;../../login/login.service&#x27;;
+import {SyncBasketRequestDTO} from &#x27;../../dto/basket/SyncBasketRequestDTO&#x27;;
+import {UpdateBasketItemDTO} from &#x27;../../dto/basket/UpdateBasketItemDTO&#x27;;
+import {SpecialOfferProductSummaryDTO} from &#x27;../../dto/pharmacy/SpecialOfferProductSummaryDTO&#x27;;
+import {Subscriber} from &#x27;rxjs/src/internal/Subscriber&#x27;;
+
+const BASKET_ITEM_LIST_LOCAL_STORAGE_KEY &#x3D; &#x27;basketItemList&#x27;;
+const BASKET_ITEM_LIST_VERSION_STORAGE_KEY &#x3D; &#x27;basketItemListVersion&#x27;;
+
+@Injectable({
+    providedIn: &#x27;root&#x27;
+})
+export class BasketPageService {
+
+    basketItemList: BasketItemDTO[] &#x3D; [];
+
+    private basketItemsCount &#x3D; new BehaviorSubject(0);
+    basketItemsCount$ &#x3D; this.basketItemsCount.asObservable();
+    // it is used to discover if saved basketItemList in localstorage is valid
+    private basketItemListVersion &#x3D; 2;
+
+    constructor(
+        private httpClient: HttpClient,
+        private loginService: LoginService) {
+        // this is for updating basket item count in header whenever user login
+        this.loginService.userLoggedIn$.subscribe(userIsLoggedIn &#x3D;&gt; {
+            if (userIsLoggedIn) {
+                this.getUserBasketFromServer();
+            }
+        });
+
+        // this is for updating basket item count in header whenever user logout
+        this.loginService.userLoggedOut$.subscribe(userIsLoggedOut &#x3D;&gt; {
+            if (userIsLoggedOut) {
+                this.basketItemList &#x3D; [];
+                this.basketItemsCount.next(0);
+            }
+        });
+    }
+
+    loadBasket() {
+
+        if (this.loginService.isUserLoggedIn()) {
+            return this.getUserBasketFromServer();
+        } else {
+            let basketItemList &#x3D; [];
+            const basketItemListJson &#x3D; localStorage.getItem(BASKET_ITEM_LIST_LOCAL_STORAGE_KEY);
+            const basketItemListVersionJson &#x3D; localStorage.getItem(BASKET_ITEM_LIST_VERSION_STORAGE_KEY);
+            if (basketItemListJson &amp;&amp; basketItemListVersionJson) {
+                const basketItemListVersion &#x3D; JSON.parse(basketItemListVersionJson);
+                if (basketItemListVersion &#x3D;&#x3D;&#x3D; this.basketItemListVersion) {
+                    basketItemList &#x3D; JSON.parse(basketItemListJson);
+                }
+            }
+            this.basketItemList &#x3D; basketItemList;
+            this.basketItemsCount.next(this.getBasketItemsCount());
+            return of(this.basketItemList);
+        }
+
+    }
+
+    addItemToBasket(product: ProductSummaryDTO, productUnitList: ProductUnitDTO[]): Observable&lt;boolean&gt; {
+        const basketItem &#x3D; this.getItemToAddToBasket(product, productUnitList, false);
+        return this.updateItemInBasket(basketItem);
+    }
+
+    addSpecialOfferItemToBasket(product: SpecialOfferProductSummaryDTO): Observable&lt;boolean&gt; {
+        const basketItem &#x3D; this.getItemToAddToBasket(product, product.unitList, true);
+        return this.updateItemInBasket(basketItem);
+    }
+
+    removeItemFromBasket(productCode: string): Observable&lt;boolean&gt; {
+        // user is logged in
+        if (this.loginService.isUserLoggedIn()) {
+            const deleteFromServerBasket$ &#x3D; this.removeBasketItemFromServerBasket(productCode).pipe(shareReplay(1));
+            deleteFromServerBasket$.subscribe(() &#x3D;&gt; {
+                this.removeBasketItemFromLocalBasket(productCode);
+            });
+            return deleteFromServerBasket$;
+
+        } else { // user in not logged in
+            this.removeBasketItemFromLocalBasket(productCode);
+            this.saveBasketItemListToLocalStorage();
+            return of(true);
+        }
+    }
+
+    hasUserOpenOrder(): Observable&lt;OpenOrderResponseDTO&gt; {
+        return this.httpClient.post&lt;OpenOrderResponseDTO&gt;(
+            RestAddresses.HAS_OPEN_ORDER,
+            null
+        );
+    }
+
+    updateItemInBasket(basketItem: BasketItemDTO): Observable&lt;boolean&gt; {
+        // user is logged in
+        if (this.loginService.isUserLoggedIn()) {
+            const syncWithServerBasket$ &#x3D; this.syncWithServerBasket([basketItem]).pipe(shareReplay(1));
+            syncWithServerBasket$.subscribe(() &#x3D;&gt; {
+                this.syncLocalBasketItemList(basketItem);
+            });
+            return syncWithServerBasket$;
+
+        } else { // user in not logged in
+            this.syncLocalBasketItemList(basketItem);
+            this.saveBasketItemListToLocalStorage();
+            return Observable.create((observer: Subscriber&lt;boolean&gt;) &#x3D;&gt; observer.next(true));
+        }
+    }
+
+    insertOrder(addressId: number): Observable&lt;boolean&gt; {
+        return this.httpClient.post&lt;boolean&gt;(RestAddresses.INSERT_ORDER, {addressId: addressId});
+    }
+
+    payPayment(orderId: number, hixCode: number, amount: number): Observable&lt;string&gt; {
+        return this.httpClient.post&lt;string&gt;(RestAddresses.ID_PAY_PAYMENT, {
+            orderId: orderId,
+            hixCode: hixCode,
+            amount: amount
+        });
+    }
+
+    getBasketItemsCount() {
+        return this.basketItemList ? this.basketItemList.length : 0;
+    }
+
+    clearBasket() {
+        this.basketItemList &#x3D; [];
+        this.removeBasketItemListFromLocalStorage();
+        this.basketItemsCount.next(0);
+    }
+
+
+    private syncWithServerBasket(basketItemList: BasketItemDTO[]): Observable&lt;boolean&gt; {
+        const updateBasketItemList &#x3D; basketItemList.map(basketItem &#x3D;&gt;
+            new UpdateBasketItemDTO(basketItem.productDetail.productCode, basketItem.count, basketItem.unitId));
+        const request &#x3D; new SyncBasketRequestDTO(updateBasketItemList);
+        return this.httpClient.post&lt;boolean&gt;(RestAddresses.SYNC_BASKET, request);
+
+    }
+
+    private removeBasketItemFromServerBasket(productCode: string): Observable&lt;boolean&gt; {
+        return this.httpClient.post&lt;boolean&gt;(RestAddresses.REMOVE_ITEM_FROM_BASKET,
+            {productCode: productCode});
+    }
+
+    private removeBasketItemFromLocalBasket(productCode: string) {
+        const deletionIndex &#x3D; this.basketItemList.findIndex(item &#x3D;&gt; item.productDetail.productCode &#x3D;&#x3D;&#x3D; productCode);
+        this.basketItemList.splice(deletionIndex, 1);
+        this.basketItemsCount.next(this.getBasketItemsCount());
+    }
+
+    private getUserBasketFromServer(): Observable&lt;BasketItemDTO[]&gt; {
+
+        const serverBasket$ &#x3D; this.syncWithServerBasket(this.basketItemList)
+            .pipe(
+                flatMap(() &#x3D;&gt; this.httpClient.post&lt;BasketItemDTO[]&gt;(RestAddresses.GET_USER_BASKET, null)),
+                shareReplay(1)
+            );
+        serverBasket$
+            .subscribe(basketItemList &#x3D;&gt; {
+                this.basketItemList &#x3D; basketItemList ? basketItemList : [];
+                this.basketItemsCount.next(this.getBasketItemsCount());
+                this.removeBasketItemListFromLocalStorage();
+            });
+
+        return serverBasket$;
+    }
+
+    private syncLocalBasketItemList(newItem: BasketItemDTO) {
+        let updateIndex &#x3D; -1;
+        this.basketItemList &#x3D; this.basketItemList.map((item, index) &#x3D;&gt; {
+            if (item.productDetail.productCode &#x3D;&#x3D;&#x3D; newItem.productDetail.productCode) {
+                updateIndex &#x3D; index;
+                return newItem;
+            }
+            return item;
+        });
+        // it is a new Item
+        if (updateIndex &#x3D;&#x3D;&#x3D; -1) {
+            this.basketItemList.unshift(newItem);
+        } else { // it is an update
+            this.basketItemList[updateIndex] &#x3D; newItem;
+            // let newBasketItemList &#x3D; [this.basketItemList[updateIndex]];
+            // newBasketItemList &#x3D; newBasketItemList.concat(this.basketItemList.slice(0, updateIndex));
+            // newBasketItemList &#x3D; newBasketItemList.concat(this.basketItemList.slice(updateIndex + 1, this.basketItemList.length));
+            // this.basketItemList &#x3D; newBasketItemList;
+
+        }
+        const newCount &#x3D; this.getBasketItemsCount();
+        if (this.basketItemsCount.getValue() !&#x3D;&#x3D; newCount) {
+            this.basketItemsCount.next(newCount);
+        }
+    }
+
+    private saveBasketItemListToLocalStorage() {
+        localStorage.setItem(BASKET_ITEM_LIST_LOCAL_STORAGE_KEY, JSON.stringify(this.basketItemList));
+        localStorage.setItem(BASKET_ITEM_LIST_VERSION_STORAGE_KEY, JSON.stringify(this.basketItemListVersion));
+    }
+
+    private removeBasketItemListFromLocalStorage() {
+        localStorage.removeItem(BASKET_ITEM_LIST_LOCAL_STORAGE_KEY);
+        localStorage.removeItem(BASKET_ITEM_LIST_VERSION_STORAGE_KEY);
+    }
+
+    private getItemToAddToBasket(product: ProductSummaryDTO | SpecialOfferProductSummaryDTO,
+                                 productUnitList: ProductUnitDTO[],
+                                 isSpecialOfferProduct: boolean): BasketItemDTO {
+
+        const result &#x3D; new BasketItemDTO(product, productUnitList, 1, 0, isSpecialOfferProduct);
+        if (productUnitList &amp;&amp; productUnitList.length &gt; 0) {
+            result.unitId &#x3D; productUnitList[0].unitId;
+        }
+        const productInBasket &#x3D; this.basketItemList.filter(basketItem &#x3D;&gt; basketItem.productDetail.productCode &#x3D;&#x3D;&#x3D; product.productCode);
+        if (productInBasket.length &gt; 0) {
+            result.count &#x3D; productInBasket[0].count + 1;
+            result.unitId &#x3D; productInBasket[0].unitId;
+        }
+        return result;
+    }
+
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'BasketPageService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<mat-card id="vitrin-card">
+    <mat-card-content id="vitrin-card-content" [fxLayout]="'column'" [fxLayoutAlign]="'space-between stretch'">
+        <div>
+            <div id="vitrin-title">ویترین داروپین</div>
+            <div id="vitrin-subtitle">دیگه هیچوقت بهترین تخفیف های داروخانه های اطرافت رو از دست نمی دی</div>
+        </div>
+
+        <ngu-carousel id="carousel" #productOfferCarousel
+                      *ngIf="specialOfferOfferProductList && specialOfferOfferProductList.length>0"
+                      [dataSource]="specialOfferOfferProductList"
+                      [inputs]="carouselConfig">
+            <button *ngIf="productOfferCarousel.pointNumbers.length>0" NguCarouselPrev
+                    [disabled]="productOfferCarousel.isFirst" class="carousel-button carousel-right"
+                    mat-button>
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+            <button *ngIf="productOfferCarousel.pointNumbers.length>0" NguCarouselNext
+                    [disabled]="productOfferCarousel.isLast" class="carousel-button carousel-left"
+                    mat-button>
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <div *nguCarouselDef="let item;" class="item" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                <app-product-summary-card
+                        class="tile"
+                        [productSummary]="item"
+                        [cardType]="ProductSummaryCardTypeEnum.SpecialOfferProduct"
+                        [cardLayout]="CardLayoutEnum.Vertical"
+                ></app-product-summary-card>
+            </div>
+
+        </ngu-carousel>
+        <button *ngIf="pharmacyHixCode" [routerLink]="'/pharmacy/'+pharmacyHixCode"
+                class="pharmacy-shelf-button" mat-button>
+            مشاهده قفسه
+            {{utilService.normalizePharmacyName(pharmacyName)}}
+        </button>
+
+    </mat-card-content>
+</mat-card>
+

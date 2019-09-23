@@ -1,0 +1,21 @@
+<mat-card id="order-bill-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title>
+                <span>صورت حساب</span>
+            </mat-card-title>
+        </mat-card-header>
+        <div id="order-price">
+            <span>مجموع خرید</span>
+            <span class="price">{{orderPrice | friendlyPrice}}</span>
+        </div>
+        <div id="shipping-cost">
+            <span>هزینه ارسال</span>
+            <span class="price">{{transportPrice | friendlyPrice}}</span>
+        </div>
+        <div id="total-cost">
+            <span>جمع کل</span>
+            <span class="price">{{totalPrice | friendlyPrice}}</span>
+        </div>
+    </mat-card-content>
+</mat-card>

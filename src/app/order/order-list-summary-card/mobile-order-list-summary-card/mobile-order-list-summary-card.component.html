@@ -1,0 +1,32 @@
+<mat-card id="order-summary-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title>
+                <span>شماره پیگیری: </span>
+                <span>{{order.orderId}}</span>
+            </mat-card-title>
+        </mat-card-header>
+        <div class="card-text-container">
+            <div *ngIf="order.createDateTime">
+                <span>تاریخ ثبت سفارش: </span>
+                <span>{{order.createDateTime}}</span>
+            </div>
+            <div *ngIf="showPaymentInfo">
+                <span>مبلغ سفارش: </span>
+                <span>{{order.totalPrice}}</span>
+            </div>
+            <div *ngIf="showPaymentInfo">
+                <span>وضعیت پرداخت: </span>
+                <span *ngIf="order.isPaid" class="is-green">پرداخت موفق</span>
+                <span *ngIf="!order.isPaid">-</span>
+            </div>
+            <div *ngIf="order.stateName">
+                <span>وضعیت سفارش: </span>
+                <span [ngClass]="{'is-orange':order.isPaid || !showPaymentInfo, 'is-green':order.isReadyToPay && order.isCancelable}">{{order.stateName}}</span>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="goToOrderDetail('/order/detail/')" mat-button>مشاهده جزییات</button>
+    </mat-card-actions>
+</mat-card>

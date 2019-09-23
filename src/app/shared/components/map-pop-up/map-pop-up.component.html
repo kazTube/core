@@ -1,0 +1,69 @@
+<div id="map-dialog">
+    <div class="map-dialog-title" mat-dialog-title>
+        <span>{{title}}</span>
+        <button mat-dialog-close mat-icon-button>
+            <mat-icon id="close-button">close</mat-icon>
+        </button>
+
+    </div>
+    <div mat-dialog-content>
+        <input
+            #addressSearch
+            *ngIf="isMapReady && isFullVersion"
+            [(ngModel)]="addressSearchValue"
+            class="address-search-box"
+            dir="auto"
+            placeholder="جستجو..."
+        />
+        <agm-map
+                (mapReady)="mapIsReady($event)"
+                [(zoom)]="markerLocation.zoom"
+                [latitude]="markerLocation.lat"
+                [longitude]="markerLocation.lng"
+                [streetViewControl]="false"
+                [zoomControl]="isFullVersion">
+            <agm-marker
+                    (dragEnd)='setMarkerLocation($event)'
+                    *ngIf="showMarker"
+                    [iconUrl]="icon"
+                    [latitude]="markerLocation.lat"
+                    [longitude]="markerLocation.lng"
+                    [markerDraggable]="!readonly"
+                    [animation]="isMapReady?'DROP':null"
+            ></agm-marker>
+        </agm-map>
+        <button
+                *ngIf="!readonly && isMapReady"
+                (click)="getCurrentLocation()"
+                [disabled]="waitingForGettingLocation"
+                [ngClass]="appStateService.isMobile()?'circle-map-btn':'square-map-btn'"
+                id="current-location-button"
+                mat-icon-button
+        >
+            <mat-icon *ngIf="!waitingForGettingLocation">my_location</mat-icon>
+            <mat-spinner *ngIf="waitingForGettingLocation" diameter="26" strokeWidth="3"></mat-spinner>
+        </button>
+    </div>
+    <mat-dialog-actions>
+        <div class="btn-container" fxLayout="row wrap" fxLayoutAlign="center center">
+            <button fxFlex="0 1 calc(80% - 12px)"
+                    (click)="setLocation()"
+                    *ngIf="!readonly"
+                    appDpButton="blue"
+                    mat-button>ثبت موقعیت
+            </button>
+            <button fxFlex="3 1 auto"
+                    (click)="confirmLocation()"
+                    *ngIf="readonly"
+                    appDpButton="blue"
+                    mat-button>تایید آدرس و ادامه
+            </button>
+            <button fxFlex="1 0 auto"
+                    (click)="cancel()"
+                    *ngIf="readonly"
+                    appDpButton="blue-outline"
+                    mat-button>انصراف
+            </button>
+        </div>
+    </mat-dialog-actions>
+</div>

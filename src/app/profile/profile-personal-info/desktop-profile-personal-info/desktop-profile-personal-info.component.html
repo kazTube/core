@@ -1,0 +1,24 @@
+<mat-card id="profile-personal-info-card">
+    <mat-card-content>
+        <mat-card-title class="card-title">اطلاعات حساب کاربری</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-subtitle class="card-subtitle">مشخصات فردی کاربر</mat-card-subtitle>
+        <app-personal-info-form
+                (isValid)="personalInfoFormService.isPersonalFormValid=$event"
+                [(personalInfo)]="personalInfoFormService.formPersonalInfo"
+                [profileMode]="true"
+                class="personal-info-form"
+        ></app-personal-info-form>
+        <button
+                (click)="submitPersonalInfo()"
+                [disabled]="isConfirmButtonDisabled()"
+                appDpButton="blue"
+                class="confirm-button"
+                mat-raised-button
+        >
+            <span *ngIf="!isLoading">ثبت تغییرات</span>
+            <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+        </button>
+    </mat-card-content>
+</mat-card>
+

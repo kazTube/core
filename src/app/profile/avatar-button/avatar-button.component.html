@@ -1,0 +1,12 @@
+<div (click)="isUpdating?null:openAvatarPopup()" id="avatar-container">
+    <mat-icon [svgIcon]="avatar" class="avatar"></mat-icon>
+    <mat-icon class="edit-avatar-btn"
+              fxLayout
+              fxLayoutAlign="center center">
+        edit
+    </mat-icon>
+    <div *ngIf="isUpdating" class="updating-avatar">
+        <mat-spinner diameter="40"
+                     strokeWidth="4"></mat-spinner>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div #addressListTopAnchor></div>
+<div id="desktop-address-list">
+    <div *ngIf="fullMode" fxLayout="row nowrap" fxLayoutAlign="space-between center" class="title">
+        <span>انتخاب آدرس تحویل سفارش</span>
+        <button
+                [routerLink]="'/profile/address/add'"
+                class="address-add-btn"
+                mat-raised-button>
+            <mat-icon
+                    class="address-add-icon" svgIcon="svg_map-add">mic
+            </mat-icon>
+            <span class="address-btn-text">ثبت آدرس جدید</span>
+        </button>
+    </div>
+    <div class="address-list-container" [@preventInitialChildAnimations]>
+        <div #addressCard
+             *ngFor="let address of addressList; let i=index"
+             [@listAnimation]="{value: getAnimationState(i,address.addressId), params:{top: selectedItemTop, moveDown:moveDown}}"
+             (@listAnimation.start)="animationStarted($event)"
+             (@listAnimation.done)="animationDone(i,$event)"
+             [ngClass]="selectedAddressId===address.addressId?'address-card selectedRow':'address-card'">
+            <app-desktop-address-card
+                    (delete)="removeAddress($event)"
+                    (edit)="editAddress($event)"
+                    (select)="onAddressSelect(i,addressCard,24,$event)"
+                    [address]="address"
+                    [isSelected]="selectedAddressId===address.addressId">
+            </app-desktop-address-card>
+        </div>
+    </div>
+</div>

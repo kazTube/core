@@ -1,0 +1,33 @@
+<div id="mobile-profile-personal-info">
+    <div class="blue-header"></div>
+    <div class="personal-info-container"
+         fxLayout="column"
+         fxLayoutAlign="start center">
+        <mat-toolbar class="profile-toolbar">
+            <button (click)="routingService.navigateBack()" mat-button>
+                بازگشت
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+        </mat-toolbar>
+        <app-personal-info-form
+                (isValid)="personalInfoFormService.isPersonalFormValid=$event"
+                [(personalInfo)]="personalInfoFormService.formPersonalInfo"
+                [profileMode]="true"
+                class="personal-info-form"
+        ></app-personal-info-form>
+        <button
+                (click)="submitPersonalInfo()"
+                [disabled]="!personalInfoFormService.canSubmitPersonalInfo()"
+                appDpButton="blue"
+                class="confirm-button"
+                mat-raised-button
+        >
+            <span *ngIf="!isLoading">ثبت تغییرات</span>
+            <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+        </button>
+        <app-avatar-button
+                [(avatar)]="personalInfoFormService.avatar"
+                class="avatar-button"
+        ></app-avatar-button>
+    </div>
+</div>

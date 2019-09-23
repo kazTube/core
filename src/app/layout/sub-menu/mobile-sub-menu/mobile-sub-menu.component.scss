@@ -1,0 +1,69 @@
+@import "../../../core/constants/Colors";
+
+/deep/ #menu-category {
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+
+  mat-expansion-panel {
+    box-shadow: none;
+
+    mat-expansion-panel-header {
+      cursor: pointer;
+      background-color: $BLUE_50;
+
+      &:hover {
+        background-color: $BLUE_50;
+      }
+
+      .menu-item-text {
+        color: $BLACK;
+        margin: 0 48px;
+      }
+
+      &.level-1 {
+        background-color: $LIGHT_BLUE_200;
+      }
+
+      &.level-2 {
+        background-color: $LIGHT_BLUE_300;
+      }
+
+      &.level-3 {
+        background-color: $LIGHT_BLUE_400;
+      }
+
+      &.level-4 {
+        background-color: $LIGHT_BLUE_500;
+      }
+
+    }
+  }
+
+  //to disable hover effect
+  .mat-expansion-panel .mat-expansion-panel-header:hover,
+  .mat-expansion-panel .mat-expansion-panel-header:focus {
+
+    &.level-1 {
+      background-color: $LIGHT_BLUE_200;
+    }
+
+    &.level-2 {
+      background-color: $LIGHT_BLUE_300;
+    }
+
+    &.level-3 {
+      background-color: $LIGHT_BLUE_400;
+    }
+
+    &.level-4 {
+      background-color: $LIGHT_BLUE_500;
+    }
+
+  }
+}
+
+
+
+
+

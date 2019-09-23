@@ -1,0 +1,99 @@
+// this file should be added in styles array in angular.json file
+@import "../../../core/constants/Colors";
+
+.dp-blue-form-field {
+  &.mat-form-field-appearance-outline {
+    .mat-select-arrow {
+      border: 0;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      margin-top: 0;
+    }
+
+    .mat-form-field-wrapper {
+      line-height: 16px;
+      font-size: 12px;
+    }
+
+    .mat-form-field-outline-start, .mat-form-field-outline-gap, .mat-form-field-outline-end {
+      background-color: $LIGHT_BLUE_50;
+      color: $BLUE_800;
+    }
+
+    .mat-select-placeholder {
+      color: $BLUE_500;
+    }
+
+    .mat-form-field-outline {
+      color: $BLUE_800;
+    }
+
+    .mat-icon {
+      color: $BLUE_800;
+      fill: $BLUE_800;;
+    }
+
+    .mat-form-field-label {
+      color: $BLUE_500;
+    }
+
+    &.mat-form-field-can-float.mat-form-field-should-float {
+      .mat-form-field-label {
+        transform: translateY(-1.25em) scale(.75);
+        color: $BLUE_500;
+      }
+    }
+
+
+    .mat-form-field-prefix, .mat-form-field-suffix {
+      top: 0.5em;
+    }
+
+    .mat-form-field-infix {
+      padding: 0.9em 0 0.9em 0;
+      border-top: .4em solid transparent;
+    }
+
+    &.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-outline-gap {
+      border-top-color: transparent;
+
+    }
+
+    //for error
+    &.mat-form-field-invalid {
+      .mat-form-field-outline-start, .mat-form-field-outline-gap, .mat-form-field-outline-end {
+        background-color: $RED_50;
+        border-color: $RED_700;
+      }
+
+      .mat-icon {
+        color: $RED_700;
+        fill: $RED_700;
+      }
+
+      .mat-form-field-label {
+        color: $RED_100;
+      }
+
+      &.mat-form-field-can-float.mat-form-field-should-float {
+        .mat-form-field-label {
+          transform: translateY(-1.25em) scale(.75);
+          color: $RED_100;
+        }
+      }
+
+
+    }
+  }
+
+  .mat-select-panel {
+    background-color: $LIGHT_BLUE_100;
+  }
+
+  .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $BLUE_800 !important;
+  }
+}
+

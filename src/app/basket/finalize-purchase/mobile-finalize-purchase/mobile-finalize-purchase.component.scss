@@ -1,0 +1,38 @@
+@import "../../../core/constants/Colors";
+
+#finalize-purchase-step {
+  padding: 8px;
+
+  .mat-card {
+    padding: 0;
+  }
+
+  #finalize-purchase-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: $BLACK_300;
+    margin: 16px 8px;
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: $GRAY_100;
+    width: calc(100% - 32px);
+    margin-bottom: 4px;
+  }
+
+  #cancel-pay {
+    width: 100%;
+    margin-top: 24px;
+    //border: 1px solid $BLUE_700;
+    //color: $BLUE_700;
+    //background-color: $GRAY_50;
+  }
+
+  app-order-provider-card {
+    display: block;
+    padding: 16px;
+  }
+}

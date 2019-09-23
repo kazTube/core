@@ -1,0 +1,38 @@
+<mat-card id="product-carousel-card" [fxLayout]="'column'" ngClass.lt-sm="small-screen" *ngIf="productList && productList.length>0">
+    <mat-card-title>
+        <mat-card-header class="product-carousel-header">{{title}}</mat-card-header>
+    </mat-card-title>
+
+    <mat-card-content [fxLayout]="'row'" [fxLayoutAlign]="'space-evenly center'">
+        <div class="button-container right-button" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+            <button (click)="prev()" [disabled]="currentSlide===0" mat-fab *ngIf="productCarousel.pointNumbers.length>0"
+                    class="buttons ">
+                <mat-icon>navigate_next</mat-icon>
+            </button>
+        </div>
+
+        <ngu-carousel id="carousel" #productCarousel [dataSource]="productList" [inputs]="carouselConfig">
+
+
+            <div *nguCarouselDef="let item;" class="item" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                <app-product-summary-card [productSummary]="item"
+                                          [cardType]="cardsType"
+                                          [cardLayout]="CardLayoutEnum.Vertical"
+                                          class="tile"></app-product-summary-card>
+            </div>
+            <ul *ngIf="showPoints" NguCarouselPoint class="points">
+                <li (click)="productCarousel.moveTo(j)" *ngFor="let j of productCarousel.pointNumbers; let j = index"
+                    [class.active]="j==productCarousel.activePoint"></li>
+            </ul>
+        </ngu-carousel>
+
+        <div class="button-container left-button" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+            <button (click)="next()" mat-fab [disabled]="currentSlide===productCarousel.pointNumbers.length-1"
+                    *ngIf="productCarousel.pointNumbers.length>0"
+                    class="buttons">
+                <mat-icon>navigate_before</mat-icon>
+            </button>
+        </div>
+
+    </mat-card-content>
+</mat-card>

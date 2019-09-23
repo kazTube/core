@@ -1,0 +1,75 @@
+<div id="faq" fxLayout="column">
+    <mat-toolbar fxHide.gt-xs>
+        <span>
+            سوالات متداول
+        </span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-card id="content-container" ngClass.lt-sm="small-screen">
+        <mat-card-content>
+            <div id="title" fxHide.lt-sm>
+                سوالات متداول
+            </div>
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                برای خرید از داروپین، حتما باید در سایت عضو باشم؟
+            </div>
+            <div class="body-text">
+                بله. قبل از خرید میبایست از طریق شماره موبایل و تکمیل پروفایل ثبت نام کنید
+            </div>
+
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                میتوانم بعد از فاکتور شدن سفارش درخواست تغییر در مندرجات فاکتور را بدهم ؟
+            </div>
+            <div class="body-text">
+                خیر. بعد از صادر شدن فاکتور امکان هیچ تغییری وجود ندارد
+            </div>
+
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                می‏‌توانم سفارشم را تلفنی ثبت کنم؟
+            </div>
+            <div class="body-text">
+                خیر، امکان ثبت سفارش بصورت تلفنی امکان پذیر نیست
+            </div>
+
+
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                چطور میتوانم سفارشم را پیگیری کنم ؟
+            </div>
+            <div class="body-text">
+                <div>وارد بخش لیست سفارشات شوید</div>
+                <div>در این قسمت با زدن روی فلش میتوانید جزییات سفارش خود را ببینید</div>
+                <div>میتوانید در این قسمت روند آماده سازی و مراحل ارسال سفارش خود را پیگیری کنید</div>
+            </div>
+
+
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                چطور در داروپین سفارش خود را ثبت کنم ؟
+            </div>
+            <div class="body-text">
+                <div>وارد پروفایل خود شوید</div>
+                <div>محصول مورد نظر خود را جستجو کنید</div>
+                <div>روی " افزودن به سبد خرید" کلیک کنید</div>
+            </div>
+
+
+            <div class="header-text">
+                <mat-icon class="help-icon" svgIcon="svg_help" fxHide.lt-sm></mat-icon>
+                چطور میتوانم به اطلاعات خریدهای قبلی خود دسترسی پیدا کنم؟
+            </div>
+            <div class="body-text">
+                <div>ابتدا وارد پروفایل خود شوید</div>
+                <div>روی گزینه ی "سفارشات من" کلیک کنید</div>
+                <div>میتوانید در این قسمت سوابق سفارشات خود را ملاحظه فرمایید</div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,37 @@
+<mat-card id="image-slider-card" [fxLayout]="'column'" dir="rtl">
+    <button (click)="closeDialog()" id="close-button" mat-icon-button>
+        <mat-icon>close</mat-icon>
+    </button>
+    <mat-card-content [fxFlex]="'grow'" [fxLayout]="'column'" [fxLayoutAlign]="'center stretch'">
+        <div [fxFlex]="'grow'" id="preview-area" [fxLayout]="'row'" [fxLayoutAlign]="'space-evenly center'">
+            <div class="button-container right-button" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                <button (click)="prev()" [disabled]="currentSlide===0" mat-fab *ngIf="imageCarousel.pointNumbers.length>0"
+                        class="buttons ">
+                    <mat-icon>navigate_next</mat-icon>
+                </button>
+            </div>
+
+            <ngu-carousel id="carousel" #imageCarousel [dataSource]="imageUrlList" [inputs]="carouselConfig">
+
+                <div *nguCarouselDef="let item;" class="item" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                    <app-img-with-loading class="tile" [src]="item"></app-img-with-loading>
+                </div>
+
+            </ngu-carousel>
+
+            <div class="button-container left-button" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                <button (click)="next()" mat-fab [disabled]="currentSlide===imageCarousel.pointNumbers.length-1"
+                        *ngIf="imageCarousel.pointNumbers.length>0"
+                        class="buttons">
+                    <mat-icon>navigate_before</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div id="thumbnail-area">
+            <div id="thumbnail-container" [fxLayout]="'row'" [fxLayoutAlign]="'center center'" [fxLayoutGap]="'8px'">
+            <app-img-with-loading  *ngFor="let img of imageUrlList; let i=index" (click)="moveTo(i)"
+                                  class="thumbnail-image" [src]="img"></app-img-with-loading>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

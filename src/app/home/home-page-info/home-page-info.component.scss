@@ -1,0 +1,126 @@
+@import "../../core/constants/Colors";
+
+#home-page-info-container {
+  position: relative;
+
+  .info-card {
+    margin: 0 64px;
+
+    .info-container {
+      width: 19%;
+      min-width: 154px;
+      margin: 3%;
+
+      .info-icon {
+        width: 50%;
+        height: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+      }
+
+      .info-text {
+        font-size: 90%;
+        text-align: center;
+        min-height: 80px;
+      }
+    }
+
+  }
+
+  #top-categories-container {
+    width: 100%;
+    overflow: hidden;
+
+    #top-categories-title {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      font-size: 128%;
+      margin-bottom: -8%;
+      color: $BLUE_800;
+    }
+
+    #arc {
+      width: 104%;
+      height: auto;
+      margin-right: -2%;
+    }
+
+    #top-categories-buttons-container {
+      padding: 0 128px;
+
+      .top-category-button {
+        min-width: 128px;
+        background-color: $BLUE_700;
+        color: $WHITE;
+        width: 29%;
+        margin: 3% 2%;
+      }
+    }
+  }
+
+  #why-daroopin-label {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 145%;
+    color: $BLUE_800;
+  }
+
+  #why-daroopin-container {
+    margin: 0 64px;
+
+    .why-daroopin-content {
+      width: 21%;
+      margin: 2%;
+      min-width: 128px;
+      background-color: $BLUE_200;
+      border-radius: 10px;
+
+      .why-daroopin-icon {
+        width: 70%;
+        height: auto;
+      }
+
+      .why-daroopin-text {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: 60%;
+        min-height: 78px;
+        padding: 5% 10%;
+      }
+    }
+  }
+
+  .more-info {
+    padding: 48px;
+
+    .more-info-text {
+      min-width: 200px;
+      padding: 32px;
+      font-size: 80%;
+
+      .more-info-text-header {
+        font-size: 120%;
+        margin-bottom: 16px;
+        color: $BLUE_800;
+      }
+
+      .more-info-text-body {
+        text-align: justify;
+      }
+    }
+
+    .more-info-icon {
+      height: auto;
+      min-width: 150px;
+      margin: 24px;
+    }
+
+    &#more-info-pharmacy {
+      background-color: $GRAY_100;
+      margin-bottom: 0 !important;
+    }
+  }
+}

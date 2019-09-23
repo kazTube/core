@@ -1,0 +1,15 @@
+<div id="open-order-dialog" [fxLayout]="'column'" [fxLayoutAlign]="'stretch center'">
+    <mat-icon id="danger-icon" svgIcon="svg_danger"></mat-icon>
+    <div mat-dialog-content>
+        <p>کاربر گرامی</p>
+        <p> شما یک سفارش باز در لیست سفارشات خود دارید برای ثبت سفارش جدید می بایست در ابتدا سفارش خود را در قسمت لیست
+            سفارشات لغو کنید
+        </p>
+    </div>
+    <div mat-dialog-actions>
+        <button (click)="closeDialog()" class="cancel-button" mat-button>انصراف</button>
+        <button (click)="closeDialog()" [routerLink]="orderListPath"
+                class="order-list-button" mat-button>لیست سفارشات
+        </button>
+    </div>
+</div>

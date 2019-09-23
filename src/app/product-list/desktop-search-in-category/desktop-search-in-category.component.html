@@ -1,0 +1,20 @@
+<div id="search-in-category-container">
+    <div id="title">
+        جستجو در نتایج
+    </div>
+    <div id="content">
+
+        <mat-form-field appDpFormField appearance="outline" class="form-field">
+            <input #inputBox
+                   [(ngModel)]="searchText"
+                   class="input-box"
+                   matInput
+                   placeholder="نام کالای مورد نظر را جستجو کنید"
+            >
+            <mat-icon matPrefix>search</mat-icon>
+
+        </mat-form-field>
+
+
+    </div>
+</div>

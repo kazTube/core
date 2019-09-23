@@ -1,0 +1,24 @@
+@import "../../core/constants/Colors";
+
+#personal-info-form-field-container {
+  .form-field {
+    min-width: 156px;
+    margin: 0 4%;
+
+    .full-width {
+      width: 100%;
+    }
+
+    .readonly {
+      color: $GRAY_600;
+    }
+
+    .no-national-code {
+      font-size: 12px;
+      margin-bottom: 16px;
+      margin-top: -2px;
+      display: block;
+
+    }
+  }
+}

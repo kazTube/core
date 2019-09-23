@@ -1,0 +1,93 @@
+@import "../../core/constants/Colors";
+
+#vitrin-card {
+  padding: 16px 0;
+  background: $WHITE_OPACITY_50;
+  box-shadow: none;
+  height: calc(100% - 32px);
+
+  #vitrin-card-content {
+    height: 100%;
+
+    #vitrin-title {
+      padding: 8px 24px;
+      background-image: linear-gradient(to right, $CYAN_400, $CYAN_700);
+      position: relative;
+      border-radius: 24px;
+      display: inline-block;
+      color: $GRAY_50;
+      font-size: 100%;
+      margin-right: 32px;
+    }
+
+    #vitrin-subtitle {
+      display: inline-block;
+      color: $CYAN_900;
+      font-size: 85%;
+      margin-right: 16px;
+    }
+
+
+    #carousel {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      /deep/ .ngu-touch-container {
+        height: 100%;
+      }
+
+      .item {
+        margin: 4px 0;
+        box-sizing: border-box;
+        height: 256px;
+
+        .tile {
+          height: 100%;
+          width: 80%;
+        }
+      }
+
+    }
+
+    .carousel-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 88px;
+      height: 64px;
+      padding: 0;
+      min-width: 40px;
+      width: 40px;
+      z-index: 1;
+      color: $GRAY_600;
+      background: $BLUE_200;
+      outline: none;
+
+      &:disabled {
+        background-color: $GRAY_200;
+        color: $GRAY_500;
+      }
+    }
+
+    .carousel-right {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .carousel-left {
+      left: 0;
+      border-radius: 0 8px 8px 0;
+
+    }
+
+
+    .pharmacy-shelf-button {
+      margin: 16px auto;
+      display: block;
+      border: 1px solid;
+      color: $BLUE_700;
+      border-radius: 24px;
+    }
+  }
+}

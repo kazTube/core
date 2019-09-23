@@ -1,0 +1,34 @@
+<div id="contact-us" fxLayout="column">
+    <mat-toolbar fxHide.gt-xs>
+        <span>
+            تماس با ما
+        </span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-card id="content-container" ngClass.lt-sm="small-screen">
+        <mat-card-content>
+            <div id="title" fxHide.lt-sm>
+                تماس با ما
+            </div>
+
+            <div class="body-text">
+                کاربر گرامی، لطفاً در صورت وجود هرگونه سوال یا ابهامی، با این شماره
+                <span class="phone-number">02175416000</span>
+                .تماس حاصل فرمایید
+            </div>
+
+            <div class="header-text">
+                آدرس دفترمرکزی
+            </div>
+            <div class="body-text">
+                تهران ، مجیدیه شمالی ، خیابان شهید سرگرد داوود اردستانی ، خیابان شهید برادران محمدی (ریحانی) پلاک
+                14،طبقه 4
+                ، واحد شمالی
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

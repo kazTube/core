@@ -1,0 +1,77 @@
+@import "../../../core/constants/Colors";
+
+#desktop-basket-item-card {
+  width: 100%;
+  text-align: justify;
+  padding: 8px;
+  overflow: hidden;
+  line-height: 24px;
+  direction: rtl;
+  border-radius: 4px;
+
+  .mat-card-content {
+    height: 100%;
+
+    #action-panel {
+      text-align: center;
+      mat-icon {
+        color: $GRAY_600;
+      }
+    }
+
+    .card-info {
+      height: 100%;
+
+      .product-image {
+        height: 100%;
+        width: 100%;
+
+        .mat-icon {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .product-text {
+
+        padding-left: 24px;
+        overflow: hidden;
+
+        .product-name {
+          font-size: 110%;
+          font-weight: bold;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-bottom: 4px;
+          width: 100%;
+        }
+
+        .product-attribute {
+          width: 100%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 85%;
+        }
+
+        .special-offer-product-attributes {
+          font-size: 85%;
+
+          .price {
+            font-size: 100%;
+            color: $GREEN_200;
+          }
+        }
+      }
+    }
+
+    .card-count-selection {
+      /deep/ .mat-form-field-wrapper {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+    }
+  }
+}

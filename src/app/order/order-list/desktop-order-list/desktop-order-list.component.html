@@ -1,0 +1,28 @@
+<mat-card id="order-list-card">
+    <mat-card-content>
+        <mat-card-title class="card-title">لیست سفارشات</mat-card-title>
+        <mat-divider></mat-divider>
+        <div class="order-list-header" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <span fxFlex="0 0 calc(7% - 8px)">#</span>
+            <span fxFlex="0 0 calc(16% - 8px)">شماره پیگیری</span>
+            <span fxFlex="0 0 calc(19% - 8px)">تاریخ ثبت سفارش</span>
+            <span fxFlex="0 0 calc(17% - 8px)">مبلغ سفارش</span>
+            <span fxFlex="0 0 calc(17% - 8px)">وضعیت پرداخت</span>
+            <span fxFlex="0 0 calc(17% - 8px)">وضعیت سفارش</span>
+            <span fxFlex="0 0 7%">جزییات</span>
+        </div>
+
+        <app-desktop-order-list-summary-card
+                *ngFor="let order of orderListService.orderList; let index=index"
+                [index]="index+1"
+                [order]="order"
+        ></app-desktop-order-list-summary-card>
+
+
+        <mat-spinner-button (click)="loadMoreOrders()"
+                            *ngIf="orderListService.hasMoreOrder"
+                            [options]="loadMoreButtonOptions"
+                            id="load-more"></mat-spinner-button>
+    </mat-card-content>
+</mat-card>
+

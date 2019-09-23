@@ -1,0 +1,16 @@
+@import "../../../core/constants/Colors";
+
+#desktop-basket-item-list {
+  width: 100%;
+  #list-title{
+    width: 100%;
+    min-height: 48px;
+    padding: 8px 32px;
+    background-color: $WHITE;
+    font-size: 80%;
+
+  }
+  app-desktop-basket-item-card{
+    width: calc(100% - 16px);
+  }
+}

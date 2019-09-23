@@ -1,0 +1,35 @@
+@import "../../core/constants/Colors";
+
+#search-in-category-container {
+  min-width: 230px;
+  border-radius: 4px;
+  border: 1px solid $GRAY_600;
+  overflow: hidden;
+
+  #title {
+    color: $BLACK_300;
+    padding: 4%;
+    font-size: 110%;
+    font-weight: bold;
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  #content {
+    padding: 0 4% 4%;
+    height: calc(100% - 88px);
+    overflow: auto;
+
+    .form-field {
+      width: 100%;
+      padding-bottom: 0;
+      input::placeholder{
+        color: $BLUE_700;
+      }
+      mat-icon{
+        color: $BLUE_700;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../core/constants/Colors";
+
+#pharmacy-info-card {
+  line-height: 28px;
+  box-shadow: none;
+  border: 1px solid $GRAY_600;
+  border-radius: 4px;
+
+  #pharmacy-info {
+    margin-bottom: 24px;
+    #pharmacy-thumbnail {
+      height: 86px;
+      width: 86px;
+      border-radius: 50%;
+      overflow: hidden;
+      /deep/ .fading-img {
+        background-size: cover;
+      }
+    }
+
+    #pharmacy-name {
+      font-size: 100%;
+      font-weight: bold;
+      color: $BLUE_800
+    }
+
+    #pharmacy-manager {
+      font-size: 100%;
+      color: $BLACK_300;
+    }
+
+    #pharmacy-phone {
+      font-size: 100%;
+      color: $BLACK_300;
+
+      #phone-number {
+        color: $BLUE_700;
+      }
+    }
+
+    #pharmacy-address {
+      font-size: 100%;
+      color: $BLACK_300;
+    }
+  }
+
+  #location-info {
+    #map-label {
+      font-size: 70%;
+      color: $GRAY_700;
+    }
+
+    #pharmacy-location {
+      height: 148px;
+    }
+  }
+
+}

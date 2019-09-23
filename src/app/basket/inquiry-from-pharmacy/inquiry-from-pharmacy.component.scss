@@ -1,0 +1,21 @@
+@import "../../core/constants/Colors";
+
+#inquiry-form-pharmacy-card {
+  .mat-card-content {
+    .mat-icon {
+      width: 50%;
+      max-width: 200px;
+      height: auto;
+      margin: 48px 32px 24px;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .order-list-button {
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+  }
+}

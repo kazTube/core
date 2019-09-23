@@ -1,0 +1,41 @@
+<app-mobile-header></app-mobile-header>
+<mat-sidenav-container
+        id="sidenav-container"
+        [ngClass]="{'z-index-12':headerService.showSearchBox && !isMenuOpen}"
+        (backdropClick)="closeMenu()"
+        dir="rtl">
+    <mat-sidenav id="sidenav"
+                 mode="over"
+                 [opened]="isMenuOpen"
+                 [fixedInViewport]="true"
+                 [fixedTopGap]="48"
+                 role="navigation">
+        <app-mobile-menu [menuCategoryList]="menuCategoryList"></app-mobile-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div *ngIf="headerService.showSearchBox"
+             @searchBoxAnimation
+             class="header-search-box">
+            <app-search-box></app-search-box>
+        </div>
+        <div id="sidenav-content" appCaptureScrollEvent #appContainer
+             [ngClass]="{'search-box-margin':headerService.showSearchBox}">
+            <div class="animation-container "
+                 [@routeAnimations]="prepareRoute(routerOutlet)"
+                 (@routeAnimations.start)="routeAnimationIsStarted()"
+                 (@routeAnimations.done)="routeAnimationIsEnded()">
+
+                <router-outlet
+                    #routerOutlet="outlet"
+                    (activate)="onActivate()"
+                    class="outlet-content">
+                </router-outlet>
+            </div>
+
+            <app-footer @footerAnimation *ngIf="footerIsVisible"></app-footer>
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

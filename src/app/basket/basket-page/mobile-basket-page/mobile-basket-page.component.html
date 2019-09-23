@@ -1,0 +1,65 @@
+<div id="basket-stepper-container">
+    <app-basket-stepper-control
+            [currentStepIndex]="currentStepIndex"
+            (stepChange)="goToStep($event)"
+            [height]="96"
+    ></app-basket-stepper-control>
+
+    <mat-toolbar *ngIf="currentStepIndex==3" id="total-price-header" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+        <span>جمع هزینه کل</span>
+        <span>{{orderDetail.totalPrice | friendlyPrice}}</span>
+    </mat-toolbar>
+    <mat-horizontal-stepper #stepper [selectedIndex]="currentStepIndex" id="basket-stepper" labelPosition="bottom">
+        <mat-step id="step-1">
+            <app-mobile-basket-list *ngIf="currentStepIndex<2"></app-mobile-basket-list>
+        </mat-step>
+        <mat-step id="step-2">
+            <app-mobile-address-list (addressChanged)="onAddressChange($event)"
+                                     *ngIf="currentStepIndex<2"
+                                     [(addressList)]="addressList"
+                                     [title]="'انتخاب آدرس تحویل سفارش'"></app-mobile-address-list>
+        </mat-step>
+        <mat-step id="step-3">
+            <app-inquiry-from-pharmacy *ngIf="currentStepIndex===2"
+                                              id="step-inquiry-from-pharmacy"></app-inquiry-from-pharmacy>
+        </mat-step>
+        <mat-step id="step-4">
+            <app-mobile-finalize-purchase *ngIf="currentStepIndex===3"
+                                          [orderDetail]="orderDetail"></app-mobile-finalize-purchase>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+    <!--sticky buttons should be placed here-->
+    <button (click)="goToSelectAddressStep($event)" *ngIf="currentStepIndex==0"
+            [disabled]="basketService.basketItemList.length==0 || isLoading"
+            appDpButton="orange"
+            class="stepper-action-button"
+            mat-raised-button>
+        <span *ngIf="!isLoading">تایید و ادامه ثبت سفارش</span>
+        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+    </button>
+    <button (click)="insertOrder()" *ngIf="currentStepIndex==1"
+            [disabled]="isLoading"
+            appDpButton="orange"
+            class="stepper-action-button"
+            mat-raised-button>
+        <span *ngIf="!isLoading">تایید آدرس و استعلام</span>
+        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+    </button>
+    <button *ngIf="currentStepIndex==2"
+            [routerLink]="'/'"
+            appDpButton="blue"
+            class="stepper-action-button"
+            id="go-home" mat-raised-button>
+        <span>بازگشت به صفحه اصلی</span>
+    </button>
+    <button (click)="payPayment()"
+            *ngIf="currentStepIndex==3"
+            [disabled]="isLoading"
+            appDpButton="green"
+            class="stepper-action-button"
+            id="pay" mat-raised-button>
+        <span *ngIf="!isLoading">پرداخت</span>
+        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+    </button>
+</div>

@@ -1,0 +1,26 @@
+@import "../../../core/constants/Colors";
+
+#profile-personal-info-card {
+  margin: 0 0 32px 0;
+
+  .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: $BLUE_800;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .confirm-button {
+    margin: 32px auto 16px auto;
+    width: 40%;
+    max-width: 300px;
+    display: block;
+  }
+}

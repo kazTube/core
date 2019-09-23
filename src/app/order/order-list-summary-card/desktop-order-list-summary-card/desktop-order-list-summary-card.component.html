@@ -1,0 +1,65 @@
+<mat-card id="order-summary-card">
+    <mat-card-content>
+        <div class="order-list-header"
+             fxLayout="row nowrap"
+             fxLayoutAlign="start stretch"
+             fxLayoutGap="8px">
+
+            <span *ngIf="!summaryMode"
+                  fxFlex="0 0 calc(7% - 8px)"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                    {{index}}
+            </span>
+
+            <span [fxFlex]="summaryMode?'0 0 calc(18% - 8px)':'0 0 calc(16% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                    {{order.orderId}}
+            </span>
+
+
+            <span [fxFlex]="summaryMode?'0 0 calc(22% - 8px)':'0 0 calc(19% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                {{order.createDateTime}}
+            </span>
+
+            <span [fxFlex]="summaryMode?'0 0 calc(20% - 8px)':'0 0 calc(17% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                {{order.totalPrice}}
+            </span>
+
+            <!--payment status-->
+            <span *ngIf="order.isPaid"
+                  class="is-green"
+                  [fxFlex]="summaryMode?'0 0 calc(20% - 8px)':'0 0 calc(17% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                پرداخت موفق
+            </span>
+            <span *ngIf="!order.isPaid"
+                  [fxFlex]="summaryMode?'0 0 calc(20% - 8px)':'0 0 calc(17% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">-</span>
+
+            <!--order status-->
+            <span [ngClass]="{'is-orange':order.isPaid || !showPaymentInfo, 'is-green':order.isReadyToPay && order.isCancelable}"
+                  [fxFlex]="summaryMode?'0 0 calc(20% - 8px)':'0 0 calc(17% - 8px)'"
+                  fxLayout="row nowrap"
+                  fxLayoutAlign="center center">
+                {{order.stateName}}
+            </span>
+
+            <button (click)="goToOrderDetail('/profile/order/detail/')"
+                    *ngIf="!summaryMode"
+                    fxLayout="row nowrap"
+                    fxLayoutAlign="center center"
+                    fxFlex="0 0 7%"
+                    mat-button>
+                <mat-icon>navigate_before</mat-icon>
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

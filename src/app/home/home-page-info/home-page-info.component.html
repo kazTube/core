@@ -1,0 +1,78 @@
+<div id="home-page-info-container" [fxLayout]="'column'" [fxLayoutGap]="'96px'" [fxLayoutAlign]="'center stretch'">
+    <div [fxFlexOffset]="'64px'" [fxLayout]="'row wrap'" [fxLayoutAlign]="'center center'" class="info-card">
+
+        <div class="info-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="info-icon" svgIcon="svg_arayeshi"></mat-icon>
+            <span class="info-text">محصولات آرایشی و بهداشتی</span>
+        </div>
+
+        <div class="info-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="info-icon" svgIcon="svg_otc"></mat-icon>
+            <span class="info-text">دارو های بدون نیاز به نسخه پزشک</span>
+        </div>
+
+        <div class="info-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="info-icon" svgIcon="svg_pharmacy"></mat-icon>
+            <span class="info-text">از معتبرترین داروخانه های اطراف شما</span>
+        </div>
+
+        <div class="info-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="info-icon" svgIcon="svg_on_demand"></mat-icon>
+            <span class="info-text">خرید به هنگام و ارسال با حداقل تاخیر</span>
+        </div>
+    </div>
+    <ng-container  *ngIf="topCategoryList && topCategoryList.length>0" >
+        <div [fxHide.lt-sm]="true"  id="top-categories-container">
+            <div id="top-categories-title">شاید نیاز داشته باشید</div>
+            <mat-icon id="arc" svgIcon="svg_arc"></mat-icon>
+            <div id="top-categories-buttons-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'center center'">
+                <button class="top-category-button" mat-button
+                        [routerLink]="'/product/list/'+category.categoryId"
+                        *ngFor="let category of topCategoryList">{{category.name}}</button>
+            </div>
+        </div>
+    </ng-container>
+    <div [fxHide.lt-sm]="true" id="why-daroopin-label">چرا از داروپین استفاده کنیم؟</div>
+    <div [fxHide.lt-sm]="true" id="why-daroopin-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'center center'">
+        <div class="why-daroopin-content" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="why-daroopin-icon" svgIcon="svg_why_daroopin_1"></mat-icon>
+            <div class="why-daroopin-text">راحتی و صرفه جویی در زمان و هزینه</div>
+        </div>
+        <div class="why-daroopin-content" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="why-daroopin-icon" svgIcon="svg_why_daroopin_2"></mat-icon>
+            <div class="why-daroopin-text">امکان مقایسه اقلام موجود با موارد مشابه</div>
+        </div>
+        <div class="why-daroopin-content" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="why-daroopin-icon" svgIcon="svg_why_daroopin_3"></mat-icon>
+            <div class="why-daroopin-text">ثبت درخواست دارو به صورت ۲۴ ساعته</div>
+        </div>
+        <div class="why-daroopin-content" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+            <mat-icon class="why-daroopin-icon" svgIcon="svg_why_daroopin_4"></mat-icon>
+            <div class="why-daroopin-text">دسترسی راحت تر به محصولات کمیاب در کمترین زمان ممکن</div>
+        </div>
+
+    </div>
+    <div [fxHide.lt-sm]="true" id="more-info-pharmacy" class="more-info" [fxLayout]="'row wrap'"
+         [fxLayoutAlign]="'center'">
+        <div class="more-info-text" fxFlex>
+            <div class="more-info-text-header">سفارش از داروخانه های محلی شما</div>
+            <div class="more-info-text-body">با داروپین درخواست های خود را ثبت کنید و با توجه به موقعیت فعلی خود
+                ،محصولات مورد نیاز خود را از نزدیکترین داروخانه های اطرافتان تهیه کنید
+            </div>
+        </div>
+        <mat-icon [fxFlex]="30" class="more-info-icon" svgIcon="svg_sefaresh_az_darookhane"></mat-icon>
+    </div>
+    <div [fxHide.lt-sm]="true" class="more-info" [fxLayout]="'row wrap'" [fxLayoutAlign]="'center'">
+        <mat-icon [fxFlex]="30" class="more-info-icon" svgIcon="svg_bike"></mat-icon>
+
+        <div fxFlex class="more-info-text">
+            <div class="more-info-text-header">ارسال توسط پیک با قیمت مقرون به صرفه</div>
+            <div class="more-info-text-body">پیش از ارسال محصولات، هماهنگی های لازم در مورد تاریخ و زمان تحویل سفارش
+                از
+                طرف داروخانه ها با مشتری (تحویل گیرنده سفارش) انجام میشود. در این صورت شما میتوانید بدون نیاز به
+                خروج از
+                منزل در کوتاهترین زمان ممکن شاهد تحویل محصولات خریداری شده توسط پیک با قیمت های مقرون به صرفه باشید
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+@import "../../../core/constants/Colors";
+
+#sidenav-container {
+  height: 100%;
+
+  .space {
+    height: 48px;
+    width: 100%;
+    background-color: $WHITE;
+  }
+
+  #sidenav {
+    width: 90%;
+    min-width: 300px;
+    background-color: $BLUE_50;
+    height: calc(100% - 48px);
+    position: fixed !important;
+
+    /deep/ .mat-drawer-inner-container {
+      overflow: initial !important;
+    }
+  }
+
+
+  /deep/ .mat-sidenav-content {
+    height: calc(100% - 48px);
+    overflow: hidden;
+
+    #sidenav-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      overflow: auto;
+
+      .animation-container {
+        flex-grow: 1;
+        background-color: $WHITE;
+      }
+
+      /deep/ .outlet-content + * {
+        flex-grow: 1;
+      }
+
+      .temp-product-basket {
+        margin: 8px;
+      }
+
+    }
+
+    .search-box-margin {
+      height: calc(100% - 65px) !important;
+      margin-top: 65px;
+    }
+
+    .header-search-box {
+      direction: rtl;
+      width: calc(100% - 64px);
+      position: absolute;
+      background-color: $GRAY_OPACITY_90;
+      padding: 0 32px 17px;
+      box-shadow: 0 3px 6px $BLACK_OPACITY_16;
+      z-index: 10;
+      //transform: translate3d(0, 0, 0);
+      //-webkit-overflow-scrolling: touch;
+    }
+  }
+
+  app-footer {
+    z-index: 1;
+  }
+
+  &.z-index-12 {
+    z-index: 12;
+  }
+}

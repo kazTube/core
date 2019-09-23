@@ -1,0 +1,95 @@
+@import "../../core/constants/Colors";
+
+#contact-support-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  #background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/Background_Colorize.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+  }
+
+  #contact-support-card-container {
+    padding: 64px;
+    background: $WHITE_OPACITY_50;
+    margin: 8%;
+    min-width: 600px;
+    max-width: 700px;
+
+    #contact-support-card {
+      background-color: $WHITE;
+      line-height: 32px;
+
+      mat-card-title {
+        color: $BLUE_800;
+      }
+
+      mat-card-content {
+        min-height: 150px;
+
+        #phone-number {
+          color: $BLUE_700;
+        }
+      }
+
+      mat-card-actions {
+        #continue-button {
+          min-width: 128px;
+          margin-bottom: 8px;
+        }
+      }
+
+    }
+  }
+
+  &.small-screen {
+    #background-image {
+      filter: blur(0px);
+    }
+
+    #contact-support-card-container {
+      padding: 0;
+      min-width: auto;
+
+      /deep/ #contact-support-card {
+        padding: 0;
+
+        .mat-card-header {
+          background: $BLUE_200;
+          margin: auto;
+          border-bottom: 1px solid $GRAY_600;
+
+          .mat-card-header-text {
+
+            .mat-card-title {
+              min-height: 42px;
+              margin: 0;
+              font-size: 100%;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+
+
+        mat-card-content {
+          padding: 16px;
+        }
+
+        mat-card-actions {
+          padding: 16px;
+        }
+      }
+    }
+
+  }
+}

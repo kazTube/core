@@ -1,0 +1,90 @@
+<mat-card id="view-comment-card" ngClass.lt-sm="small-screen">
+    <app-loading *ngIf="isLoading"></app-loading>
+
+    <mat-card-title>
+        <mat-card-header *ngIf="isUserComment" class="user-comment-header">
+            <mat-card-title class="title">
+                نظر من
+            </mat-card-title>
+            <button (click)="onEdit()" class="edit-button" mat-icon-button>
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="onDelete()" class="delete-button" mat-icon-button>
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-header>
+    </mat-card-title>
+    <mat-card-content>
+
+        <div [ngClass]="{'rate-star-container':true, 'is-user-comment':isUserComment}">
+            <star-rating fxHide.gt-xs [labelText]="comment.rate" [rating]="comment.rate" [starType]="'svg'" direction="ltr"
+                         hoverEnabled="true"
+                         labelPosition="right" readOnly="true" size="small"
+                         staticColor="ok"></star-rating>
+
+            <star-rating fxHide.lt-sm [labelText]="comment.rate+' : '+'امتیاز این کاربر'" [rating]="comment.rate" [starType]="'svg'" direction="ltr"
+                         hoverEnabled="true"
+                         labelPosition="right" readOnly="true" size="small"
+                         staticColor="ok"></star-rating>
+
+        </div>
+        <div class="title">{{comment.title}}</div>
+
+        <div class="comment-info">
+            <div>
+                <span>نوشته شده توسط </span>
+                <span>{{comment.fullname}}</span>
+            </div>
+            <div>
+                <span>در روز </span>
+                <span>{{comment.date}}</span>
+                <span>در ساعت </span>
+                <span>{{comment.time}}</span>
+            </div>
+        </div>
+
+        <div class="comment-text" [fxLayout.gt-xs]="'row wrap'" [fxLayout.lt-sm]="'column'" [fxLayoutGap.gt-sm]="'4%'">
+
+            <div class="comment-body" fxFlex="auto">
+                {{comment.message}}
+            </div>
+
+            <div [fxLayout.gt-xs]="'row wrap'" [fxLayoutAlign.gt-xs]="'space-around center'" [fxLayoutGap.gt-xs]="'4%'"
+                 class="comment-strength-weakness-container" fxFlex="auto"
+                 [fxLayout.lt-sm]="'column'">
+                <div class="strength-point-list">
+                    <span class="green-bullet"></span>
+                    <span class="header">نقاط قوت</span>
+                    <div *ngFor="let strength of comment.positiveOpinion" class="point">
+                        {{strength}}
+                    </div>
+                </div>
+                <div class="weakness-point-list">
+                    <span class="red-bullet"></span>
+                    <span class="header">نقاط ضعف</span>
+                    <div *ngFor="let weakness of comment.negativeOpinion" class="point">
+                        {{weakness}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <mat-card-actions *ngIf="!isUserComment">
+            <div class="like-dislike-container" [fxLayout]="'row'" [fxLayoutAlign.lt-sm]="'space-between center'"  [fxLayoutAlign.gt-xs]="'end center'" [fxLayoutGap.gt-xs]="'4%'">
+                <div fxFlex.lt-sm  >آیا این نظر برای شما مفید بود؟</div>
+                <div fxFlex.lt-sm  [fxLayout]="'row'" [fxLayoutAlign]="'end center'" [fxLayoutGap]="'4%'">
+                    <button (click)="onLike()" [disabled]="isLoading || comment.isLikedByThisUser" class="likes" mat-button>
+                        <span>{{comment.likeCount}}</span>
+                        <span fxHide.lt-sm>بله</span>
+                        <mat-icon svgIcon="svg_like"></mat-icon>
+                    </button>
+                    <button (click)="onDislike()" [disabled]="isLoading || comment.isDislikedByThisUser" class="dislikes" mat-stroked-button>
+                        <span>{{comment.dislikeCount}}</span>
+                        <span fxHide.lt-sm>خیر</span>
+                        <mat-icon svgIcon="svg_dislike"></mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,18 @@
+<div id="container" appCaptureClickEvent>
+    <app-desktop-header></app-desktop-header>
+    <div #appContainer appCaptureScrollEvent dir="rtl" id="content-container">
+        <app-desktop-menu *ngIf="showMenu" [menuCategoryList]="menuCategoryList"></app-desktop-menu>
+        <div class="animation-container"
+             [@routeAnimations]="prepareRoute(routerOutlet)"
+             (@routeAnimations.done)="routeAnimationIsEnded()"
+             (@routeAnimations.start)="routeAnimationIsStarted()">
+            <router-outlet
+                #routerOutlet="outlet"
+                (activate)="onActivate()"
+                class="outlet-content">
+            </router-outlet>
+        </div>
+        <app-footer @footerAnimation *ngIf="footerIsVisible"></app-footer>
+
+    </div>
+</div>

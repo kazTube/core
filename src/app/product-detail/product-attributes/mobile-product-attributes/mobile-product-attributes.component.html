@@ -1,0 +1,32 @@
+<mat-card id="product-attributes-card">
+    <mat-card-content>
+        <h5 class="product-attributes-title">مشخصات کالا</h5>
+        <div *ngIf="productAttributeListSize>0" [fxLayoutGap]="'2%'" [fxLayout]="'column'">
+            <div *ngFor="let attribute of visibleProductAttributeList" class="product-attribute">
+                <div class="attribute-key">{{attribute.attributeName}}</div>
+                <div class="attribute-value">{{attribute.attributeValue}}</div>
+            </div>
+        </div>
+
+        <ng-container *ngIf="productAttributeListSize>initialAttributeSize">
+            <button (click)="showMoreAttribute()"
+                    *ngIf="!isShowingAllAttributes"
+                    class="show-more-button"
+                    mat-button>مشاهده
+                بیشتر
+            </button>
+            <button (click)="showLessAttribute()"
+                    *ngIf="isShowingAllAttributes"
+                    class="show-less-button"
+                    mat-button>مشاهده
+                مختصر
+            </button>
+        </ng-container>
+
+        <div *ngIf="productAttributeListSize==0" id="no-product">
+            مشخصاتی برای کالا ثبت نشده است
+        </div>
+
+    </mat-card-content>
+
+</mat-card>

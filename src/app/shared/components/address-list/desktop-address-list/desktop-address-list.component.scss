@@ -1,0 +1,60 @@
+@import "../../../../core/constants/Colors";
+
+#desktop-address-list {
+  position: relative;
+
+  .title {
+    padding: 24px;
+    background-color: $WHITE;
+    margin-bottom: 16px;
+
+    span {
+      font-size: 13px;
+    }
+
+    .address-add-btn {
+      border: 1px solid $BLUE_700;
+      width: 25%;
+      border-radius: 8px 8px 8px 8px;
+      font-size: 13px;
+      min-width: 200px;
+      padding-right: 0;
+      padding-left: 8px;
+
+      /deep/ .mat-button-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .address-add-icon {
+        padding: 9px 8px;
+        background-color: $BLUE_700;
+        color: $WHITE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 18px;
+        width: 16px;
+        box-shadow: 0 3px 6px $BLACK_OPACITY_16;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .address-btn-text {
+        flex-grow: 1;
+        margin-right: 8px;
+        font-size: 11px;
+        color: $BLUE_700;
+      }
+    }
+  }
+
+  .address-list-container {
+    position: relative;
+
+    .address-card {
+      margin: 0 0 24px 0;
+      display: block;
+    }
+  }
+}

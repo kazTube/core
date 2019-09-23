@@ -1,0 +1,12 @@
+<mat-toolbar [ngClass]="isMobile?'mat-elevation-z2 mobile-height':'mat-elevation-z2'"
+             id="app-header">
+    <mat-icon [routerLink]="'/home'" id="logo-in-header" svgIcon="svg_logo"></mat-icon>
+
+</mat-toolbar>
+<div [ngClass]="isMobile?'mobile-simple-layout-content  simple-layout-content':'simple-layout-content'"
+     #appContainer
+     [@routeAnimations]="prepareRoute(routerOutlet)">
+    <router-outlet
+            (activate)="onActivate()"
+            #routerOutlet="outlet"></router-outlet>
+</div>

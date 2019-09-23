@@ -1,0 +1,41 @@
+@import "../../../core/constants/Colors";
+
+#order-bill-card {
+  padding: 0;
+  box-shadow: none;
+
+  .mat-card-header {
+    padding: 16px;
+    background: $WHITE;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+
+    .mat-card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+
+  #order-price {
+    background: $GRAY_200;
+    padding: 4px 16px;
+
+  }
+
+  #shipping-cost {
+    background: $WHITE;
+    padding: 4px 16px;
+  }
+
+  #total-cost {
+    background: $GRAY_200;
+    padding: 12px 16px;
+  }
+
+  .price {
+    float: left;
+  }
+}

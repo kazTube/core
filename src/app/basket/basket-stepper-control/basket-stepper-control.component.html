@@ -1,0 +1,35 @@
+<div id="basket-stepper-control-container" [style.height]="height+'px'" [fxLayout]="'row'"
+     [fxLayoutAlign]="'center center'">
+    <div id="basket-stepper-control">
+        <div id="basket-stepper-icons" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+            <button (click)="goToStep(0)" class="stepper-label"
+                    [disabled]="currentStepIndex!==1" mat-button>
+                <mat-icon [ngClass]="{'rotate':currentStepIndex===0}"
+                          svgIcon="svg_basket_stepper_register_order"></mat-icon>
+                <div class="stepper-text">ثبت سفارش</div>
+            </button>
+            <div class="stepper-label" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+                <mat-icon [ngClass]="{'rotate':currentStepIndex===1}"
+                          svgIcon="svg_basket_stepper_choose_address"></mat-icon>
+                <div class="stepper-text">انتخاب آدرس</div>
+            </div>
+            <div class="stepper-label" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+                <mat-icon [ngClass]="{'rotate':currentStepIndex===2}"
+                          svgIcon="svg_basket_stepper_inquiries_from_pharmacy"></mat-icon>
+                <div class="stepper-text">استعلام از داروخانه ها</div>
+            </div>
+            <div class="stepper-label" [fxLayout]="'column'" [fxLayoutAlign]="'center center'">
+                <mat-icon [ngClass]="{'rotate':currentStepIndex===3}"
+                          svgIcon="svg_basket_stepper_finalize_purchase"></mat-icon>
+                <div class="stepper-text">نهایی کردن خرید</div>
+            </div>
+        </div>
+        <mat-progress-bar [value]="progress" dir="rtl" id="progress" mode="determinate"></mat-progress-bar>
+        <div id="basket-stepper-bullets" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+            <div [ngClass]="currentStepIndex >=0 ?'bullet is-blue':'bullet'"></div>
+            <div [ngClass]="currentStepIndex >=1 ?'bullet is-blue':'bullet'"></div>
+            <div [ngClass]="currentStepIndex >=2 ?'bullet is-blue':'bullet'"></div>
+            <div [ngClass]="currentStepIndex >=3 ?'bullet is-blue':'bullet'"></div>
+        </div>
+    </div>
+</div>

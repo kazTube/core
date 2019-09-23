@@ -1,0 +1,30 @@
+@import "../../../core/constants/Colors";
+#product-attribute-list{
+  margin: 4%;
+  .product-attribute{
+
+    font-size: 80%;
+    .attribute-key{
+      background-color: $GRAY_100;
+      border-radius: 16px;
+      padding: 1% 4%;
+    }
+    .attribute-value{
+      background-color: $GRAY_100;
+      border-radius: 16px;
+      padding: 1% 4%;
+    }
+  }
+
+  #no-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80%;
+    font-weight: bold;
+    color: $ORANGE_300;
+    padding: 4%;
+
+  }
+}

@@ -1,0 +1,26 @@
+<div id="file-a-complaint" fxLayout="column">
+    <mat-toolbar fxHide.gt-xs>
+        <span>
+            ثبت شکایات
+        </span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-card id="content-container" ngClass.lt-sm="small-screen">
+        <mat-card-content>
+            <div id="title" fxHide.lt-sm>
+                ثبت شکایات
+            </div>
+            <div class="body-text">
+                در صورت وجود هرگونه انتقاد، پیشنهاد و یا شکایت از طریق تماس با پشتیبانی اقدام فرمایید.
+                <div>
+                    تلفن:
+                    <span class="phone-number">02175416000</span>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

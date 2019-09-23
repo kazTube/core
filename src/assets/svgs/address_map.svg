@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.368" height="70.368" viewBox="0 0 70.368 70.368">
+    <defs>
+        <style>
+            .address-a{fill:#c2c2c2;}.address-b{fill:#e4e4e4;}.address-c{fill:#cbcbcb;}.address-d{fill:#adadad;}.address-e{fill:#c6c8c9;}
+        </style>
+    </defs>
+    <g transform="translate(0.001 0)">
+        <path class="address-a" d="M58.191,302H12.038L0,330.862H70.367Zm0,0" transform="translate(0 -260.494)"/>
+        <path class="address-a" d="M291.184,330.862H256V302h23.007Zm0,0" transform="translate(-220.817 -260.494)"/>
+        <path class="address-b" d="M94.285,332H53.577L45,352.616h57.861Zm0,0" transform="translate(-38.817 -286.371)"/>
+        <path class="address-b" d="M284.862,352.616H256V332h20.285Zm0,0" transform="translate(-220.817 -286.371)"/>
+        <path class="address-c"
+              d="M139.554,0A18.7,18.7,0,0,0,121,18.691a19.134,19.134,0,0,0,2.845,10.033l15.709,24.9,15.709-24.9a19.133,19.133,0,0,0,2.845-10.033A18.7,18.7,0,0,0,139.554,0Zm0,29.137a10.446,10.446,0,1,1,10.308-10.445A10.43,10.43,0,0,1,139.554,29.137Zm0,0"
+              transform="translate(-104.371)"/>
+        <path class="address-a" d="M157.979,315.141l4.091.511-3.092,24.739-4.091-.511Zm0,0"
+              transform="translate(-133.6 -271.829)"/>
+        <path class="address-a" d="M307.363,340.359l-3.171-24.739,4.091-.523,3.171,24.739Zm0,0"
+              transform="translate(-262.385 -271.791)"/>
+        <path class="address-a" d="M67.5,392h51.676v4.123H67.5Zm0,0" transform="translate(-58.224 -338.125)"/>
+        <path class="address-d"
+              d="M274.554,18.691a19.133,19.133,0,0,1-2.845,10.033L256,53.628V29.137a10.446,10.446,0,0,0,0-20.89V0a18.7,18.7,0,0,1,18.554,18.691Zm0,0"
+              transform="translate(-220.817)"/>
+        <path class="address-e" d="M256,392h25.769v4.123H256Zm0,0" transform="translate(-220.817 -338.125)"/>
+    </g>
+</svg>

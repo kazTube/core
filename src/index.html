@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- this styles will apply when javascript is disabled-->
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #no-script {
+            position: fixed;
+            top: 0;
+            direction: rtl;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: #D92915;
+            width: 100%;
+            height: calc(100% - 48px);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #no-script-logo {
+            position: relative;
+            top: 64px;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            z-index: 1;
+            width: 60vw;
+        }
+
+        #no-script-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 0;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <title>داروپین</title>
+    <base href="/">
+
+    <meta content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+          name="viewport">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!--ios pwa config-->
+
+    <link href="assets/icons/icon-512x512.png" rel="apple-touch-icon" sizes="512x512">
+
+    <link href="assets/splashscreens/iphone5_splash.png"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/iphone6_splash.png"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/iphoneplus_splash.png"
+          media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/iphonex_splash.png"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/iphonexr_splash.png"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/iphonexsmax_splash.png"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/ipad_splash.png"
+          media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/ipadpro1_splash.png"
+          media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/ipadpro3_splash.png"
+          media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <link href="assets/splashscreens/ipadpro2_splash.png"
+          media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+
+    <!--ios pwa config-->
+
+
+    <meta name="theme-color" content="#1C77C3">
+</head>
+<body>
+
+<app-root></app-root>
+<noscript>
+    <img id="no-script-background" src="assets/images/Image_background.png"/>
+    <img id="no-script-logo" src="assets/svgs/logo.svg">
+    <div id="no-script">لطفا برای استفاده از اپلیکیشن javascript را فعال کنید
+    </div>
+</noscript>
+</body>
+</html>

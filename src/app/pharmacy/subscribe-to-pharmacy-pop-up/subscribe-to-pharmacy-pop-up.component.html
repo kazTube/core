@@ -1,0 +1,10 @@
+<div [fxLayoutAlign]="'stretch center'" [fxLayout]="'column'" id="subscribe-to-pharmacy-dialog">
+    <mat-icon id="subscribe-to-pharmacy" svgIcon="svg_subscribing_to_pharmacy"></mat-icon>
+    <div class="dialog-content" mat-dialog-content>
+        {{data.msg}}
+    </div>
+    <div class="dialog-actions" mat-dialog-actions>
+        <button [mat-dialog-close]="true" class="contact-button" mat-button>عضویت</button>
+        <button (click)="cancel()" cdkFocusInitial class="cancel-button" mat-button>انصراف</button>
+    </div>
+</div>

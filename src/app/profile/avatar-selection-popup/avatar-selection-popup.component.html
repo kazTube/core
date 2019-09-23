@@ -1,0 +1,24 @@
+<div id="avatar-popup">
+    <h1 class="popup-header" mat-dialog-title>انتخاب آواتار</h1>
+    <div class="avatar-popup-content"
+         fxLayout="row wrap"
+         fxLayoutAlign="center center"
+         mat-dialog-content
+    >
+        <button
+                fxFlex="20%"
+                fxLayout="row"
+                fxLayoutAlign="center center"
+                (click)="onSelectAvatar(avatar)"
+                *ngFor="let avatar of userProfileService.avatarList"
+                [ngClass]="selectedAvatar===avatar?'avatar-select-btn selected-avatar-btn':'avatar-select-btn'"
+                mat-button
+        >
+            <mat-icon [svgIcon]="avatar"></mat-icon>
+        </button>
+    </div>
+    <div mat-dialog-actions>
+        <button [mat-dialog-close]="selectedAvatar" class="confirm-btn" mat-button>تایید</button>
+        <button [mat-dialog-close]="null" class="cancel-btn" mat-button>انصراف</button>
+    </div>
+</div>

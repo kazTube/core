@@ -1,0 +1,73 @@
+<div fxLayout="column nowrap" fxLayoutAlign="start stretch" fxLayoutGap="16px" id="order-detail">
+    <app-basket-stepper-control
+            *ngIf="showStepperSection"
+            [currentStepIndex]="stepperStep"
+            [height]="100"
+    ></app-basket-stepper-control>
+
+    <div *ngIf="showOrderInfoSection"
+         class="order-info-list">
+        <div class="order-info-header" fxLayout="row nowrap" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <span fxFlex="0 0 calc(18% - 8px)">شماره پیگیری</span>
+            <span fxFlex="0 0 calc(22% - 8px)">تاریخ ثبت سفارش</span>
+            <span fxFlex="0 0 calc(20% - 8px)">مبلغ سفارش</span>
+            <span fxFlex="0 0 calc(20% - 8px)">وضعیت پرداخت</span>
+            <span fxFlex="0 0 calc(20% - 8px)">وضعیت سفارش</span>
+        </div>
+        <app-desktop-order-list-summary-card
+                [order]="orderSummary"
+                [summaryMode]="true"
+        ></app-desktop-order-list-summary-card>
+    </div>
+
+    <app-desktop-address-card
+            *ngIf="showAddressSection"
+            [address]="address"
+            [readonly]="true"
+    ></app-desktop-address-card>
+    <app-order-provider-card
+            *ngIf="showProviderSection"
+            [pharmacyDescription]="orderDetail.pharmacyDescription"
+            [pharmacyDistance]="'('+orderDetail.pharmacyDistance+')'"
+            [pharmacyName]="orderDetail.pharmacyName"></app-order-provider-card>
+
+    <div class="order-product-summary-list">
+        <div class="order-product-summary-list-header" fxLayout="row nowrap" fxLayoutAlign="start center"
+             fxLayoutGap="8px">
+            <span fxFlex="0 0 calc(15% - 8px)"></span>
+            <span fxFlex="0 0 calc(40% - 8px)">عنوان</span>
+            <span fxFlex="0 0 calc(20% - 8px)">تعداد</span>
+            <span fxFlex="0 0 calc(25% - 8px)">قیمت داروخانه</span>
+        </div>
+        <app-desktop-order-product-summary-card *ngFor="let OrderProductSummary of orderDetail.productList"
+                                                [OrderProductSummary]="OrderProductSummary"
+        ></app-desktop-order-product-summary-card>
+
+        <app-desktop-order-product-summary-card
+                *ngIf="orderDetail.isPaid"
+                [OrderProductSummary]="transportInfo"
+                [svgIconName]="'svg_transport'"
+                class="transport-card"
+        ></app-desktop-order-product-summary-card>
+
+        <app-desktop-order-product-summary-card
+                *ngIf="orderDetail.isPaid"
+                [OrderProductSummary]="totalPayment"
+                [greenMode]="true"
+                [svgIconName]="'svg_pos'"
+                class="total-payment-card"
+        ></app-desktop-order-product-summary-card>
+    </div>
+
+    <button
+            (click)="onCancelOrder()"
+            *ngIf="isCancelableOnly"
+            [disabled]="isCancelling"
+            appDpButton="red-outline"
+            class="cancel-order-btn"
+            mat-button>
+        <span *ngIf="!isCancelling">لغو سفارش</span>
+        <mat-spinner *ngIf="isCancelling" diameter="32" strokeWidth="3"></mat-spinner>
+    </button>
+
+</div>

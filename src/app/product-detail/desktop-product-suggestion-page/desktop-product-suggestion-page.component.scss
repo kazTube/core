@@ -1,0 +1,84 @@
+@import "../../core/constants/Colors";
+
+#desktop-product-suggestion-container {
+  padding: 128px 4% 4%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  #page-header {
+    position: fixed;
+    height: 64px;
+    background-color: $LIGHT_BLUE_200;
+    width: 100%;
+    top: 64px;
+    right: 0;
+    z-index: 2;
+
+
+  }
+
+  #added-product-card {
+    position: fixed;
+    width: calc(92% - 294px);
+    padding-left: 278px;
+    top: 80px;
+    z-index: 2;
+    height: 64px;
+    right: 4%;
+    overflow: hidden;
+
+    mat-card-content {
+      height: 100%;
+
+      #message {
+        height: 100%;
+        color: $GREEN_200;
+        font-size: 100%;
+        min-width: 140px;
+
+        /deep/ .mat-icon {
+          font-size: 200%;
+        }
+      }
+
+      #product-info-text {
+        height: 100%;
+        overflow: hidden;
+        #product-name {
+          font-size: 110%;
+          font-weight: bold;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        #product-attribute {
+          font-size: 80%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+      }
+
+      #product-image {
+        height: 100%;
+        min-width: 64px;
+
+        app-img-with-loading {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      #go-to-basket-button {
+        position: absolute;
+        height: 48px;
+        left: 24px;
+        top: 24px;
+        width: 230px;
+
+      }
+    }
+
+  }
+}

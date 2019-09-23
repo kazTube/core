@@ -1,0 +1,40 @@
+@import "../../core/constants/Colors";
+
+#change-pharmacy-dialog {
+  font-size: 13px;
+  direction: rtl;
+  font-weight: bold;
+  height: 100%;
+
+  .dialog-content {
+    flex-grow: 1;
+    text-align: justify;
+  }
+
+  .dialog-actions {
+    width: calc(100% + 24px);
+  }
+
+  #danger_icon {
+    width: 56px;
+    height: 48px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+  }
+
+  .cancel-button {
+    color: $GRAY_700;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 4px;
+  }
+
+  .contact-button {
+    color: $GREEN_200;
+    font-size: 16px;
+    margin-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

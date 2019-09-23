@@ -1,0 +1,29 @@
+@import "../../../core/constants/Colors";
+
+#container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  #content-container {
+    height: calc(100% - 64px);
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    overflow: auto;
+
+    .animation-container {
+      flex-grow: 1;
+      background-color: $WHITE;
+    }
+
+    /deep/ .outlet-content + * {
+      flex-grow: 1;
+    }
+
+    app-footer {
+      z-index: 1;
+    }
+  }
+}

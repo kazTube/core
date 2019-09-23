@@ -1,0 +1,47 @@
+@import "../../../core/constants/Colors";
+
+#order-list-container {
+  width: 100%;
+
+  .mat-toolbar {
+    background-color: $BLUE_200;
+    color: $BLUE_800;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .mat-button {
+      margin-right: auto;
+      padding-left: 4px;
+
+      .mat-icon {
+        color: $BLUE_600;
+      }
+    }
+  }
+
+  .card-container {
+    padding: 8px;
+  }
+
+  #load-more {
+    /deep/ button {
+      margin-right: auto;
+      margin-left: auto;
+      width: 100px;
+      font-size: 12px;
+      margin-top: 4px;
+      color: $BLUE_700;
+      cursor: pointer;
+      display: block;
+
+      .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: $BLUE_700;
+      }
+    }
+  }
+}

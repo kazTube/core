@@ -1,0 +1,44 @@
+@import "../../../core/constants/Colors";
+
+#order-provider-card {
+  padding: 0;
+  box-shadow: none;
+
+  #provider-info-container {
+    margin-bottom: 8px;
+    font-size: 13px
+  }
+
+  .provider-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+  }
+
+  #provider-label {
+    color: $ORANGE_300;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  #distance {
+    display: block;
+    color: $BLUE_700;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  #provider-description {
+    font-size: 13px;
+
+    #textarea {
+      margin-top: 4px;
+      width: calc(100% - 32px);
+      min-height: 32px;
+      background: $YELLOW_50;
+      padding: 16px;
+      border: 1px solid $YELLOW_500;
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "~src/app/core/constants/Colors";
+
+#user-home-page-container {
+  background-color: $GRAY_50;
+  height: 100%;
+
+  #background-img {
+    width: 100%;
+    filter: blur(8px);
+    position: absolute;
+    margin-top: -8px;
+  }
+
+  #offers-card {
+    box-shadow: none;
+    background-color: $WHITE_OPACITY_50;
+    margin: 8px;
+    padding-left: 0;
+    padding-right: 0;
+
+    #discount-title {
+      padding: 8px 24px;
+      background-image: linear-gradient(to right, $CYAN_400, $CYAN_700);
+      position: relative;
+      border-radius: 24px;
+      display: inline-block;
+      color: $GRAY_50;
+      font-size: 14px;
+      margin-right: 16px;
+    }
+
+    #discount-subtitle {
+      position: relative;
+      display: block;
+      margin: 4px 16px 16px;
+      font-size: 12px;
+      color: $GRAY_700;
+      padding-right: 16px;
+    }
+
+
+    .pharmacy-shelf-button {
+      margin: 16px auto;
+      display: block;
+      border: 1px solid;
+      color: $BLUE_700;
+      border-radius: 24px;
+    }
+
+  }
+}

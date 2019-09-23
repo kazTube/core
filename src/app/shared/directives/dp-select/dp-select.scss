@@ -1,0 +1,12 @@
+// this file should be added in styles array in angular.json file
+@import "../../../core/constants/Colors";
+
+.dp-blue-select {
+  &.mat-select-panel {
+    background-color: $LIGHT_BLUE_100;
+  }
+  .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $BLUE_800 !important;
+  }
+}
+

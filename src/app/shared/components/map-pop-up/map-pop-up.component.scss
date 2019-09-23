@@ -1,0 +1,121 @@
+@import "../../../core/constants/Colors";
+
+/deep/ .map-overlay {
+  height: 100%;
+  width: 95vw;
+  padding: 30px 16px;
+  max-width: 800px !important;
+  max-height: 90vh !important;
+
+  #map-dialog {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .map-dialog-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      direction: rtl;
+      padding: 5px 16px;
+      background-color: $BLUE_500;
+      color: $GRAY_50;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .mat-dialog-content {
+      flex-grow: 1;
+      max-height: unset;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      height: 0;
+
+      .address-search-box {
+        position: absolute;
+        z-index: 2;
+        right: 8px;
+        top: 16px;
+        height: 40px;
+        line-height: 40px;
+        min-width: 200px;
+        max-width: 600px;
+        width: 40%;
+        padding: 0 8px;
+        font-size: 13px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
+        outline: none;
+      }
+
+      .address-search-box[placeholder] {
+        text-align: right;
+        direction: rtl;
+      }
+
+      #current-location-button {
+        position: absolute;
+        background-color: $WHITE;
+        color: $BLACK_100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
+
+        /deep/ .mat-progress-spinner circle, .mat-spinner circle {
+          stroke: $GRAY_600;
+        }
+      }
+
+      #current-location-button:hover {
+        color: $BLACK_200;
+      }
+
+      .circle-map-btn {
+        bottom: 16px;
+        right: 16px;
+        height: 56px;
+        width: 56px;
+      }
+
+      .square-map-btn {
+        right: 10px;
+        bottom: 110px;
+        border-radius: 0;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .mat-dialog-actions {
+      margin: 0;
+      border-top: 1px solid $GRAY_500;
+      padding: 8px 16px;
+      direction: rtl;
+
+      .btn-container {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+
+        button {
+          margin: 12px 5px;
+          box-shadow: 0 4px 6px $BLACK_OPACITY_16;
+        }
+      }
+    }
+
+
+
+    agm-map {
+      height: 100%;
+    }
+  }
+
+  .mat-dialog-container {
+    padding: 0 !important;
+    border-radius: 8px;
+  }
+}

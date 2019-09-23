@@ -1,0 +1,53 @@
+<mat-card id="product-description-card">
+    <mat-card-content>
+        <ngu-carousel #descriptionCarousel *ngIf="isProductImageExist" [dataSource]="productInfo.imageUrlList"
+                      [inputs]="carouselConfig">
+            <div *nguCarouselDef="let item;" class="item">
+                <app-img-with-loading [src]="item" class="carousel-img"></app-img-with-loading>
+            </div>
+            <ul NguCarouselPoint class="points">
+                <li (click)="descriptionCarousel.moveTo(j)"
+                    *ngFor="let j of descriptionCarousel.pointNumbers; let j = index"
+                    [class.active]="j==descriptionCarousel.activePoint"></li>
+            </ul>
+        </ngu-carousel>
+
+        <mat-icon *ngIf="!isProductImageExist" class="default-image" svgIcon="svg_default_image"></mat-icon>
+        <div class="product-text">
+            <div class="rate-star-container">
+                <star-rating [labelText]="productInfo.rate" [rating]="productInfo.rate" [starType]="'svg'"
+                             direction="ltr"
+                             hoverEnabled="true"
+                             labelPosition="right" readOnly="true" size="small"
+                             staticColor="ok"></star-rating>
+
+            </div>
+            <div class="product-name">{{productInfo.productNameFa}}</div>
+            <ng-container *ngIf="isSpecialOfferProduct">
+                <div *ngIf="isDiscountPercentageVisible" class="discount-percentage">
+                    تخفیف
+                    {{productInfo.discountPercentage}}
+                    ٪
+                </div>
+                <div class="price">{{productInfo.newPrice | friendlyPrice}}</div>
+            </ng-container>
+            <ng-container *ngIf="providerName">
+                <div *ngIf="!isSpecialOfferProduct" class="product-provider">
+                    <mat-icon svgIcon="svg_producer"></mat-icon>
+                    <span>شرکت تولید کننده: </span>
+                    <span>{{providerName}}</span>
+                </div>
+                <div *ngIf="isSpecialOfferProduct" class="product-provider">
+                    <mat-icon svgIcon="svg_pharmacy"></mat-icon>
+                    <span class="pharmacy">تامین کننده: </span>
+                    <span>
+                    {{providerName}}
+                </span>
+                </div>
+            </ng-container>
+            <div class="product-description">
+                {{productInfo.description}}
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

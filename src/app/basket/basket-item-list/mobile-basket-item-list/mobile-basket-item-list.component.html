@@ -1,0 +1,22 @@
+<div id="basket-item-list">
+    <div class="list-title" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+        <span>سبد خرید</span>
+        <span>{{basketService.basketItemList.length + " محصول"}}</span>
+    </div>
+    <app-mobile-basket-item-card
+            *ngFor="let item of basketService.basketItemList"
+            (countChange)="onCountChange($event)"
+            (delete)="onProductDelete($event)"
+            (unitChange)="onUnitChange($event)"
+            [height]="200"
+            [basketItem]="item"
+            class="basket-item"
+    ></app-mobile-basket-item-card>
+    <button [routerLink]="'/home'"
+            appDpButton="blue"
+            class="add-another-item-button"
+            mat-button>
+        <mat-icon id="add-icon" svgIcon="svg_add"></mat-icon>
+        اضافه کردن کالای دیگر
+    </button>
+</div>

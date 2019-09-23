@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$daroopin-app-primary: mat-palette($mat-blue);
+$daroopin-app-accent:  mat-palette($mat-orange, 600, 500, 700);
+$daroopin-app-warn:    mat-palette($mat-red);
+
+$daroopin-app-theme: mat-light-theme($daroopin-app-primary, $daroopin-app-accent, $daroopin-app-warn);
+
+
+@include angular-material-theme($daroopin-app-theme);

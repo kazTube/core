@@ -1,0 +1,50 @@
+@import "../../../core/constants/Colors";
+
+#order-detail-page {
+  width: 100%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+  padding-top: 1px;
+  margin-top: -1px;
+
+  .order-detail-container-card {
+    width: 80%;
+    max-width: 1400px;
+    margin: 3% auto;
+
+    .card-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .card-title :first-child {
+      margin-left: 12px;
+    }
+
+    .return-btn {
+      position: absolute;
+      left: 8px;
+      top: 66px;
+      color: $BLUE_800;
+      direction: rtl;
+      font-size: 11px;
+      z-index: 1;
+      margin-right: auto;
+
+      .mat-icon {
+        color: $BLUE_600;
+        font-size: 20px;
+        width: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .desktop-order-detail {
+      display: block;
+      width: 80%;
+      margin: 32px auto;
+    }
+  }
+
+
+}

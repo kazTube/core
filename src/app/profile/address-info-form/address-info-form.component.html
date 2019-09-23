@@ -1,0 +1,70 @@
+<form [formGroup]="addressForm"
+      dir="rtl"
+      fxLayout="row wrap"
+      fxLayoutAlign="space-between center"
+      id="address-form-field-container"
+>
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>نام و نام خانوادگی تحویل گیرنده</mat-label>
+        <input formControlName="receiverName" matInput>
+    </mat-form-field>
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>شماره موبایل</mat-label>
+        <input formControlName="phone" matInput>
+        <mat-error *ngIf="phone.errors && phone.errors['pattern']">فرمت شماره موبایل وارد شده نامعتبر
+            است
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>استان</mat-label>
+        <mat-select appDpSelect formControlName="stateId">
+            <mat-option *ngFor="let state of stateList" [value]="state.stateId">
+                {{state.name}}
+            </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>شهر</mat-label>
+        <mat-select appDpSelect formControlName="cityId">
+            <mat-option *ngFor="let city of getCityList(addressForm.get('stateId').value)"
+                        [value]="city.cityId">
+                {{city.name}}
+            </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>آدرس</mat-label>
+        <textarea formControlName="addressText" matInput></textarea>
+        <mat-error *ngIf="addressText.errors && addressText.errors['minlength']">
+            آدرس وارده شده کوتاه است
+        </mat-error>
+    </mat-form-field>
+
+    <div fxFlex="100%"
+         fxLayout="row nowrap"
+         fxLayoutAlign="center center">
+        <mat-form-field appDpFormField appearance="outline" class="form-field small-field" fxFlex="1 0 42%">
+            <mat-label>پلاک</mat-label>
+            <input formControlName="plaqueNumber" matInput>
+        </mat-form-field>
+        <mat-form-field appDpFormField appearance="outline" class="form-field small-field" fxFlex="1 0 42%">
+            <mat-label>واحد</mat-label>
+            <input formControlName="unit" matInput>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>کد پستی</mat-label>
+        <input formControlName="postalCode" matInput>
+    </mat-form-field>
+    <div class="mat-form-field-wrapper map-field" fxFlex="1 0 42%">
+        <app-map-button [text]="mapButtonText"
+                        [variation]="mapButtonVariation"
+                        formControlName="location"></app-map-button>
+    </div>
+</form>

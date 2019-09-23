@@ -1,0 +1,16 @@
+<div cdkFocusInitial id="sort-by-dialog">
+    <h1 mat-dialog-title>مرتب سازی بر اساس</h1>
+    <div mat-dialog-content>
+        <mat-radio-group [(ngModel)]="selectedSortById">
+            <mat-radio-button
+                    *ngFor="let sortByOption of sortByOptions"
+                    [value]="sortByOption.id"
+            >{{sortByOption.text}}</mat-radio-button>
+        </mat-radio-group>
+
+    </div>
+    <div mat-dialog-actions>
+        <button [mat-dialog-close]="getSelectedOption()" id="confirm-button" mat-button>تایید</button>
+        <button (click)="onCancel()" mat-button>انصراف</button>
+    </div>
+</div>

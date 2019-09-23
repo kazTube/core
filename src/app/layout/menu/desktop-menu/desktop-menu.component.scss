@@ -1,0 +1,31 @@
+@import "../../../core/constants/Colors";
+
+#menu-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px $BLACK_OPACITY_16;
+  height: fit-content;
+  z-index: 3;
+
+  .menu-button {
+    min-height: 48px;
+    border-radius: 0;
+    color: $BLUE_800;
+
+    .dropdown-icon {
+      color: $LIGHT_BLUE_A100;
+      margin-top: 4px;
+    }
+
+    &.is-open {
+      background-color: $BLUE_700;
+      color: $WHITE;
+
+      .dropdown-icon {
+        color: $WHITE;
+      }
+    }
+  }
+
+}

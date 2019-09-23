@@ -1,0 +1,28 @@
+@import "../../core/constants/Colors";
+
+#open-order-dialog {
+  font-size: 13px;
+  direction: rtl;
+  font-weight: bold;
+
+  #danger-icon {
+    width: 56px;
+    height: 48px;
+  }
+
+  .cancel-button {
+    color: $GRAY_700;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 4px;
+  }
+
+  .order-list-button {
+    color: $BLUE_700;
+    font-size: 16px;
+    margin-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

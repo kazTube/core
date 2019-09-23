@@ -1,0 +1,42 @@
+<div id="app-footer">
+    <div [fxLayout.gt-xs]="'row wrap'" [fxLayoutAlign]="'center flex-end'" [fxLayoutGap.gt-xs]="'8%'"
+         [fxLayout]="'column'"
+         id="footer-content">
+        <div id="footer-text" fxFlex>
+            <mat-icon id="logo-in-footer" svgIcon="svg_logo"></mat-icon>
+            <p id="text">
+                فروشگاه اینترنتی داروپین ،فرصت انتخاب و خرید هزاران قلم دارو ،لوازم آرایشی بهداشتی و تجهیزات پزشکی از
+                بین
+                صدها
+                برند متنوع و معتبر را از نزدیک ترین داروخانه های اطراف در کل کشور فراهم می سازد.تسهیل در خرید داروهای
+                کمیاب
+                ،از
+                نزدیک ترین داروخانه ها در کمترین زمان ممکن یکی از دغدغه های مدیران این شرکت بوده که با داروپین این مشکل
+                برطرف
+                گردیده.
+            </p>
+            <div id="link-container">
+                <div id="first-column">
+                    <div class="link" routerLink="/how-to-insert-an-order">نحوه ثبت سفارش</div>
+                    <div class="link" routerLink="/contact-us">تماس با ما</div>
+                    <div class="link" routerLink="/about-us">درباره ما</div>
+                </div>
+                <div id="second-column">
+                    <div class="link" routerLink="/faq">سوالات متداول</div>
+                    <div class="link" routerLink="/file-a-complaint">ثبت شکایت</div>
+                    <div [routerLink]="orderListPath" class="link"> پیگیری سفارش</div>
+                </div>
+            </div>
+        </div>
+        <div class="symbols" [fxLayout]="'row'" [fxLayoutAlign]="'space-around center'" [fxFlex]="45">
+            <img src="../../../assets/images/digital.png"/>
+            <img src="../../../assets/images/majazi.png"/>
+            <img src="../../../assets/images/electronic.png"/>
+        </div>
+
+    </div>
+    <p id="copy-right">
+        کلیه حقوق این سایت متعلق به شرکت آراتل هوشمند آفتاب است
+    </p>
+</div>
+

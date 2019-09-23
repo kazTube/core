@@ -1,0 +1,114 @@
+@import "../../core/constants/Colors";
+
+#basket-stepper-control-container {
+  background-color: $WHITE;
+
+  #basket-stepper-control {
+    max-width: 700px;
+    height: 100%;
+
+    #basket-stepper-icons {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+
+      button {
+        font-size: 16px;
+      }
+
+      .stepper-label {
+        padding: 16px 0 32px 0;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        z-index: 1;
+        line-height: 24px;
+        display: block;
+
+        /deep/ .mat-button-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .stepper-text {
+          font-size: 60%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-weight: bold;
+          width: 100%;
+          color: $BLACK_300;
+        }
+
+        .mat-icon {
+          width: 50%;
+          height: 50%;
+          transition: all 0s;
+
+          &.rotate {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(-360deg);
+            transform-origin: center center;
+          }
+        }
+
+        &:disabled {
+          color: $BLACK;
+        }
+      }
+
+    }
+
+    /deep/ #progress {
+      display: flex;
+      width: 75%;
+      margin-top: -20px;
+      margin-bottom: -18px;
+      margin-right: 12.5%;
+      direction: ltr;
+      height: 2px;
+
+      .mat-progress-bar-fill::after {
+        background-color: $BLUE_700;
+      }
+
+      .mat-progress-bar-buffer {
+        background-color: $GRAY_400;
+      }
+
+      &.mat-progress-bar .mat-progress-bar-background {
+        width: 100%;
+      }
+
+      &.mat-progress-bar[dir=rtl], [dir=rtl] .mat-progress-bar {
+        transform: rotate(180deg);
+      }
+    }
+
+    #basket-stepper-bullets {
+      height: 32px;
+      width: 75%;
+      margin-right: 12.4%;
+
+      .bullet {
+        width: 16px;
+        height: 16px;
+        background: $GRAY_400;
+        display: flex;
+        border-radius: 50%;
+        transition: background-color 0.2s ease-in-out;
+        z-index: 0;
+
+        &.is-blue {
+          transition: all 0.5s ease-in-out;
+          background-color: $BLUE_700;
+        }
+
+      }
+    }
+  }
+}

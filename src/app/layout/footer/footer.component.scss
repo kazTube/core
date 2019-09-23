@@ -1,0 +1,77 @@
+@import "../../core/constants/Colors";
+
+#app-footer {
+  #footer-content {
+    text-align: justify;
+    padding: 4%;
+    color: $GRAY_800;
+    background-color: $GRAY_100;
+
+    #footer-text {
+
+      #logo-in-footer {
+        width: 120px;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        filter: contrast(0%);
+      }
+
+      #text {
+        font-size: 56%;
+      }
+
+      #link-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        padding-bottom: 12%;
+        padding-top: 4%;
+        font-size: 75%;
+
+        #first-column {
+          margin-right: 8%;
+        }
+
+        #second-column {
+          margin-right: 16%;
+        }
+
+        .link {
+          line-height: 300%;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .symbols {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      img {
+        width: 30%;
+        max-width: 128px;
+        height: auto;
+      }
+    }
+
+  }
+
+  #copy-right {
+    margin-top: 0;
+    height: 48px;
+    background-color: $BLUE_800;
+    width: 100%;
+    font-size: 62.5%;
+    color: $GRAY_500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}

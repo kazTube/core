@@ -1,0 +1,110 @@
+@import "../../core/constants/Colors";
+
+#subscription-completed-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  #background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/Background_Colorize.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+  }
+
+  #subscription-completed-container {
+    padding: 64px;
+    background: $WHITE_OPACITY_50;
+    margin: 8%;
+    min-width: 600px;
+    max-width: 700px;
+
+    #subscription-completed-card {
+      background-color: $WHITE;
+      line-height: 32px;
+
+      mat-card-title {
+        color: $BLUE_800;
+      }
+
+      mat-card-content {
+        min-height: 150px;
+        text-align: center;
+
+        #done-icon {
+          width: 48px;
+          height: auto;
+          display: block;
+          margin: 48px auto 32px;
+        }
+
+        .text {
+          width: 50%;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+
+      mat-card-actions {
+        #continue-button {
+          min-width: 128px;
+          margin-bottom: 8px;
+        }
+      }
+
+    }
+  }
+
+  &.small-screen {
+    #background-image {
+      filter: blur(0px);
+    }
+
+    #subscription-completed-container {
+      padding: 0;
+      min-width: auto;
+
+      /deep/ #subscription-completed-card {
+        padding: 0;
+
+        .mat-card-header {
+          background: $BLUE_200;
+          margin: auto;
+          border-bottom: 1px solid $GRAY_600;
+
+          .mat-card-header-text {
+
+            .mat-card-title {
+              min-height: 42px;
+              margin: 0;
+              font-size: 100%;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+
+
+        mat-card-content {
+          padding: 16px;
+
+          .text {
+            width: 100% !important;
+          }
+
+        }
+
+        mat-card-actions {
+          padding: 16px;
+        }
+      }
+    }
+
+  }
+}

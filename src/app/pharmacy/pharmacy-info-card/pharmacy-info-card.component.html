@@ -1,0 +1,46 @@
+<mat-card id="pharmacy-info-card" [fxLayout]="'column'" [fxLayoutAlign]="'stretch stretch'">
+    <mat-card-content [fxFlex]="'grow'" [fxLayout.lt-sm]="'column'" [fxLayout.gt-xs]="'row'">
+        <div [fxFlex.gt-xs]="'60%'" id="pharmacy-info">
+            <div id="pharmacy-thumbnail">
+                <app-img-with-loading *ngIf="isPharmacyThumbnailExist" [src]="pharmacyInfo.imageThumbnail"
+                ></app-img-with-loading>
+                <app-img-with-loading *ngIf="!isPharmacyThumbnailExist"
+                                      src="../../../assets/images/pharmacy_default_thumbnail.png"></app-img-with-loading>
+            </div>
+            <div *ngIf="pharmacyInfo.name && pharmacyInfo.name.length>0" id="pharmacy-name">
+                داروخانه
+                {{pharmacyInfo.name}}
+            </div>
+
+            <div *ngIf="pharmacyInfo.manager && pharmacyInfo.manager.length>0" id="pharmacy-manager">
+                مدیریت داروخانه :
+                {{pharmacyInfo.manager}}
+            </div>
+            <div *ngIf="pharmacyInfo.tel && pharmacyInfo.tel.length>0" id="pharmacy-phone">
+                تلفن تماس :
+                <span id="phone-number">{{pharmacyInfo.tel}}</span>
+            </div>
+            <div *ngIf="pharmacyInfo.address && pharmacyInfo.address.length>0" id="pharmacy-address">
+                آدرس :
+                {{pharmacyInfo.address}}
+            </div>
+        </div>
+        <div id="location-info" [fxLayout]="'column'"  [fxLayoutAlign]="'end stretch'" [fxFlex.gt-xs]="'40%'" >
+            <div id="map-label">موقعیت بر روی نقشه</div>
+            <agm-map [latitude]="pharmacyInfo.latitude"
+                     [longitude]="pharmacyInfo.longitude"
+                     [streetViewControl]="false"
+                     [zoomControl]="false"
+                     [zoom]="16"
+                     id="pharmacy-location"
+            >
+                <agm-marker
+                        [iconUrl]="markerIcon"
+                        [latitude]="pharmacyInfo.latitude"
+                        [longitude]="pharmacyInfo.longitude"
+                        [markerDraggable]="false"
+                ></agm-marker>
+            </agm-map>
+        </div>
+    </mat-card-content>
+</mat-card>

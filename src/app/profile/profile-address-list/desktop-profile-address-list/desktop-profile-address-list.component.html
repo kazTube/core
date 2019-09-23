@@ -1,0 +1,30 @@
+<mat-card id="profile-address-info-card">
+    <mat-card-content>
+        <mat-card-title class="card-title">آدرس ها</mat-card-title>
+        <mat-divider></mat-divider>
+        <app-desktop-address-list (addressChanged)="setDefaultAddress($event)"
+                                  [(addressList)]="addressFormService.addressList"
+                                  class="desktop-address-list"
+        >
+        </app-desktop-address-list>
+        <div class="section-title">ثبت آدرس جدید</div>
+        <app-address-info-form
+            #addressForm
+            (isValid)="addressFormService.isAddressFormValid=$event"
+            [(address)]="addressFormService.formAddress"
+            [cityList]="addressFormService.cityList"
+            [stateList]="addressFormService.stateList"
+        ></app-address-info-form>
+        <mat-divider></mat-divider>
+        <button (click)="submitAddressInfo()"
+                [disabled]="isConfirmButtonDisabled()"
+                appDpButton="blue"
+                class="confirm-button"
+                mat-raised-button>
+            <span *ngIf="!isLoading">ثبت اطلاعات</span>
+            <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+        </button>
+
+    </mat-card-content>
+</mat-card>
+

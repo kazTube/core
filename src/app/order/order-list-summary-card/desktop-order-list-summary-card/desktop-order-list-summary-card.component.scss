@@ -1,0 +1,37 @@
+@import "../../../core/constants/Colors";
+
+#order-summary-card {
+  margin: 16px 0;
+  padding: 0;
+  box-shadow: 0 4px 6px $BLACK_OPACITY_12;
+  border: 1px solid $BLACK_OPACITY_12;
+
+  .order-list-header {
+    span {
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center;
+      padding: 16px 8px 16px 0 !important;
+    }
+
+    button {
+      padding: 0;
+    }
+
+    .is-green {
+      color: $GREEN_500;
+    }
+
+    .is-orange {
+      color: $ORANGE_300;
+    }
+  }
+
+  .order-list-header > *:not(:first-child) {
+    border-right: 1px solid $GRAY_300;
+  }
+
+  .order-list-header > *:not(:last-child) {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,104 @@
+<div id="desktop-basket-stepper-container" [fxLayout]="'row'" [fxLayoutGap]="'2%'">
+    <div id="content" [fxFlex]="'70%'">
+        <app-basket-stepper-control
+                [currentStepIndex]="currentStepIndex"
+                (stepChange)="goToStep($event)"
+                [height]="100"
+        ></app-basket-stepper-control>
+
+        <mat-horizontal-stepper #stepper [selectedIndex]="currentStepIndex" id="basket-stepper" labelPosition="bottom">
+            <mat-step id="step-1">
+                <app-desktop-basket-item-list *ngIf="currentStepIndex<2"></app-desktop-basket-item-list>
+            </mat-step>
+            <mat-step id="step-2">
+                <app-desktop-address-list (addressChanged)="onAddressChange($event)"
+                                          *ngIf="currentStepIndex<2"
+                                          [(addressList)]="addressList"
+                                          [fullMode]="true"></app-desktop-address-list>
+            </mat-step>
+            <mat-step id="step-3">
+                <app-inquiry-from-pharmacy *ngIf="currentStepIndex===2"
+                                           id="step-inquiry-from-pharmacy"></app-inquiry-from-pharmacy>
+            </mat-step>
+            <mat-step id="step-4">
+                <app-desktop-finalize-purchase *ngIf="currentStepIndex===3"
+                                               [orderDetail]="orderDetail">
+
+                </app-desktop-finalize-purchase>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+
+    <div id="left-side" [fxFlex]="'28%'">
+        <mat-card id="action-card">
+            <mat-card-content [fxLayout]="'column'" [fxLayoutGap]="'10%'" [fxLayoutAlign]="'center center'">
+                <ng-container *ngIf="currentStepIndex!=3">
+                    <mat-icon id="warning-icon" svgIcon="svg_warning"></mat-icon>
+                    <div class="warning-text">
+                        <div *ngIf="currentStepIndex==0">مبلغ سفارش و هزینه ارسال کالا، بعد از استعلام گرفتن از داروخانه
+                            های
+                            موجود در اطراف شما به اطلاع می رسد
+                        </div>
+                        <div *ngIf="currentStepIndex==1">استعلام از داروخانه های اطراف آدرس گیرنده انجام می شود</div>
+                        <div *ngIf="currentStepIndex==2" id="step-3-warning">برای پیگیری نتیجه استعلام به لیست سفارشات
+                            مراجعه فرمایید
+                        </div>
+                    </div>
+                    <button (click)="goToSelectAddressStep($event)" *ngIf="currentStepIndex==0"
+                            [disabled]="basketService.basketItemList.length==0 || isLoading"
+                            appDpButton="orange"
+                            class="stepper-action-button"
+                            mat-raised-button>
+                        <span *ngIf="!isLoading">تایید و ادامه ثبت سفارش</span>
+                        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+                    <button (click)="insertOrder()" *ngIf="currentStepIndex==1"
+                            [disabled]="isLoading"
+                            appDpButton="orange"
+                            class="stepper-action-button"
+                            mat-raised-button>
+                        <span *ngIf="!isLoading">تایید آدرس و استعلام</span>
+                        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+
+                </ng-container>
+                <ng-container *ngIf="currentStepIndex===3">
+
+                    <div id="order-price" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+                        <span>هزینه کل</span>
+                        <span>{{orderDetail.orderPrice | friendlyPrice}}</span>
+                    </div>
+                    <div id="transport-price" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+                        <span>هزینه ارسال</span>
+                        <span>{{orderDetail.transportPrice | friendlyPrice}}</span>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div id="total-price" [fxLayout]="'column'" [fxLayoutAlign]="'space-between center'">
+                        <div id="total-price-label">مبلغ قابل پرداخت</div>
+                        <div id="total-price-value">{{orderDetail.totalPrice | friendlyPrice}}</div>
+                    </div>
+                    <button (click)="payPayment()"
+                            [disabled]="isLoading"
+                            appDpButton="green"
+                            class="stepper-action-button"
+                            id="pay-button" mat-raised-button>
+                        <span *ngIf="!isLoading">پرداخت</span>
+                        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+                    <div class="warning-text">پس از خرید نهایی سفارش توسط داروخانه برای شما ارسال خواهد شد</div>
+                    <button
+                            (click)="cancelOrder()"
+                            appDpButton="blue-outline"
+                            id="cancel-pay-button"
+                            mat-raised-button>
+                        <span>انصراف از خرید</span>
+                    </button>
+
+                </ng-container>
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+
+</div>

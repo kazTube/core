@@ -1,0 +1,27 @@
+@import "../../../core/constants/Colors";
+
+.daroopin-notification {
+  background-color: $WHITE !important;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 20px;
+  direction: rtl;
+  text-align: right;
+  margin: 16px 12px !important;
+  border-right: 6px solid;
+  padding: 14px 12px !important;
+}
+
+.daroopin-notification-success {
+  color: $GREEN_800 !important;
+
+}
+
+.daroopin-notification-error {
+  color: $RED_800 !important;
+}
+
+.daroopin-notification-info {
+  color: #FF8F00 !important;
+
+}

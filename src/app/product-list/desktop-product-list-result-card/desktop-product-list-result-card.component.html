@@ -1,0 +1,38 @@
+<mat-card id="product-list-result-card">
+    <app-loading *ngIf="isLoading"></app-loading>
+    <mat-card-title [fxLayout]="'row wrap'" [fxLayoutAlign]="'start center'">
+        <mat-icon id="sort-by-icon" svgIcon="svg_sort"></mat-icon>
+        <div id="sort-by-text">مرتب سازی بر اساس</div>
+        <mat-chip-list selectable>
+            <mat-chip class="sort-by-chip" (click)="onSortChange(sortByOption)"
+                      [selected]="sortByOption.id===selectedSortByOption.id"
+                      *ngFor="let sortByOption of sortByOptions"> {{sortByOption.text}}</mat-chip>
+        </mat-chip-list>
+    </mat-card-title>
+    <mat-card-content id="content">
+        <mat-grid-list [cols]="gridColsNumber" rowHeight="256px" gutterSize="16">
+            <mat-grid-tile
+                    *ngFor="let product of productList"
+                    [colspan]="1"
+                    [rowspan]="1">
+
+                <app-product-summary-card
+                        [productSummary]="product"
+                        [cardType]="ProductSummaryCardTypeEnum.Summary"
+                        [cardLayout]="CardLayoutEnum.Vertical"
+                        [fxLayout]="'row'" [fxLayoutAlign]="'center center'"
+                ></app-product-summary-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="page-number-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'end center'">
+            <button [ngClass]="{'selected-page': selectedPageNumber===pageNumber}" (click)="onPageChange(pageNumber)" mat-icon-button *ngFor="let pageNumber of pageNumberList">{{pageNumber}}</button>
+            <button [disabled]="selectedPageNumber + 1 > totalPageCount" (click)="nextPage()" mat-icon-button>
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+
+        </div>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,120 @@
+@import "../../../core/constants/Colors";
+
+#sticky-search-box {
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 680px;
+    margin: 0 auto;
+
+    .input-box {
+      line-height: 44px;
+      flex-grow: 1;
+      padding: 1px 12px 1px 1px;
+      border: 1px solid $LIGHT_BLUE_A100;
+      border-radius: 0 4px 4px 0;
+      color: $BLUE_800;
+      margin: 0;
+      background-color: $WHITE_OPACITY_87;
+      font-size: 11px;
+    }
+
+    .input-box::placeholder {
+      font-size: 11px;
+      color: $BLUE_800;
+    }
+
+    input[placeholder] {
+      text-overflow: ellipsis;
+    }
+
+    .input-box:focus {
+      outline: none;
+    }
+
+    .search-btn {
+      min-width: 48px;
+      width: 16%;
+      border-radius: 4px 0 0 4px;
+      border: 2px solid $BLUE_700;
+
+      .mat-icon {
+        width: 24px;
+        height: 100%;
+      }
+
+      .search-btn-text {
+        display: block;
+        font-size: 100%;
+        line-height: 0;
+      }
+    }
+  }
+
+  .desktop-search-box {
+    input {
+      height: 36px !important;
+      line-height: 40px;
+    }
+
+    button {
+      height: 40px !important;
+      min-width: 72px !important;
+    }
+  }
+}
+
+/deep/ .result-suggestion {
+  background-color: $GRAY_50;
+  border: 1px solid $LIGHT_BLUE_A100;
+  box-shadow: 0 3px 6px $BLACK_OPACITY_24;
+  border-radius: 0 0 4px 4px;
+  position: absolute;
+  margin-top: -1px;
+  max-height: 268px;
+  overflow: auto;
+  padding: 4px 0 !important;
+
+
+  .odd-option-button {
+    background-color: $GRAY_100 !important;
+  }
+
+  .mat-option {
+    height: unset !important;
+    white-space: normal !important;
+    padding: 8px 16px !important;
+    line-height: unset !important;
+    font-size: 12px;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .mat-option.mat-active {
+    background: $BLUE_100 !important;
+  }
+
+  .mat-optgroup-label {
+    padding: 0 !important;
+    text-align: right;
+  }
+
+  .blue-text {
+    font-size: 12px;
+    color: $BLUE_700;
+  }
+
+  .text-padding {
+    padding: 0 16px;
+  }
+
+  .list-divider {
+    margin: 0 11.5px 0 !important;
+  }
+
+  .optgroup-divider {
+    margin: -3px 11.5px 0 !important;
+  }
+}

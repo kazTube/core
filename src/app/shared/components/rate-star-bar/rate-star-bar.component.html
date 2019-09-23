@@ -1,0 +1,26 @@
+<div id="rate-star-bar">
+    <div class="unselected-star-container">
+        <div (@rateSelectAnimation.start)="setUnselectAnimationState('start')"
+             *ngFor="let starNumber of starCount"
+             [@rateSelectAnimation]="{value: selectedRate!==-1?'hide':'show', params:{xMove: (3-starNumber)*42}}"
+             class="star-container">
+            <mat-icon
+                    (click)="selectedRate===-1?onSelect(starNumber):null"
+                    [svgIcon]="selectedRate>=starNumber?'svg_baseline_star':'svg_outline_star'"
+                    class="star-icon"
+            ></mat-icon>
+            <span class="star-text">{{starNumber}}</span>
+        </div>
+    </div>
+    <div
+            *ngIf="selectedRate!==-1"
+            [@rateUnselectAnimation]="unselectAnimationState"
+            class="selected-star-container">
+        <mat-icon
+                (click)="onDeselect()"
+                svgIcon="svg_baseline_star"
+                class="selected-star-icon"
+        ></mat-icon>
+        <span (click)="onDeselect()" class="selected-star-text">{{selectedRate}}</span>
+    </div>
+</div>

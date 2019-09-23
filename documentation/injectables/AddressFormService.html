@@ -1,0 +1,879 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>AddressFormService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/profile/address-info-form/address-form.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addressList">addressList</a>
+                            </li>
+                            <li>
+                                <a href="#cityList">cityList</a>
+                            </li>
+                            <li>
+                                <a href="#formAddress">formAddress</a>
+                            </li>
+                            <li>
+                                <a href="#initAddress">initAddress</a>
+                            </li>
+                            <li>
+                                <a href="#isAddressFormValid">isAddressFormValid</a>
+                            </li>
+                            <li>
+                                <a href="#stateList">stateList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userProfileService">userProfileService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#utilService">utilService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#canSubmitAddressInfo">canSubmitAddressInfo</a>
+                            </li>
+                            <li>
+                                <a href="#hasAddressInfoChanged">hasAddressInfoChanged</a>
+                            </li>
+                            <li>
+                                <a href="#resetInitAddress">resetInitAddress</a>
+                            </li>
+                            <li>
+                                <a href="#setInitialState">setInitialState</a>
+                            </li>
+                            <li>
+                                <a href="#submitAddressInfo">submitAddressInfo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(utilService: <a href="../injectables/UtilService.html">UtilService</a>, userProfileService: <a href="../injectables/UserProfileService.html">UserProfileService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>utilService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UtilService.html" target="_self" >UtilService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userProfileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserProfileService.html" target="_self" >UserProfileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canSubmitAddressInfo"></a>
+                    <span class="name">
+                        <b>
+                            canSubmitAddressInfo
+                        </b>
+                        <a href="#canSubmitAddressInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>canSubmitAddressInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasAddressInfoChanged"></a>
+                    <span class="name">
+                        <b>
+                            hasAddressInfoChanged
+                        </b>
+                        <a href="#hasAddressInfoChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasAddressInfoChanged()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetInitAddress"></a>
+                    <span class="name">
+                        <b>
+                            resetInitAddress
+                        </b>
+                        <a href="#resetInitAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetInitAddress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setInitialState"></a>
+                    <span class="name">
+                        <b>
+                            setInitialState
+                        </b>
+                        <a href="#setInitialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setInitialState(initAddress: <a href="../classes/AddressDTO.html">AddressDTO</a>, stateList?: <a href="../classes/StateDTO.html">StateDTO[]</a>, cityList?: <a href="../classes/CityDTO.html">CityDTO[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>initAddress</td>
+                                    <td>
+                                                <code><a href="../classes/AddressDTO.html" target="_self" >AddressDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>stateList</td>
+                                    <td>
+                                                <code><a href="../classes/StateDTO.html" target="_self" >StateDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>cityList</td>
+                                    <td>
+                                                <code><a href="../classes/CityDTO.html" target="_self" >CityDTO[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitAddressInfo"></a>
+                    <span class="name">
+                        <b>
+                            submitAddressInfo
+                        </b>
+                        <a href="#submitAddressInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitAddressInfo(isUpdate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isUpdate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addressList"></a>
+                        <span class="name">
+                            <b>
+                            addressList</b>
+                            <a href="#addressList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/AddressDTO.html" target="_self" >AddressDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cityList"></a>
+                        <span class="name">
+                            <b>
+                            cityList</b>
+                            <a href="#cityList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/CityDTO.html" target="_self" >CityDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formAddress"></a>
+                        <span class="name">
+                            <b>
+                            formAddress</b>
+                            <a href="#formAddress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/AddressDTO.html" target="_self" >AddressDTO</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>AddressDTO.emptyInstance()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initAddress"></a>
+                        <span class="name">
+                            <b>
+                            initAddress</b>
+                            <a href="#initAddress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/AddressDTO.html" target="_self" >AddressDTO</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>AddressDTO.emptyInstance()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAddressFormValid"></a>
+                        <span class="name">
+                            <b>
+                            isAddressFormValid</b>
+                            <a href="#isAddressFormValid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stateList"></a>
+                        <span class="name">
+                            <b>
+                            stateList</b>
+                            <a href="#stateList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/StateDTO.html" target="_self" >StateDTO[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userProfileService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            userProfileService</b>
+                            <a href="#userProfileService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/UserProfileService.html" target="_self" >UserProfileService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="utilService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            utilService</b>
+                            <a href="#utilService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/UtilService.html" target="_self" >UtilService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/profile/address-info-form/address-form.service.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {AddressDTO} from &#x27;../../dto/profile/AddressDTO&#x27;;
+import {UtilService} from &#x27;../../core/services/util.service&#x27;;
+import {UserProfileService} from &#x27;../user-profile.service&#x27;;
+import {StateDTO} from &#x27;../../dto/profile/StateDTO&#x27;;
+import {CityDTO} from &#x27;../../dto/profile/CityDTO&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
+
+@Injectable({
+    providedIn: &#x27;root&#x27;
+})
+export class AddressFormService {
+
+    formAddress: AddressDTO &#x3D; AddressDTO.emptyInstance();
+    initAddress: AddressDTO &#x3D; AddressDTO.emptyInstance();
+    isAddressFormValid &#x3D; false;
+    stateList: StateDTO[] &#x3D; [];
+    cityList: CityDTO[] &#x3D; [];
+    addressList: AddressDTO[];
+
+    constructor(
+        public utilService: UtilService,
+        public userProfileService: UserProfileService) {
+    }
+
+    hasAddressInfoChanged() {
+        if (this.formAddress !&#x3D;&#x3D; undefined &amp;&amp; this.initAddress !&#x3D;&#x3D; undefined) {
+            return !(this.initAddress.cityId &#x3D;&#x3D;&#x3D; this.formAddress.cityId
+                &amp;&amp; this.initAddress.stateId &#x3D;&#x3D;&#x3D; this.formAddress.stateId
+                &amp;&amp; this.initAddress.addressText &#x3D;&#x3D;&#x3D; this.formAddress.addressText
+                &amp;&amp; this.initAddress.postalCode &#x3D;&#x3D;&#x3D; this.formAddress.postalCode
+                &amp;&amp; this.initAddress.latitude &#x3D;&#x3D;&#x3D; this.formAddress.latitude
+                &amp;&amp; this.initAddress.longitude &#x3D;&#x3D;&#x3D; this.formAddress.longitude
+                &amp;&amp; this.initAddress.receiverName &#x3D;&#x3D;&#x3D; this.formAddress.receiverName
+                &amp;&amp; this.initAddress.receiverPhone &#x3D;&#x3D;&#x3D; this.formAddress.receiverPhone
+                &amp;&amp; this.initAddress.unit &#x3D;&#x3D;&#x3D; this.formAddress.unit
+                &amp;&amp; this.initAddress.plaqueNumber &#x3D;&#x3D;&#x3D; this.formAddress.plaqueNumber
+            );
+        } else {
+            return false;
+        }
+    }
+
+    canSubmitAddressInfo() {
+        return this.isAddressFormValid &amp;&amp; this.hasAddressInfoChanged();
+    }
+
+    submitAddressInfo(isUpdate: boolean): Observable&lt;any&gt; {
+        let addressInfo$;
+        if (isUpdate) {
+            addressInfo$ &#x3D; this.userProfileService.updateAddress(this.formAddress);
+        } else {
+            addressInfo$ &#x3D; this.userProfileService.addAddress(this.formAddress);
+        }
+        addressInfo$.subscribe((addedAddress: AddressDTO) &#x3D;&gt; {
+            if (this.addressList &amp;&amp; addedAddress.addressId) {
+                this.addressList.unshift(addedAddress);
+                this.addressList &#x3D; [...this.addressList];
+            }
+            this.setInitialState(this.formAddress);
+        });
+        return addressInfo$;
+    }
+
+    setInitialState(initAddress: AddressDTO, stateList?: StateDTO[], cityList?: CityDTO[]) {
+        if (initAddress) {
+            this.initAddress &#x3D; AddressDTO.clone(initAddress);
+            this.formAddress &#x3D; AddressDTO.clone(initAddress);
+        }
+        this.stateList &#x3D; stateList ? stateList : this.stateList;
+        this.cityList &#x3D; cityList ? cityList : this.cityList;
+    }
+
+    resetInitAddress() {
+        this.initAddress &#x3D; AddressDTO.emptyInstance();
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddressFormService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

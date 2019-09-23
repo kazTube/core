@@ -1,0 +1,50 @@
+@import "../../../core/constants/Colors";
+
+#product-list-container {
+  width: 100%;
+  padding: 2%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  #product-list-card {
+    padding: 2%;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+
+
+    .mat-card-title {
+      margin-bottom: 1%;
+
+      .product-list-header {
+        font-size: 60%;
+        font-weight: bold;
+        padding: 0 1% 2%;
+        border-bottom: 1px solid $GRAY-600;
+
+        /deep/ .mat-card-header-text {
+          margin: 0 4px;
+        }
+      }
+    }
+    #result-container{
+      #items-count{
+        min-height: 48px;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 2%;
+        font-size: 105%;
+        color: $BLUE_800;
+      }
+    }
+
+    #side-bar{
+      min-width: 232px;
+    }
+    .mat-card-content {
+      padding: 0 2%;
+    }
+  }
+  app-product-carousel{
+    width: 100%;
+  }
+}

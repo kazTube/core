@@ -1,0 +1,93 @@
+@import "../../core/constants/Colors";
+
+#user-info-form-container {
+  position: relative;
+  padding-bottom: 32px;
+  padding-top: 114px;
+  overflow: hidden;
+  margin-top: -64px;
+  background-color: $GRAY_50;
+  min-height: 100%;
+
+  .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  /deep/ #user-info-form-card {
+    padding: 0 0 8px 0;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 750px;
+
+    .mat-card-header {
+      background: $BLUE_200;
+      margin: auto;
+      border-bottom: 1px solid $GRAY_600;
+      text-align: right;
+
+      .mat-card-header-text {
+        text-align: right;
+        width: 100%;
+
+        .mat-card-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .section-title {
+      direction: rtl;
+      padding-right: 4%;
+      margin-bottom: 16px;
+      margin-top: 8px;
+      padding-top: 8px;
+      color: $BLUE_700;
+      font-weight: bold;
+      font-size: 100%;
+    }
+
+    .border-top {
+      border-top: 1px solid $GRAY_600;
+    }
+
+    #rule-confirm {
+      padding: 8px 4% 16px 4%;
+      display: flex;
+      line-height: 24px;
+      direction: rtl;
+      align-items: center;
+
+      span {
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      .link {
+        color: $BLUE_700;
+        cursor: pointer;
+      }
+
+      .mat-checkbox {
+        margin-top: -1px;
+        margin-left: 8px;
+      }
+
+    }
+
+    .confirm-button {
+      width: 80%;
+      margin: 16px auto 32px;
+      display: block;
+      max-width: 400px;
+    }
+
+    .mat-horizontal-stepper-header-container {
+      display: none;
+    }
+  }
+}

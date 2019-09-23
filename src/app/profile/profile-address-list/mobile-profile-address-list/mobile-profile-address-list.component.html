@@ -1,0 +1,14 @@
+<div id="address-list-container">
+    <mat-toolbar>
+        <span>آدرس ها</span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="card-container">
+        <app-mobile-address-list (addressChanged)="setDefaultAddress($event)"
+                                 [(addressList)]="addressList"></app-mobile-address-list>
+    </div>
+</div>
+

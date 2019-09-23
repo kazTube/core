@@ -1,0 +1,58 @@
+<mat-card id="product-basket-card" [fxLayout]="'column'" [style.height]="height+'px'">
+    <mat-card-content [fxLayout]="'column'" [fxLayoutGap]="'3%'">
+        <div class="card-info" [fxLayout]="'row'" [fxLayoutAlign]="'start center'" [fxLayoutGap]="'3%'">
+            <div [fxFlex]="'25%'" class="product-image">
+                <app-img-with-loading *ngIf="isProductImageExist"
+                                      [src]="basketItem.productDetail.imageUrlList[0]"></app-img-with-loading>
+                <mat-icon *ngIf="!isProductImageExist" svgIcon="svg_default_image"></mat-icon>
+            </div>
+            <div [fxFlex]="'75%'" class="product-text">
+                <div class="product-name">{{basketItem.productDetail.productNameFa}}</div>
+                <ng-container *ngIf="!basketItem.isSpecialOfferProduct">
+                    <ng-container *ngIf="basketItem.productDetail.attributeList.length>0">
+                        <div *ngFor="let attribute of basketItem.productDetail.attributeList.slice(0,2)"
+                             class="product-attribute">
+                            {{
+                            attribute.attributeName && attribute.attributeName.length > 0 ?
+                                attribute.attributeName + ' : ' + attribute.attributeValue
+                                :
+                                attribute.attributeValue
+                            }}
+                        </div>
+                    </ng-container>
+                    <ng-container
+                            *ngIf="!basketItem.productDetail.attributeList || basketItem.productDetail.attributeList.length===0">
+                        <div class="product-attribute">
+                            {{basketItem.productDetail.description}}
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <div *ngIf="basketItem.isSpecialOfferProduct" class="special-offer-product-attributes">
+                    <div>
+                        داروخانه
+                        {{basketItem.productDetail.pharmacyName}}
+                    </div>
+                    <div class="price">{{basketItem.productDetail.newPrice | friendlyPrice}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-count-selection" [fxLayout]="'row'" [fxLayoutAlign]="'start center'" [fxLayoutGap]="'3%'">
+            <span [fxFlexOffset]="'16px'" class="count-text">تعداد</span>
+            <mat-select [fxFlex]="'25%'" (selectionChange)="onCountChange($event)" [(ngModel)]="basketItem.count"
+                        class="blue-select"
+                        id="count-select">
+                <mat-option *ngFor="let number of numberList" [value]="number">{{number}}</mat-option>
+            </mat-select>
+
+            <mat-select [fxFlex]="'40%'" (selectionChange)="onUnitChange($event)" [(ngModel)]="basketItem.unitId"
+                        class="blue-select"
+                        id="unit-select">
+                <mat-option *ngFor="let unit of basketItem.productUnitList"
+                            [value]="unit.unitId">{{unit.unitName}}</mat-option>
+            </mat-select>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="actions-panel">
+        <button (click)="deleteFromBasket(basketItem)" mat-button>حذف</button>
+    </mat-card-actions>
+</mat-card>

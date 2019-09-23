@@ -1,0 +1,74 @@
+<div id="sticky-search-box">
+    <div [ngClass]="appStateService.isMobile()?'search-box':'search-box desktop-search-box'">
+        <input #inputBox
+               [(ngModel)]="searchService.searchText"
+               (focus)="inputFocus()"
+               id="inputBox"
+               [matAutocomplete]="autoComplete"
+               class="input-box"
+               matInput
+               [placeholder]="appStateService.isMobile()?'نام دارو یا محصول مورد نظر را جستجو کنید':'نام دارو ، محصول یا دسته بندی مورد نظر را جستجو کنید'"
+        >
+        <button appDpButton="blue" class="search-btn">
+            <mat-icon *ngIf="!isSearching"
+                      [fxHide]="true"
+                      [fxShow.lt-sm]="true"
+                      svgIcon="svg_search"
+                      matSuffix>
+            </mat-icon>
+            <span *ngIf="!isSearching"
+                  [fxHide.lt-sm]="true"
+                  class="search-btn-text">
+                جستجو
+            </span>
+            <mat-spinner *ngIf="isSearching" diameter="24"
+                         strokeWidth="3"></mat-spinner>
+        </button>
+    </div>
+
+    <mat-autocomplete #autoComplete="matAutocomplete"
+                      class="result-suggestion">
+
+        <ng-container *ngIf="searchService.autoCompleteToShow==='TOP'">
+            <mat-optgroup>
+                <mat-option (onSelectionChange)="showProductDetails($event,product)"
+                            *ngFor="let product of searchService.topProductList; let i = index"
+                            [ngClass]="{'odd-option-button':i%2===1}">
+                    {{product.productNameFa}}
+                </mat-option>
+                <span class=" blue-text text-padding
+                ">جستجوهای پر بازدید اخیر</span>
+                <mat-divider class="optgroup-divider"></mat-divider>
+            </mat-optgroup>
+        </ng-container>
+
+        <ng-container *ngIf="searchService.autoCompleteToShow==='RESULT'">
+            <mat-option
+                    (onSelectionChange)="searchInCategory($event,category)"
+                    *ngFor="let category of searchService.searchResult?.categoryList; let i = index">
+                {{searchService.searchText + " در دسته بندی " + category.categoryName}}
+                <span class="blue-text">{{" " + category.categoryName}}</span>
+            </mat-option>
+            <mat-divider *ngIf="searchService.searchResult?.categoryList.length>0" class="list-divider"></mat-divider>
+            <mat-option (onSelectionChange)="showProductDetails($event,product)"
+                        *ngFor="let product of searchService.searchResult?.productList; let i = index"
+                        [ngClass]="{'odd-option-button':i%2===1}">
+                {{product.productNameFa}}
+            </mat-option>
+            <mat-divider class="list-divider"></mat-divider>
+            <mat-option (onSelectionChange)="showAllResult($event)">
+                نمایش همه نتایج
+            </mat-option>
+        </ng-container>
+
+        <ng-container *ngIf="searchService.autoCompleteToShow==='NOT_FOUND'">
+            <mat-option (onSelectionChange)="showNewProductDetails($event, searchService.searchText)"
+                        [value]="searchService.searchText">
+                جستجوی بیشتر برای
+                <span class="blue-text">{{searchService.searchText}}</span>
+            </mat-option>
+        </ng-container>
+
+    </mat-autocomplete>
+
+</div>

@@ -1,0 +1,82 @@
+@import "../../core/constants/Colors";
+
+#profile-page {
+  padding: 2%;
+  height: 100%;
+  background-image: linear-gradient($BLUE_100, $WHITE);
+
+  #profile-menu {
+    padding: 0 0 24px 0;
+
+    .avatar-button {
+      display: block;
+      width: 70%;
+      max-width: 96px;
+      margin: 0 auto;
+      padding-top: 8%;
+      padding-bottom: 4%;
+    }
+
+
+    #username {
+      text-align: center;
+      color: $BLUE_800;
+      font-weight: bold;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      width: calc(100% - 16px);
+      padding: 0 8px;
+      word-break: break-word
+    }
+
+    .profile-action-list {
+      padding-top: 5%;
+      border: none;
+      border-radius: 0;
+
+      .profile-menu-btn {
+        text-align: right;
+        font-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        width: 100%;
+        border: none;
+
+        mat-icon {
+          margin-right: 0;
+          margin-left: 16px;
+        }
+
+        /deep/ .mat-list-item-content {
+          width: 100%;
+        }
+
+        /deep/ .mat-button-toggle-label-content {
+          width: calc(100% - 24px);
+          text-align: right;
+        }
+      }
+
+      /deep/ .mat-button-toggle-checked {
+        color: $WHITE;
+        background-color: $BLUE_700;
+
+        svg {
+          path {
+            stroke: $WHITE;
+            fill: $WHITE;
+          }
+        }
+
+        mat-icon {
+          color: $WHITE;
+        }
+      }
+    }
+  }
+
+  #content {
+    height: 100%;
+  }
+}

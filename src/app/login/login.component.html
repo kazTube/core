@@ -1,0 +1,96 @@
+<div [ngClass]="{'desktop-login-container':appStateService.isDesktop()}" id="login-container">
+    <img class="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="login-card">
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>ورود به حساب کاربری</mat-card-title>
+            </mat-card-header>
+            <mat-icon *ngIf="currentStepIndex!=2" class="logo-icon" svgIcon="svg_dp_logo"></mat-icon>
+
+            <mat-horizontal-stepper #loginStepper id="login-stepper">
+                <mat-step>
+                    <div class="text">ورود به داروپین با شماره همراه</div>
+                    <div class="form-field-container" dir="rtl">
+                        <mat-form-field appDpFormField appearance="outline" class="form-field">
+                            <mat-label>شماره موبایل</mat-label>
+                            <input (keydown)="sendOnEnter($event)"
+                                   [formControl]="phone"
+                                   inputmode="numeric"
+                                   matInput
+                                   pattern="[0-9]*"
+                                   placeholder="شماره موبایل خود را وارد کنید">
+                            <mat-error *ngIf="phone.errors && phone.errors['pattern']">فرمت شماره موبایل وارد شده
+                                نامعتبر
+                                است
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </mat-step>
+                <mat-step>
+                    <div class="text">کد پیامک شده به شماره همراهتان را وارد کنید</div>
+                    <div id="phone-edit-container">
+                        <mat-icon (click)="editPhoneNumber()" id="edit-icon" svgIcon="svg_edit"></mat-icon>
+                        <span id="phone-edit">{{phone.value}}</span>
+                    </div>
+                    <div class="form-field-container" dir="rtl">
+                        <mat-form-field appDpFormField appearance="outline" class="form-field">
+                            <mat-label>کد ۴ رقمی</mat-label>
+                            <input
+                                    [formControl]="code"
+                                    inputmode="numeric"
+                                    matInput
+                                    pattern="[0-9]*"
+                                    placeholder="کد ۴ رقمی را وارد کنید">
+                            <mat-error *ngIf="code.errors && (code.errors['minlength'] || code.errors['maxlength'])">
+                                تعداد
+                                ارقام کد ۴ رقم است
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="!isResendCodeEnable" class="code-text">
+                        <span>ارسال مجدد کد فعالسازی</span>
+                        <span class="timer">({{resendCodeTimer | secondsTimerFormatter}})</span>
+                    </div>
+                    <div *ngIf="isResendCodeEnable" class="code-text">
+                        <button (click)="resendLoginCode()" mat-button>ارسال مجدد کد فعال سازی</button>
+                    </div>
+                </mat-step>
+                <mat-step>
+                    <mat-icon *ngIf="currentStepIndex==2" class="done-icon" svgIcon="svg_done"></mat-icon>
+                    <div class="text">حساب کاربری شما با موفقیت ایجاد شد</div>
+
+
+                </mat-step>
+
+            </mat-horizontal-stepper>
+            <button (click)="sendLoginCode()"
+                    *ngIf="currentStepIndex===0"
+                    [disabled]="!phone.value || phone.errors || isWaitingForCode"
+                    appDpButton="blue"
+                    class="stepper-button"
+                    mat-raised-button>
+                <span *ngIf="!isWaitingForCode">بعدی</span>
+                <mat-spinner *ngIf="isWaitingForCode" diameter="32" strokeWidth="3"></mat-spinner>
+            </button>
+            <button (click)="verifyLoginCode()"
+                    *ngIf="currentStepIndex===1"
+                    [disabled]="!code.value || code.errors || isWaitingForCodeVerification"
+                    appDpButton="blue"
+                    class="stepper-button"
+                    mat-raised-button>
+                <span *ngIf="!isWaitingForCodeVerification">تایید</span>
+                <mat-spinner *ngIf="isWaitingForCodeVerification" diameter="32" strokeWidth="3"></mat-spinner>
+            </button>
+            <button *ngIf="currentStepIndex===2"
+                    [routerLink]="nextRouteURL"
+                    autofocus
+                    appDpButton="blue"
+                    class="stepper-button"
+                    tabindex="0"
+                    mat-raised-button>تکمیل حساب کاربری
+            </button>
+
+        </mat-card-content>
+    </mat-card>
+</div>

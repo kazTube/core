@@ -1,0 +1,28 @@
+<div id="user-home-page-container">
+    <img id="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="offers-card">
+        <mat-card-content>
+            <ng-container *ngIf="isThereAnyOffer">
+                <div id="discount-title">تخفیف های ویژه برای شما</div>
+                <div id="discount-subtitle">از داروخانه های اطراف شما</div>
+                <app-product-offer-carousel
+                        [productOfferList]="userHomePageInfo.productList"
+                        [pharmacyHixCode]="userHomePageInfo.pharmacy.pharmacyHixCode"
+                        [pharmacyName]="userHomePageInfo.pharmacy.name"
+                ></app-product-offer-carousel>
+            </ng-container>
+            <button *ngIf="isThereAnyPharmacy" [routerLink]="'/pharmacy/'+userHomePageInfo.pharmacy.pharmacyHixCode"
+                    class="pharmacy-shelf-button" mat-button>
+                مشاهده قفسه
+                {{utilService.normalizePharmacyName(userHomePageInfo.pharmacy.name)}}
+            </button>
+            <div id="daroopin-vitrin">
+                <app-product-carousel [productList]="productListSlider"
+                                      [cardsType]="ProductSummaryCardTypeEnum.SpecialOfferProduct"
+                                      [title]="'ویترین داروپین'"
+                ></app-product-carousel>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <app-home-page-info></app-home-page-info>
+</div>

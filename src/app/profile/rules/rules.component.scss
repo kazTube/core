@@ -1,0 +1,55 @@
+@import "../../core/constants/Colors";
+
+#rules-container {
+  width: 100%;
+  overflow: hidden;
+
+  .mat-toolbar {
+    background-color: $BLUE_200;
+    color: $BLUE_800;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 8px;
+
+    .mat-button {
+      margin-right: auto;
+      padding-left: 4px;
+
+      .mat-icon {
+        color: $BLUE_600;
+      }
+    }
+  }
+
+  #content-container {
+    width: 100%;
+    direction: rtl;
+    height: calc(100% - 80px);
+    padding-bottom: 24px;
+    overflow: auto;
+
+    .header-text {
+      direction: rtl;
+      padding: 16px 24px 8px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $BLUE_600;
+    }
+
+    .body-text {
+      font-size: 12px;
+      text-align: justify;
+      direction: rtl;
+      color: $GRAY_800;
+      margin: 0;
+      padding: 8px 24px;
+    }
+
+    .bold-text {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+}

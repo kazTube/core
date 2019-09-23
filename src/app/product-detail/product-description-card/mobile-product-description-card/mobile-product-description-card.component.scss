@@ -1,0 +1,112 @@
+@import "../../../core/constants/Colors";
+
+#product-description-card {
+  .mat-card-content {
+
+    ngu-carousel {
+      height: 220px;
+      margin-bottom: 32px;
+        min-height: 220px;
+
+
+        app-img-with-loading{
+          width: 100%;
+          height: 100%;
+        }
+
+      /deep/ .ngu-touch-container {
+        height: 100%;
+      }
+
+
+
+      .points {
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+
+      .points li {
+        display: inline-block;
+        border-radius: 50%;
+        background-color: $BLUE_300;
+        padding: 2px;
+        margin: 0 3px;
+        transition-timing-function: cubic-bezier(.17, .67, .49, 1.5);
+        transition: 0.4s;
+      }
+
+      .points li.active {
+        background: $BLUE_500;
+        transform: scale(1.4);
+      }
+    }
+
+    .default-image {
+      width: calc(100% + 32px);
+      height: auto;
+      margin-right: -16px;
+      margin-top: -16px;
+    }
+
+    .product-text {
+      padding: 8px;
+
+      .rate-star-container {
+        float: left;
+      }
+
+      .product-provider {
+        display: flex;
+        margin-top: 16px;
+
+        .mat-icon {
+          height: 16px;
+          width: 16px;
+        }
+
+        span {
+          font-size: 10px;
+          margin-right: 8px;
+        }
+
+        .pharmacy {
+          color: $ORANGE_300;
+        }
+
+      }
+
+      .product-name {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .discount-percentage {
+        color: $WHITE;
+        background-color: $RED_200;
+        border-radius: 35px;
+        padding: 1px 8px;
+        display: inline-block;
+        text-align: center;
+        margin-top: 16px;
+      }
+
+      .price {
+        color: $GREEN_200;
+        font-size: 18px;
+        text-align: left;
+      }
+
+      .product-description {
+        margin-top: 16px;
+        font-size: 12px;
+        text-align: justify;
+      }
+    }
+  }
+
+}

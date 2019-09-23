@@ -1,0 +1,32 @@
+{
+  "tsconfig": "src/tsconfig.app.json",
+  "navTabConfig": [
+    {
+      "id": "readme",
+      "label": "مستند"
+    },
+    {
+      "id": "info",
+      "label": "Info"
+    },
+    {
+      "id": "source",
+      "label": "Source"
+    },
+    {
+      "id": "templateData",
+      "label": "TemplateData"
+    },
+    {
+      "id": "tree",
+      "label": "DOM Tree"
+    },
+    {
+      "id": "example",
+      "label": "نمونه"
+    }
+  ],
+  "assetsFolder": "src/doc-assets",
+  "extTheme": "src/doc-assets/styles",
+  "theme": "material"
+}

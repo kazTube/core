@@ -1,0 +1,26 @@
+<mat-card id="order-provider-card">
+    <mat-card-content>
+        <div [fxLayout.gt-xs]="'row wrap'"
+             [fxLayout.lt-sm]="'column nowrap'"
+             [fxLayoutAlign.gt-xs]="'start center'"
+             [fxLayoutAlign.lt-sm]="'start start'"
+
+             [fxLayoutGap.gt-xs]="'8px'"
+             [fxLayoutGap.lt-sm]="'4px'"
+             id="provider-info-container"
+        >
+            <mat-icon svgIcon="svg_provider" class="provider-icon"></mat-icon>
+            <div fxLayout="row nowrap" fxLayoutGap="8px">
+                <span id="provider-label">تامین کننده: </span>
+                <span>{{pharmacyName ? utilService.normalizePharmacyName(pharmacyName) : '-'}}</span>
+            </div>
+            <span *ngIf="pharmacyDistance" id="distance">{{pharmacyDistance}}</span>
+
+        </div>
+
+        <div id="provider-description">
+            <span>توضیحات داروخانه</span>
+            <div id="textarea">{{pharmacyDescription ? pharmacyDescription : '-'}}</div>
+        </div>
+    </mat-card-content>
+</mat-card>

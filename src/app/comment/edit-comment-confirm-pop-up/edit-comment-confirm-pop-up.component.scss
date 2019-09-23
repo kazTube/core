@@ -1,0 +1,42 @@
+@import "../../core/constants/Colors";
+
+.edit-comment-confirm-popup {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 13px;
+  direction: rtl;
+  font-weight: bold;
+  height: 100%;
+
+  .dialog-content {
+    padding-top: 16px;
+    flex-grow: 1;
+  }
+
+  .dialog-actions {
+    width: 100%;
+  }
+
+  #danger_icon {
+    width: 56px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .cancel-button {
+    color: $GRAY_700;
+    font-size: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 4px;
+  }
+
+  .confirm-button {
+    color: $ORANGE_300;
+    font-size: 16px;
+    margin-left: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

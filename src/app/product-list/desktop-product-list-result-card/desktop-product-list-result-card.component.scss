@@ -1,0 +1,75 @@
+@import "../../core/constants/Colors";
+
+#product-list-result-card {
+  box-shadow: none;
+  border: 1px solid $GRAY-600;
+  padding: 1%;
+
+
+  mat-card-title {
+    #sort-by-icon {
+      margin-top: -4px;
+    }
+
+    #sort-by-text {
+      font-size: 60%;
+      font-weight: bold;
+      color: $BLACK_300;
+      margin-left: 1%;
+      margin-right: 1%;
+
+    }
+
+    .sort-by-chip {
+      background-color: $WHITE;
+      line-height: 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $LIGHT_BLUE_400;
+        color: $WHITE;
+
+        &::after {
+          background-color: $WHITE;
+        }
+      }
+
+      &.mat-chip-selected {
+        background-color: $BLUE_800;
+        color: $WHITE;
+      }
+
+    }
+
+  }
+
+  #content {
+    margin-top: 2%;
+    padding: 0 1%;
+    app-product-summary-card {
+      width: 100%;
+      height: 100%;
+      max-width: 256px;
+      padding: 4px;
+    }
+  }
+
+  mat-card-actions {
+    .page-number-container {
+      padding: 1%;
+
+      button {
+        color: $BLUE_800;
+        font-size: 110%;
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+
+      .selected-page {
+        background-color: $LIGHT_BLUE_200;
+      }
+    }
+  }
+}

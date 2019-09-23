@@ -1,0 +1,44 @@
+@import "../../core/constants/Colors";
+
+
+#insert-comment-form {
+  .rating-text {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .form-field {
+    width: 100%;
+
+    textarea {
+      min-height: 42px;
+    }
+
+    /deep/ .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .opinion-chip {
+      padding: 0 8px 0 4px;
+      min-height: 28px;
+      margin: 2px;
+      font-size: 12px;
+    }
+  }
+
+  .input-label {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 8px 4px 0;
+
+    span {
+      color: $RED_700;
+    }
+  }
+
+  .add-top-margin {
+    margin-top: 24px;
+  }
+
+}

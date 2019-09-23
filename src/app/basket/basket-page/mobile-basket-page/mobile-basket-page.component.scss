@@ -1,0 +1,87 @@
+@import "../../../core/constants/Colors";
+
+#basket-stepper-container {
+  width: 100%;
+  background-color: $WHITE;
+
+
+  #total-price-header {
+    width: 100%;
+    background-color: $GREEN_200;
+    color: $WHITE;
+    position: sticky;
+    top: 0;
+    height: 48px;
+    font-size: 85%;
+    z-index: 11;
+  }
+
+  #basket-stepper {
+    width: 100%;
+
+    /deep/ .mat-stepper-horizontal-line {
+      border-top-width: 0;
+    }
+
+    /deep/ .mat-horizontal-stepper-header {
+      padding: 0;
+      height: 0;
+    }
+
+    /deep/ .mat-horizontal-stepper-header-container {
+      .mat-horizontal-stepper-header::before, .mat-horizontal-stepper-header::after {
+        border-top-width: 0;
+      }
+    }
+
+    /deep/ .mat-step-icon {
+      width: 0;
+      height: 0;
+      font-size: 0;
+
+      .mat-icon {
+        font-size: 0;
+      }
+    }
+
+    /deep/ .mat-horizontal-content-container {
+      background-image: linear-gradient($BLUE_100, $WHITE);
+      padding: 8px;
+    }
+
+    #step-inquiry-from-pharmacy {
+      /deep/ .mat-card {
+        width: calc(100% - 48px);
+        margin: 8px;
+      }
+    }
+
+  }
+
+  .stepper-action-button {
+    width: calc(100% - 32px);
+    margin-right: 16px;
+    position: sticky;
+    bottom: 16px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 115%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: block;
+    z-index: 10;
+
+    &:disabled {
+      background-color: $ORANGE_200 !important;
+      opacity: 1 !important;
+    }
+  }
+
+  #go-home {
+    background-color: $BLUE_700;
+  }
+
+  #pay {
+    background-color: $GREEN_200;
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../../core/constants/Colors";
+
+#address-list-container {
+  width: 100%;
+
+  .mat-toolbar {
+    background-color: $BLUE_200;
+    color: $BLUE_800;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .mat-button {
+      margin-right: auto;
+      padding-left: 4px;
+
+      .mat-icon {
+        color: $BLUE_600;
+      }
+    }
+  }
+
+  .card-container {
+    padding: 8px;
+  }
+}

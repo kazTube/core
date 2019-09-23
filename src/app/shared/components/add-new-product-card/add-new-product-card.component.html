@@ -1,0 +1,76 @@
+<div id="add-new-product-container" [ngClass.gt-xs]="type+' large-screen'" [ngClass]="type">
+    <mat-card id="add-new-product-card-container">
+        <mat-card-title *ngIf="type==='full'" [fxHide.lt-sm]="true">
+            <mat-card-header class="product-list-header">نتایج جستجو</mat-card-header>
+        </mat-card-title>
+        <mat-card-content>
+            <div id="card-label" *ngIf="type==='full'" [fxHide.lt-sm]="true" [fxLayoutAlign]="'space-between center'">
+                <div id="daroopin-label">داروپین</div>
+                <div id="count-label">۰ کالا</div>
+            </div>
+            <mat-card id="add-new-product-card">
+                <div id="title" *ngIf="type ==='simple'">
+                    محصول مورد نظر خود را پیدا نکردید؟
+                </div>
+                <mat-card-content [fxLayout.lt-sm]="'column'" [fxLayout.gt-xs]="'row'">
+
+                    <app-img-with-loading [fxFlex.gt-xs]="'50%'" *ngIf="type==='full'" class="image"
+                                          src="assets/images/daroopin_bag.png"></app-img-with-loading>
+                    <div id="content">
+                        <div class="text">
+                            کاربر گرامی شما می توانید محصول مورد نظر خود را با استفاده از قسمت زیر در داروخانه های اطراف
+                            جستجو
+                            کنید و در صورتی که داروخانه ها محصول مورد نظر شما را موجود داشته باشند می توانید برای خرید
+                            اقدام نمایید
+                        </div>
+
+                        <mat-form-field appDpFormField appearance="outline" class="form-field" id="product-name">
+                            <mat-label>{{InputLabel}}</mat-label>
+                            <input (blur)="onBlur()" (focus)="onFocus()" [(ngModel)]="productName"
+                                   [placeholder]="initialProductName"
+                                   matInput>
+                        </mat-form-field>
+
+                        <mat-form-field appDpFormField appearance="outline" class="form-field" id="description">
+                            <mat-label>توضیحات</mat-label>
+                            <textarea [(ngModel)]="productDescription" matInput placeholder="توضیحات"
+                                      rows="3"></textarea>
+                        </mat-form-field>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions *ngIf="type==='full'">
+                    <button
+                            (click)="addToBasket()"
+                            [disabled]="!isAddToBasketAllowed()"
+                            appDpButton="orange"
+                            id="add-to-basket-button"
+                            mat-raised-button>
+                        <mat-icon *ngIf="!isAddingToBasket" svgIcon="svg_add_to_basket"></mat-icon>
+                        <span *ngIf="!isAddingToBasket">اضافه به سبد خرید</span>
+                        <mat-spinner *ngIf="isAddingToBasket" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+                    <button
+                            [disabled]="isAddingToBasket"
+                            (click)="routingService.navigateBack()"
+                            appDpButton="blue-outline"
+                            id="return-button"
+                            mat-raised-button>بازگشت
+                    </button>
+                </mat-card-actions>
+
+                <mat-card-actions *ngIf="type==='simple'">
+                    <button
+                            (click)="addToBasket()"
+                            [disabled]="!isAddToBasketAllowed()"
+                            appDpButton="dark-blue"
+                            id="desktop-add-to-basket-button"
+                            mat-raised-button>
+                        <span *ngIf="!isAddingToBasket">اضافه به سبد خرید</span>
+                        <mat-spinner *ngIf="isAddingToBasket" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+
+                </mat-card-actions>
+            </mat-card>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,12 @@
+<div id="img-with-loading-container" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+    <div *ngIf="isLoading" id="loading-container" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+        <mat-spinner diameter="24" strokeWidth="2"></mat-spinner>
+    </div>
+    <img class="hidden-img" [src]="src" (error)="onImgError()" (load)="onImgLoaded()" alt=""/>
+    <div id="default-image" *ngIf="showDefaultImage" [ngClass]="{'is-fading-in':isFadingIn}"></div>
+    <div *ngIf="!isLoading && !showDefaultImage" class="fading-img" [ngClass]="{'is-fading-in':isFadingIn}"
+         [ngStyle]="{'background-image':'url(\''+src+'\')'}">
+        <img class="invisible-img" [src]="src" (error)="onImgError()" (load)="onImgLoaded()" alt=""/>
+
+    </div>
+</div>

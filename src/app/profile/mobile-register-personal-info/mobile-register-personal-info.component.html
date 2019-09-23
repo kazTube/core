@@ -1,0 +1,32 @@
+<div id="user-personal-info-container">
+    <img class="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="user-personal-info-card">
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>تکمیل مشخصات فردی کاربر</mat-card-title>
+            </mat-card-header>
+
+            <app-personal-info-form
+                    (isValid)="personalInfoFormService.isPersonalFormValid=$event"
+                    [(personalInfo)]="personalInfoFormService.formPersonalInfo"
+                    class="personal-info-form"
+            ></app-personal-info-form>
+            <div class="border-top" id="rule-confirm">
+                <mat-checkbox [(ngModel)]="isRuleConfirmed"></mat-checkbox>
+                <span>
+                <span [routerLink]="'../rules'" class="link">حریم خصوصی و شرایط و قوانین </span>
+                <span>استفاده از سرویس های داروپین را مطالعه کردم و با کلیه موارد آن موافقم</span>
+                </span>
+            </div>
+            <button (click)="submitPersonalInfo()"
+                    [disabled]="isConfirmButtonDisabled()"
+                    appDpButton="blue"
+                    class="confirm-button"
+                    mat-raised-button>
+                <span *ngIf="!isLoading">ثبت اطلاعات و ادامه</span>
+                <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+            </button>
+
+        </mat-card-content>
+    </mat-card>
+</div>

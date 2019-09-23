@@ -1,0 +1,39 @@
+<div id="product-detail">
+
+    <div id="product-detail-container">
+        <app-mobile-product-description-card
+                [pharmacyName]="pharmacyName"
+                [productInfo]="product"
+                [isSpecialOfferProduct]="isSpecialOfferProduct"
+        ></app-mobile-product-description-card>
+        <app-mobile-product-attributes *ngIf="!isSpecialOfferProduct"
+                                       [productAttributeList]="product.attributesList"></app-mobile-product-attributes>
+        <div id="actions-background"></div>
+        <!-- todo check return from comment list to special offer detail - use location service in comment instead redirect url-->
+        <button [routerLink]="'/comment/list/'+product.productCode" id="user-comments" mat-raised-button> نظرات
+            کاربران
+        </button>
+        <button
+                (click)="onAddProductToBasket()"
+                [disabled]="isAddingToBasket"
+                appDpButton="orange"
+                id="add-to-cart"
+                mat-raised-button>
+            <mat-icon *ngIf="!isAddingToBasket" svgIcon="svg_add_to_basket"></mat-icon>
+            <mat-spinner *ngIf="isAddingToBasket" diameter="32" strokeWidth="3"></mat-spinner>
+            <span *ngIf="!isAddingToBasket">اضافه به سبد خرید</span>
+        </button>
+    </div>
+
+
+    <div *ngIf="similarProductList && similarProductList.length>0" id="carousel-container">
+        <button *ngIf="isSpecialOfferProduct" [routerLink]="'/pharmacy/'+pharmacyHixCode" id="all-special-product-link"
+                mat-button>
+            همه
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+        <app-product-carousel [productList]="similarProductList"
+                              [title]="isSpecialOfferProduct?'دیگر محصولات این داروخانه':'محصولات مشابه'"
+                              id="similar-product-list"></app-product-carousel>
+    </div>
+</div>

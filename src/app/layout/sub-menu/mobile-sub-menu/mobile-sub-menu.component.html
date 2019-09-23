@@ -1,0 +1,29 @@
+<mat-expansion-panel (click)="closeMenu()"
+                     *ngIf="!menuCategory.subCategory || menuCategory.subCategory.length==0"
+                     [routerLink]="'/product/list/'+menuCategory.categoryId"
+                     disabled="true"
+                     hideToggle="true"
+>
+    <mat-expansion-panel-header [ngClass]="'level-'+level">
+        <mat-panel-title>
+            <div class="menu-item-text">{{menuCategory.categoryName}}</div>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+</mat-expansion-panel>
+
+<ng-container *ngIf="menuCategory.subCategory && menuCategory.subCategory.length>0">
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header [ngClass]="'level-'+level">
+            <mat-panel-title>
+                <div class="menu-item-text">
+                    {{menuCategory.categoryName}}
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let category of menuCategory.subCategory">
+            <app-mobile-sub-menu [menuCategory]="category" [level]="level+1"></app-mobile-sub-menu>
+        </ng-container>
+    </mat-expansion-panel>
+
+</ng-container>

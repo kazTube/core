@@ -1,0 +1,67 @@
+<mat-toolbar class="mat-elevation-z2"
+             dir="rtl"
+             fxLayout="row nowrap"
+             fxLayoutAlign="start center"
+             fxLayoutGap="8px"
+             id="desktop-header">
+
+    <div fxFlex="0 0 96px" id='logo-container'>
+        <mat-icon [routerLink]="'/home'" id="logo-in-header" svgIcon="svg_logo"></mat-icon>
+    </div>
+
+    <app-search-box *ngIf="headerService.showSearchBox"
+                    class="search-box"
+                    fxFlex="1 1 calc(64% - 199px)"></app-search-box>
+    <div *ngIf="!headerService.showSearchBox" fxFlex="1 1 calc(64% - 199px)"></div>
+
+    <button (click)="goToDaroopinMag()" class="mgz-btn" fxFlex="0 0 89px" mat-button>
+        مجله دارویی
+    </button>
+
+    <button *ngIf="!loginService.isUserLoggedIn()"
+            fxFlex="0 0 64px"
+            class="login-btn"
+            [routerLink]="'/login'"
+            mat-button>
+        ورود
+    </button>
+
+    <button *ngIf="loginService.isUserLoggedIn()"
+            fxFlex="0 1 calc(36% - 158px)"
+            [appCenterMatMenu]="userMenuTrigger"
+            [ngClass]="userMenuTrigger.menuOpen?'login-btn selected-login-btn':'login-btn'"
+            class="login-btn"
+            mat-button>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+        <span>{{displayName}}</span>
+    </button>
+    <div #userMenuTrigger="matMenuTrigger" [matMenuTriggerFor]="userMenu" id="menu-trigger-div"></div>
+    <mat-menu #userMenu="matMenu" class="desktop-header-user-menu" xPosition="after">
+        <button [routerLink]="'/profile/personal-info'" class="user-menu-btn" mat-menu-item>
+            <mat-icon svgIcon="svg_user"></mat-icon>
+            <span>مشخصات کاربری</span>
+        </button>
+        <button [routerLink]="'/profile/order/list'" class="user-menu-btn" mat-menu-item>
+            <mat-icon svgIcon="svg_list"></mat-icon>
+            <span>لیست سفارشات</span>
+        </button>
+        <button (click)="logoutUser()"
+                class="user-menu-btn"
+                mat-menu-item>
+            <mat-icon svgIcon="svg_logout"></mat-icon>
+            <span>خروج از حساب کاربری</span>
+        </button>
+    </mat-menu>
+
+    <button [routerLink]="'/basket'"
+            fxFlex="0 0 108px"
+            appDpButton="blue-outline"
+            id="basket-btn"
+            mat-button>
+        <mat-icon [ngClass]="{'rotate':isBasketRotating}" id="basket-btn-icon" svgIcon="svg_basket">
+            <span id="basket-items-count">{{basketItemsCount}}</span>
+        </mat-icon>
+        <span id="basket-btn-text">سبد خرید</span>
+    </button>
+
+</mat-toolbar>

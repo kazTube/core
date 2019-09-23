@@ -1,0 +1,21 @@
+@import "core/constants/Colors";
+
+#navigation-loading {
+  display: block;
+  height: 4px;
+  overflow: hidden;
+  transition: opacity 250ms linear;
+  width: 100%;
+  z-index: 12;
+  position: fixed;
+  top: 0;
+
+  /deep/ .mat-progress-bar-buffer {
+    background-color: $LIGHT_BLUE_A100;
+  }
+
+  /deep/ .mat-progress-bar-fill::after {
+    background-color: $BLUE_700;
+  }
+}
+

@@ -1,0 +1,60 @@
+<div id="insert-comment-container">
+    <mat-toolbar>
+        <span>نظرات کاربران</span>
+        <button [routerLink]="'/comment/list/'+productCode" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div id="insert-comment-form-container">
+        <mat-card class="insert-comment-cart">
+            <mat-card-content>
+                <div *ngIf="!commentHasBeenSent"
+                     [@messageAnimation]="commentHasBeenSent?'sent':'notSent'"
+                >
+                    <app-insert-comment-form
+                        #commentForm
+                        (isValid)="commentFormService.isCommentFormValid=$event"
+                        [(commentSummary)]="commentFormService.formCommentSummary"
+                        [isEditForm]="isEditForm"
+                    >
+
+                    </app-insert-comment-form>
+
+                    <div class="description">
+                        با انتخاب دکمه "ثبت نظر" موافقت خود را با قوانین انتشار محتوا در داروخانه آنلاین اعلام
+                        می‌کنم
+                    </div>
+                    <button (click)="insertComment()"
+                            [disabled]="isConfirmButtonDisabled()"
+                            appDpButton="blue"
+                            class="done-button"
+                            mat-raised-button>
+                        <span *ngIf="!isLoading">ثبت نظر</span>
+                        <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                    </button>
+                </div>
+
+                <div *ngIf="commentHasBeenSent"
+                     [@messageAnimation]="commentHasBeenSent?'sent':'notSent'"
+                     class="done-message">
+                    <mat-icon
+                            svgIcon="svg_done"
+                            class="done-icon"
+                    ></mat-icon>
+                    <div class="done-message-text green-text">نظر شما با موفقیت ثبت شد</div>
+                    <div class="done-message-text"> بعد از تایید توسط پشتیبانی نظر شما به نظرات کاربران اضافه خواهد
+                        شد
+                    </div>
+                    <button (click)="routingService.navigateBack()"
+                            appDpButton="blue"
+                            class="continue-button"
+                            mat-raised-button
+                            type="button">ادامه
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>

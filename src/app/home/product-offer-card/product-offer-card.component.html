@@ -1,0 +1,34 @@
+<mat-card id="product-offer-card" [style.height]="height+'px'">
+    <mat-card-content [routerLink]="'/product/detail/specialOffer/'+product.productCode+'/'+pharmacyHixCode">
+        <app-img-with-loading
+                *ngIf="isProductImageExist"
+                [src]="product.imageUrlList[0]"
+                class="first-image"></app-img-with-loading>
+        <div
+                *ngIf="!isProductImageExist"
+                class="default-image"
+        ></div>
+        <div *ngIf="pharmacyName" class="pharmacy-name">
+            {{utilService.normalizePharmacyName(pharmacyName)}}
+        </div>
+        <div *ngIf="pharmacyDistance" class="pharmacy-distance">
+            ({{pharmacyDistance}})
+        </div>
+        <div class="product-text" [fxLayout]="'column'" [fxLayoutAlign]="'start center'">
+            <div class="product-name">{{product.productNameFa}}</div>
+            <div class="old-price-and-discount" [fxLayout]="'row'" [fxLayoutAlign]="'space-between center'">
+                <div class="product-discount-percent">
+                    تخفیف
+                    {{product.discountPercentage}}
+                    ٪
+                </div>
+                <div class="product-old-price">
+                    {{product.oldPrice | friendlyPrice}}
+                </div>
+            </div>
+            <div class="product-price">
+                {{product.newPrice | friendlyPrice}}
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

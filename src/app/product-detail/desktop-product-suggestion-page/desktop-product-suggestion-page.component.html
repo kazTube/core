@@ -1,0 +1,37 @@
+<div id="desktop-product-suggestion-container" [fxLayout]="'column'" [fxLayoutGap]="'4%'">
+    <div id="page-header"></div>
+    <mat-card id="added-product-card">
+        <mat-card-content [fxLayout]="'row'" [fxLayoutGap]="'2%'" [fxLayoutAlign]="'start center'">
+            <div [fxFlex]="'18%'" id="message" [fxLayout]="'column'" [fxLayoutAlign]="'center center'"
+                 [fxLayoutGap]="'2%'">
+                <mat-icon>check_circle</mat-icon>
+                <span>به سبد خرید اضافه شد</span>
+            </div>
+            <div [fxFlex]="'10%'" id="product-image" [fxLayout]="'row wrap'"
+                 [fxLayoutAlign]="'start center'">
+                <app-img-with-loading *ngIf="isProductImageExist"
+                                      [src]="product.imageUrlList[0]"></app-img-with-loading>
+                <mat-icon *ngIf="!isProductImageExist" svgIcon="svg_default_image"></mat-icon>
+
+            </div>
+            <div fxFlex [fxLayout]="'column'" [fxLayoutGap]="'2%'" id="product-info-text">
+                <div id="product-name">{{product.productNameFa}}</div>
+                <div id="product-attribute" *ngIf="productFirstAttribute">{{
+                    productFirstAttribute.attributeName}} : {{productFirstAttribute.attributeValue}}</div>
+            </div>
+            <button id="go-to-basket-button" mat-raised-button appDpButton="orange" [routerLink]="'/basket'">
+                ادامه ثبت سفارش
+                ( {{basketItemCount}}
+                محصول )
+
+
+            </button>
+
+        </mat-card-content>
+    </mat-card>
+    <app-product-carousel [productList]="relatedProductList" [title]="'محصولات مرتبط'"></app-product-carousel>
+    <app-product-carousel [productList]="bestSellingProductList" [title]="'محصولات پرفروش'"></app-product-carousel>
+    <app-product-carousel [productList]="youMayNeedProductList"
+                          [title]="'شاید نیاز داشته باشید'"></app-product-carousel>
+
+</div>

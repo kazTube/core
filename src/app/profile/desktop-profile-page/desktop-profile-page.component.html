@@ -1,0 +1,46 @@
+<div fxLayout="row"
+     fxLayoutAlign="space-between start"
+     id="profile-page">
+    <mat-card fxFlex="28%" id="profile-menu">
+        <mat-card-content>
+            <app-avatar-button
+                    (avatarChange)="submitAvatar($event)"
+                    [avatar]="personalInfoFormService.avatar"
+                    [isUpdating]="isUpdatingAvatar"
+                    class="avatar-button"
+            ></app-avatar-button>
+            <div id="username">
+                {{username}}
+            </div>
+            <mat-divider></mat-divider>
+            <mat-button-toggle-group
+                    class="profile-action-list"
+                    (change)="changeRoute($event)"
+                    [(ngModel)]="selectedRoute"
+                    fxLayout="column">
+                <mat-button-toggle
+                        class="profile-menu-btn"
+                        value="personal-info">
+                    <mat-icon svgIcon="svg_user"></mat-icon>
+                    <span>مشخصات کاربری</span>
+                </mat-button-toggle>
+                <mat-button-toggle
+                        class="profile-menu-btn"
+                        value="order/list">
+                    <mat-icon svgIcon="svg_list"></mat-icon>
+                    <span>لیست سفارشات</span>
+                </mat-button-toggle>
+                <mat-button-toggle
+                        class="profile-menu-btn"
+                        value="address/list"
+                >
+                    <mat-icon svgIcon="svg_address"></mat-icon>
+                    <span>آدرس ها</span>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </mat-card-content>
+    </mat-card>
+    <div fxFlex="70%" id="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

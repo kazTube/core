@@ -1,0 +1,11 @@
+<div id="desktop-general-home-page-container">
+    <div id="top-area">
+        <div id="background-image"></div>
+        <div *ngIf="!this.headerService.showSearchBox" class="search-component">
+            <app-search-box></app-search-box>
+        </div>
+    </div>
+
+    <app-home-page-info [topCategoryList]="topCategoryList"></app-home-page-info>
+
+</div>

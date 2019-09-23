@@ -1,0 +1,13 @@
+<div id="cancel-purchase-page">
+    <mat-card>
+        <mat-card-content>
+            <app-cancel-purchase
+                    (orderCanceled)="orderCanceled()"
+                    (return)="returnToBasket()"
+                    [canceledPreDefinedCommentList]="canceledPreDefinedCommentList"
+                    [orderId]="orderId"
+            ></app-cancel-purchase>
+        </mat-card-content>
+
+    </mat-card>
+</div>

@@ -1,0 +1,15 @@
+<div id="product-attribute-list">
+    <div *ngIf="productAttributeListSize>0" [fxLayoutAlign]="'center stretch'" [fxLayoutGap]="'16px'"
+         [fxLayout]="'column'">
+        <div class="product-attribute" *ngFor="let attribute of productAttributeList" [fxLayout]="'row'"
+             [fxLayoutGap]="'2%'">
+            <div class="attribute-key" [fxFlex]="'35%'">{{attribute.attributeName}}</div>
+            <div class="attribute-value" [fxFlex]="'65%'">{{attribute.attributeValue}}</div>
+        </div>
+    </div>
+
+    <div *ngIf="productAttributeListSize===0" id="no-product">
+        مشخصاتی برای کالا ثبت نشده است
+    </div>
+
+</div>

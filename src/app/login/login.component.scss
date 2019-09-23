@@ -1,0 +1,147 @@
+@import "../core/constants/Colors";
+
+#login-container {
+  position: relative;
+  margin-top: -48px;
+  padding-top: 48px;
+  overflow: hidden;
+  min-height: 100%;
+  background-color: $GRAY_50;
+
+  .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /deep/ #login-card {
+    position: relative;
+    width: calc(100% - 48px);
+    max-width: 400px;
+    margin: 12% auto 24px;
+    padding: 0;
+
+
+    .mat-card-header {
+      background: $BLUE_200;
+      margin: auto;
+      border-bottom: 1px solid $GRAY_600;
+
+      .mat-card-header-text {
+        margin-right: auto;
+        margin-left: auto;
+
+        .mat-card-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      margin-top: 24px;
+    }
+
+    .done-icon {
+      width: 48px;
+      height: auto;
+      display: block;
+      margin: 48px auto 8px;
+    }
+
+    .mat-horizontal-stepper-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+
+      .form-field-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+
+        .form-field {
+          width: calc(100% - 32px);
+        }
+      }
+
+      .text {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      .code-text {
+        font-size: 10px;
+        color: $GRAY_600;
+        width: calc(100% - 32px);
+        margin-top: -20px;
+        margin-right: 16px;
+        text-align: right;
+        min-height: 48px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        .timer {
+          color: $BLACK;
+          display: inline-block;
+          margin-right: 8px;
+        }
+
+        button {
+          font-size: 10px;
+          padding: 0 8px;
+          color: $BLUE_700;
+          margin-right: -8px;
+        }
+      }
+
+      #phone-edit-container {
+        display: flex;
+        align-items: center;
+
+        #phone-edit {
+          color: $BLUE_700;
+          margin-right: 8px;
+        }
+
+        #edit-icon {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          color: $BLUE_700;
+          cursor: pointer;
+
+        }
+      }
+    }
+
+    .stepper-button {
+      width: calc(100% - 80px);
+      margin: 0 40px 48px;
+    }
+
+
+    .mat-horizontal-stepper-header-container {
+      display: none;
+    }
+  }
+
+  &.desktop-login-container {
+    margin-top: -64px !important;
+    padding-top: 64px !important;
+  }
+}

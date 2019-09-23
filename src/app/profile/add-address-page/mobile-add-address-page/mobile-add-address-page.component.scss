@@ -1,0 +1,90 @@
+@import "../../../core/constants/Colors";
+
+#add-address-container {
+  position: relative;
+  padding-bottom: 16px;
+  padding-top: 78px;
+  overflow: hidden;
+  margin-top: -48px;
+  background-color: $GRAY_50;
+  min-height: 100%;
+
+  .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  /deep/ #add-address-card {
+    width: calc(100% - 32px);
+    right: 16px;
+    padding: 0 0 1px;
+
+    .mat-card-header {
+      background: $BLUE_200;
+      margin: auto;
+      border-bottom: 1px solid $GRAY_600;
+      text-align: right;
+
+      .mat-card-header-text {
+        text-align: right;
+        width: 100%;
+
+        .mat-card-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .add-address-text {
+      margin: 16px 5% 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: right;
+      direction: rtl;
+
+      .new-address-text {
+        color: $BLUE_800;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .address-step-text {
+        color: $GRAY_600;
+        font-size: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .address-form {
+      display: block;
+      margin-top: 16px;
+    }
+
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 24px auto;
+      max-width: 400px;
+      width: 90%;
+
+      .done-button {
+        flex-grow: 1;
+        max-width: 240px;
+      }
+
+      .back-button {
+        margin: 0 24px 0 0;
+      }
+    }
+
+    .mat-horizontal-stepper-header-container {
+      display: none;
+    }
+  }
+}

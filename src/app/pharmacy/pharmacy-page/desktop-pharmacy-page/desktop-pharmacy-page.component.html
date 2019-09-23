@@ -1,0 +1,70 @@
+<div id="desktop-pharmacy-page-container" [fxLayout]="'row'" [fxLayoutAlign]="'center'">
+    <div id="background-image"></div>
+    <mat-card id="desktop-pharmacy-page-card" [fxLayout]="'column'" [fxLayoutAlign]="'center'" [fxLayoutGap]="'16px'">
+        <div id="pharmacy-page-header">
+            <div id="pharmacy-banner">
+                <app-img-with-loading *ngIf="!isPharmacyBannerExist"
+                                      src="assets/images/pharmacy_default_banner.png"></app-img-with-loading>
+                <app-img-with-loading *ngIf="isPharmacyBannerExist"
+                                      [src]="pharmacyInfo.imageBackground"></app-img-with-loading>
+            </div>
+
+            <div id="pharmacy-thumbnail">
+                <app-img-with-loading *ngIf="!isPharmacyThumbnailExist"
+                                      src="assets/images/pharmacy_default_thumbnail.png"></app-img-with-loading>
+                <app-img-with-loading *ngIf="isPharmacyThumbnailExist"
+                                      [src]="pharmacyInfo.imageBackground"></app-img-with-loading>
+            </div>
+            <div *ngIf="isCustomerClubMember" id="club-member-tag">
+                <mat-icon svgIcon="svg_club_member_tag"></mat-icon>
+                <span id="club-member-text">عضو باشگاه این داروخانه هستید</span>
+            </div>
+            <div id="rate-name-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'space-between center'">
+                <div *ngIf="pharmacyInfo.name && pharmacyInfo.name.length>0" id="pharmacy-name">
+                    {{utilService.normalizePharmacyName(pharmacyInfo.name)}}
+                </div>
+                <star-rating [labelText]="'امتیاز '+ pharmacyInfo.rate+ ' از '+'۵'" [rating]="pharmacyInfo.rate"
+                             [starType]="'svg'" direction="ltr"
+                             hoverEnabled="true"
+                             id="pharmacy-rating"
+                             labelPosition="right" readOnly="true" size="large"
+                             staticColor="ok"></star-rating>
+            </div>
+
+            <div *ngIf="pharmacyInfo.manager && pharmacyInfo.manager.length>0" id="pharmacy-manager">
+                مدیریت داروخانه :
+                {{pharmacyInfo.manager}}
+            </div>
+
+            <div id="discount-title">تخفیف های ویژه برای شما</div>
+        </div>
+        <mat-card-content [fxLayout]="'column'" [fxLayoutAlign]="'center'" [fxLayoutGap]="'16px'">
+            <app-desktop-pharmacy-special-offer-product-list
+                    [specialOfferProductList]="pharmacySpecialOfferProductList"
+                    [selectedSortByOption]="selectedSortBy"
+                    [selectedPageNumber]="1"
+                    [isLoading]="isLoading"
+                    [pageCount]="4"
+                    (sortByChange)="onSortChange($event)"
+                    (pageChange)="onPageChange($event)"
+                    (searchInPharmacy)="onSearchInPharmacyProducts($event)"
+            >
+
+            </app-desktop-pharmacy-special-offer-product-list>
+            <button (click)="subscribeToPharmacy()" *ngIf="!isCustomerClubMember" [disabled]=""
+                    id="subscribe-to-pharmacy-button"
+                    mat-raised-button>
+                <mat-spinner *ngIf="isSubscribingToPharmacy" diameter="32" strokeWidth="3"></mat-spinner>
+                <span *ngIf="!isSubscribingToPharmacy">عضویت در باشگاه مشتریان این داروخانه</span>
+            </button>
+            <div id="pharmacy-info">
+                <div id="pharmacy-info-label">اطلاعات داروخانه</div>
+                <app-pharmacy-info-card
+                        [pharmacyInfo]="pharmacyInfo">
+                </app-pharmacy-info-card>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+

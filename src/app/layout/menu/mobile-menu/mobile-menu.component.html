@@ -1,0 +1,79 @@
+<div id="menu-content">
+    <div cdkFocusInitial id="side-menu-header">
+        <mat-icon id="logo-in-menu" svgIcon="svg_logo_in_menu"></mat-icon>
+    </div>
+    <div id="menu-items">
+
+        <mat-accordion displayMode="flat">
+            <mat-expansion-panel (click)="closeMenu()" [disabled]="true" [routerLink]="'/home'" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_home"></mat-icon>
+                        <div class="menu-item-text">
+                            خانه
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="goToProfile()" disabled="true"
+                                 hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_user"></mat-icon>
+                        <div class="menu-item-text">
+                            ناحیه کاربری
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel id="menu-category">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_categories"></mat-icon>
+                        <div class="menu-item-text">
+                            دسته بندی ها
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let category of menuCategoryList">
+                    <app-mobile-sub-menu [level]="1" [menuCategory]="category"></app-mobile-sub-menu>
+                </ng-container>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="closeMenu()" [routerLink]="'/order/list'" disabled="true" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_list"></mat-icon>
+                        <div class="menu-item-text">لیست سفارشات</div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="closeMenu()" [routerLink]="'/profile/address/list'" disabled="true"
+                                 hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_address"></mat-icon>
+                        <div class="menu-item-text">آدرس ها</div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="logoutUser()" disabled="true" hideToggle="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon svgIcon="svg_logout"></mat-icon>
+                        <div class="menu-item-text">
+                            خروج از ناحیه کاربری
+                        </div>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+    </div>
+</div>

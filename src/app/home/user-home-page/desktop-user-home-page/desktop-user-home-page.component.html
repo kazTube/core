@@ -1,0 +1,35 @@
+<div id="user-home-page-container">
+    <!--<app-desktop-menu [menuCategoryList]="menuCategoryList"></app-desktop-menu>-->
+    <div id="top-area" [fxLayout]="'row'" [fxLayoutGap]="'3%'">
+        <div id="background-image"></div>
+        <div id="right-side" [fxFlex]="'60%'" [fxLayout]="'column'" [fxLayoutGap]="'3%'">
+
+            <div *ngIf="!headerService.showSearchBox" id="search-component">
+                <app-search-box></app-search-box>
+            </div>
+            <app-desktop-daroopin-vitrin
+                    *ngIf="isThereAnyPharmacy"
+                    [specialOfferOfferProductList]="productListSlider"
+                    [pharmacyName]="userHomePageInfo.pharmacy.name"
+                    [pharmacyHixCode]="userHomePageInfo.pharmacy.pharmacyHixCode"
+            ></app-desktop-daroopin-vitrin>
+        </div>
+
+
+        <mat-card [fxFlex]="'37%'" *ngIf="isThereAnyOffer && isThereAnyPharmacy" id="offers-card">
+            <mat-card-content>
+                <div>
+                    <div id="discount-title">تخفیف های ویژه برای شما</div>
+                    <div id="discount-subtitle">از داروخانه های اطراف شما</div>
+                </div>
+                <app-product-offer-carousel
+                        [productOfferList]="userHomePageInfo.productList"
+                        [pharmacyHixCode]="userHomePageInfo.pharmacy.pharmacyHixCode"
+                        [pharmacyName]="userHomePageInfo.pharmacy.name"
+                ></app-product-offer-carousel>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    <app-home-page-info [topCategoryList]="topCategoryList"></app-home-page-info>
+</div>

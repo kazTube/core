@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.982" height="32.982"
+     viewBox="0 0 32.982 32.982">
+    <defs>
+        <style>
+            .avatar-3-svg-a{fill:#a6d4ee;}.avatar-3-svg-b{clip-path:url(#avatar-3-svg-a);}.avatar-3-svg-c{fill:#dce9f1;stroke:#707070;}.avatar-3-svg-d{fill:#fff;}.avatar-3-svg-e{stroke:none;}.avatar-3-svg-f{fill:none;}
+        </style>
+        <clipPath id="avatar-3-svg-a">
+            <circle class="avatar-3-svg-a" cx="16.491" cy="16.491" r="16.491" transform="translate(0 0)"/>
+        </clipPath>
+    </defs>
+    <g class="avatar-3-svg-b" transform="translate(0 0)">
+        <g class="avatar-3-svg-c" transform="translate(-5.277 -6.596)">
+            <rect class="avatar-3-svg-e" width="43.206" height="42.546"/>
+            <rect class="avatar-3-svg-f" x="0.5" y="0.5" width="42.206" height="41.546"/>
+        </g>
+        <circle class="avatar-3-svg-d" cx="6.431" cy="6.431" r="6.431" transform="translate(9.895 7.256)"/>
+        <circle class="avatar-3-svg-d" cx="11.379" cy="11.379" r="11.379" transform="translate(4.947 21.438)"/>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<div id="order-list-container">
+
+    <mat-toolbar>
+        <span>لیست سفارشات</span>
+        <button (click)="routingService.navigateBack()" mat-button>
+            بازگشت
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="card-container">
+        <ng-container *ngFor="let order of orderListService.orderList">
+            <app-mobile-order-list-summary-card [order]="order"></app-mobile-order-list-summary-card>
+        </ng-container>
+
+        <mat-spinner-button (click)="loadMoreOrders()"
+                            *ngIf="orderListService.hasMoreOrder"
+                            [options]="loadMoreButtonOptions"
+                            id="load-more"></mat-spinner-button>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div id="product-offer-carousel-container">
+    <div id="carousel-right-button-container" class="carousel-button-container" NguCarouselPrev>
+        <button *ngIf="productOfferList.length>1" (click)="prev()"
+                [disabled]="productOfferCarousel.isFirst" class="carousel-button"
+                mat-button>
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+    <div id="carousel-left-button-container" class="carousel-button-container" NguCarouselNext>
+        <button *ngIf="productOfferList.length>1" (click)="next()"
+                [disabled]="productOfferCarousel.isLast" class="carousel-button"
+                mat-button>
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+    </div>
+    <ngu-carousel #productOfferCarousel
+                  [dataSource]="productOfferList"
+                  [inputs]="carouselConfig">
+
+        <div *nguCarouselDef="let item;" class="item">
+            <div class="tile">
+                <!-- todo add pharmacy distance-->
+                <app-product-offer-card
+                        [pharmacyHixCode]="pharmacyHixCode"
+                        [pharmacyName]="pharmacyName"
+                        [product]="item"></app-product-offer-card>
+            </div>
+        </div>
+
+    </ngu-carousel>
+</div>

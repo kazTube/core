@@ -1,0 +1,133 @@
+@import "../../../core/constants/Colors";
+
+.dp-button {
+  color: $WHITE;
+  height: 48px;
+  display: block;
+  line-height: 48px;
+
+  &:disabled {
+    opacity: 0.5;
+    color: $WHITE !important;
+  }
+
+  .mat-spinner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.blue {
+  background: $BLUE_700;
+
+  mat-spinner > svg > circle {
+    stroke: $WHITE;
+  }
+
+  &:disabled {
+    background: $BLUE_700 !important;
+  }
+}
+
+.dark-blue {
+  background: $BLUE_800;
+
+  mat-spinner > svg > circle {
+    stroke: $WHITE;
+  }
+
+  &:disabled {
+    background: $BLUE_800 !important;
+  }
+}
+
+.blue-outline {
+  color: $BLUE_700;
+  height: 46px;
+  display: block !important;
+  border: 1px solid $BLUE_700 !important;
+  border-radius: 4px !important;
+  padding: 0 32px !important;
+  background-color: $GRAY_50 !important;
+
+  &:disabled {
+    opacity: 0.5;
+    color: $BLUE_700 !important;
+  }
+}
+
+.orange-outline {
+  color: $ORANGE_300;
+  height: 46px;
+  display: block !important;
+  border: 1px solid $ORANGE_100 !important;
+  border-radius: 4px !important;
+  padding: 0 1% !important;
+  background-color: $GRAY_50 !important;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  mat-spinner > svg > circle {
+    stroke: $ORANGE_300;
+  }
+
+  .mat-progress-spinner > svg > circle {
+    stroke: $ORANGE_300;
+  }
+}
+
+.orange {
+  background: $ORANGE_300;
+
+  mat-spinner > svg > circle {
+    stroke: $WHITE;
+  }
+
+  &:disabled {
+    background: $ORANGE_300 !important;
+  }
+}
+
+.red-outline {
+  border: 2px solid $RED_300 !important;
+  background-color: $WHITE;
+  color: $RED_300;
+
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  mat-spinner > svg > circle {
+    stroke: $RED_300;
+  }
+}
+
+.green {
+  background: $GREEN_200;
+
+  mat-spinner > svg > circle {
+    stroke: $WHITE;
+  }
+
+  &:disabled {
+    background: $GREEN_200 !important;
+  }
+}
+
+.gray-outline {
+  border: 1px solid $GRAY_600 !important;
+  background-color: $WHITE;
+  color: $GRAY_900;
+
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  mat-spinner > svg > circle {
+    stroke: $WHITE;
+  }
+}

@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<div class="dp-doc-container">
+
+<div class="dp-doc-tags">
+
+<div class="mobile-version"></div>
+<div class="desktop-version"></div>
+
+</div>
+
+<div class="dp-doc-body">
+
+
+<h2 id="مقدمه">مقدمه</h2>
+<p>در این قسمت معماری کلی application توضیح داده می‌شود. در ابتدا مواردی که حین طراحی در نظر گرفته شده‌اند توضیح داده می‌شود و سپس توضیحاتی در خصوص ساختار کلی application  ارایه می‌شود.</p>
+<p>یکی از ویژگی‌های اصلی مورد نیاز این application پشتیبانی از نسخه‌های دسکتاپ و موبایل بوده است که تاثیر مستقیمی بر نحوه‌ی طراحی این application داشته است. پشتیبانی از نسخه‌های مختلف دو مساله‌ی اصلی را ایجاد می‌کند که در ادامه این دو مساله بررسی می‌شوند:</p>
+<ul>
+<li><strong>نمایش‌های متفاوت برای نسخه‌های دسکتاپ و موبایل</strong></li>
+</ul>
+<p>در برخی از کامپوننت ها، طراحی مربوط به نسخه‌ی دسکتاپ و موبایل کاملا متفاوت است و responsive بودن کامپوننت‌ها به تنهایی کافی نیست. در این موارد نیاز است که دو نمایش مختلف برای نسخه‌های دسکتاپ و موبایل توسعه داده شود. علاوه بر این، در برخی از موارد functionality موجود در دو نسخه نیز متفاوت است. برای مثال در کامپوننت مربوط به موبایل داده از طریق route گرفته می‌شود و در کامپوننت نسخه‌ی دسکتاپ داده توسط input‌ها فراهم می‌شود.</p>
+<p> راه‌های متفاوتی برای پشتیبانی از این ویژگی وجود دارد برای مثال می‌توان  نمایش‌های مربوط به هر دو نسخه را در فایل template مربوط به کامپوننت اضافه کرد و سپس با استفاده ازngIf، نمایش مناسب را انتخاب کرد. بدیهی است که  در این حالت بایستی functionality مربوط به هر دو نسخه در کلاس component آورده شود.</p>
+<p>استفاده از این روش باعث می‌شود که کلاس‌های component و همچنین templateهای متناظر آنها بزرگ شود. علاوه بر این، در این روش به دلیل آن که نمایش هر دو نسخه  در یک فایل template و functionality هر دو در یک فایل component است، همواره نمایش و functionality مربوط به هر دو نسخه load می‌شوند که این موضوع به خصوص هنگام اجرا بر روی موبایل باعث کاهش performance خواهد شد.</p>
+<ul>
+<li><strong>مسیرهای متفاوت برای نسخه‌های دسکتاپ و موبایل</strong></li>
+</ul>
+<p>مساله‌ی دیگری که وجود دارد تفاوت در مسیرها برای دو نسخه است. با توجه به طراحی‌های ارائه شده برای نسخه‌های دسکتاپ و موبایل، تفاوت‌هایی در routeهای application برای دو نسخه‌ی دسکتاپ و موبایل وجود دارد. برای مثال در نسخه‌ی موبایل فرم‌های مربوط به ثبت نام مشخصات کاربری و ثبت آدرس در دو مسیر مختلف نمایش داده می‌شود در صورتی که در نسخه‌ی دسکتاپ، با توجه به این که فضای بیشتری در دسترس هست، هر دو فرم در یک مسیر نمایش داده می‌شود.</p>
+<p>برای پشتیبانی از این ویژگی می‌توان تمامی مسیرهای موجود برای هر دو نسخه‌ی موبایل  و دسکتاپ را در ماژول‌ها تعریف کرد و سپس با نوشتن gaurdهای مناسب از ورود به مسیرهایی که برای یک نسخه تعریف نشده است جلوگیری کرد.
+در ادامه معماری استفاده شده برای application توضیح داده می‌شود.</p>
+<hr>
+<h2 id="معماری-کلی-application">معماری کلی application</h2>
+<p> معماری کلی application با در نظر گرفتن مسایل ذکر شده طراحی شده است. مشکلاتی که در قسمت قبل بیان شد، باعث شد تا روش دیگری برای پشتیبانی از ویژگی‌های مذکور انتخاب شود.
+ با توجه به این که در این application،  feature moduleها به صورت lazy بارگذاری می‌شوند، در معماری طراحی  شده تصمیم گرفته شد که کامپوننت‌های مربوط به نسخه‌های دسکتاپ و موبایل در ماژول‌های جداگانه‌ای تعریف شوند. با جداکردن ماژول‌ها از یکدیگر این امکان فراهم می‌شود که در زمان اجرا تنها کامپوننت‌های مربوط به نسخه‌ی مورد نیاز load شوند که این امر موجب افزایش performance خواهد شد. علاوه بر این، هنگامی که ماژول‌های مربوط به نسخه‌ها از یکدیگر جدا هستند، می‌توان مسیرهای مربوط به هر نسخه را در ماژول مربوطه تعریف کرد و به این ترتیب دیگر نیازی به نوشتن gaurd نخواهد بود و یک جداسازی کامل بین دو نسخه خواهیم داشت.</p>
+<p> در این معماری، برای هر feature سه ماژول در نظر گرفته شده است. یک ماژول برای کامپوننت‌های مربوط به نسخه‌ی دسکتاپ، یک ماژول برای کامپوننت‌های مربوط به نسخه‌ی موبایل و یک ماژول برای کامپوننت‌های مشترک بین دو نسخه. در نظر گرفتن یک ماژول برای کامپوننت‌های مشترک کمک می‌کند که از تکرار جلوگیری شود (کامپوننت‌هایی که به صورت مشترک در هر دو نسخه استفاده می‌شوند تنها یکبار نوشته شوند) و نگهداری application ساده تر شود.</p>
+<p> نکته‌ی دیگری که در ارتباط با نسخه‌ی دسکتاپ و موبایل یک کامپوننت وجود دارد آن است که معمولا درصد زیادی از logic این کامپوننت‌ها مشترک است. برای مثال کامپوننت مربوط به کارت آدرس دارای نمایش متفاوتی برای نسخه‌های موبایل و دسکتاپ است اما logic مربوط به انتخاب، ویرایش و یا حذف آدرس در هر دو مشترک است. با توجه به این نکته و به منظور جلوگیری از تکرار کد، logic مشترک بین دو نسخه‌ی دسکتاپ و موبایل یک کامپوننت به یک کامپوننت پدر منتقل شده است و کامپوننت‌های دسکتاپ و موبایل از این کامپوننت ارث بری می‌کنند. با توجه به این که نمایش مربوط به هر نسخه‌ی کامپوننت در فایل template متناظر با آن تعریف شده است، کامپوننت پدر تعریف شده کامپوننتی بدون template است. لازم به ذکر است که نسخه‌ی دسکتاپ، موبایل و کامپوننت پدر تعریف شده به ترتیب با پیشوند‌های desktop، mobile و base نام گذاری شده‌اند.</p>
+<p> علاوه بر موارد ذکر شده، در فرآیند طراحی این application تلاش شده است تا از نکات مطرح شده در <a href="https://angular.io/guide/styleguide">style guide</a> مربوط به angular پیروی شود. ساختار کلی application شامل app module، shared module،core module  و تعدادی  feature module  است. توضیحات مربوط به هر ماژول در صفحه ی ماژول آورده شده است.</p>
+<hr>
+<h2 id="نحوهی-پوشهبندی">نحوه‌ی پوشه‌بندی</h2>
+<p>پوشه‌بندی در این application با توجه به featureها انجام شده است. به این ترتیب برای هر یک از feature‌های application یک پوشه ساخته شده است و کامپوننت‌های مربوطه در درون آن پوشه قرار گرفته‌اند. همانطور که پیش از این گفته شد، در این application برای هر یک از featureها، سه ماژول تعریف شده است. یک ماژول برای کامپوننت‌های مشترک و دو ماژول دیگر برای جداسازی کامپوننت‌های مربوط به نسخه‌های دسکتاپ و موبایل. بنابراین در پوشه‌ی مربوط به هر ویژگی سه ماژول قرار خواهد داشت که یکی برای کامپوننت‌های مشترک و دو ماژول دیگر برای کامپوننت‌های اختصاصی هر نسخه است. تصویر زیر پوشه‌بندی مربوط به ویژگی order را نشان می‌دهد.</p>
+<div class="dp-doc-ltr-container">
+
+<p><img src="doc-assets/images/folder-structure-1.png#img" alt="folder-structure-1" class="img-responsive"></p>
+</div>
+
+<p>برای آن که بتوان یک کامپوننت مشخص را راحت تر پیدا کرد (locating)، برای هر کامپوننت یک پوشه ساخته شده است و سپس درون پوشه دو پوشه‌ی دیگر برای نسخه‌های دسکتاپ و موبایل اضافه شده است. کامپوننت پدر مربوطه نیز در root پوشه قرار داده شده است. تصویر زیر نحوه‌ی پوشه‌بندی مربوط به کامپوننت کارت جزییات سفارش را نشان می‌دهد.</p>
+<div class="dp-doc-ltr-container">
+
+<p><img src="doc-assets/images/folder-structure-2.png#img" alt="folder-structure-2" class="img-responsive"></p>
+</div>
+
+<p>لازم به ذکر است که برای کامپوننت‌هایی که تنها نسخه‌ی دسکتاپ یا موبایل دارند پوشه‌های تو در تو ساخته نشده است و تنها یک پوشه با پیشوند متناظر با نسخه ساخته شده است و فایل‌های مربوط به کامپوننت در آن پوشه قرار داده شده است. برای مثال پوشه‌بندی مربوط به ویژگی product-list در تصویر زیر نشان داده شده است. همانطور که در تصویر نیز مشخص است، سه کامپوننت اول این ویژگی تنها نسخه‌ی دسکتاپ دارند و به همین خاطر پوشه‌ی مربوط به آنها با پیشوند desktop نام گذاری شده است.</p>
+<div class="dp-doc-ltr-container">
+
+<p><img src="doc-assets/images/folder-structure-3.png#img" alt="folder-structure-3" class="img-responsive"></p>
+</div>
+
+</div>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<mat-card id="pharmacy-special-offer-product-list">
+    <app-loading *ngIf="isLoading"></app-loading>
+  <mat-card-title [fxLayout]="'row wrap'" [fxLayoutGap]="'1%'" [fxLayoutAlign]="'start center'">
+    <mat-form-field fxFlex appearance="outline" id="search-in-pharmacy">
+      <mat-icon id="search-icon" matPrefix>search</mat-icon>
+        <input #pharmacySearchInput [(ngModel)]="searchText" matInput placeholder="جستجو در محصولات داروخانه">
+    </mat-form-field>
+
+    <div  [fxLayout]="'row'" [fxLayoutAlign]="'start center'" [fxLayoutGap]="'8px'">
+      <mat-icon id="sort-by-icon" svgIcon="svg_sort"></mat-icon>
+      <div id="sort-by-text">مرتب سازی بر اساس</div>
+      <mat-chip-list selectable>
+        <mat-chip class="sort-by-chip" (click)="onSortChange(sortByOption)"
+                  [selected]="sortByOption.id===selectedSortByOption.id"
+                  *ngFor="let sortByOption of sortByOptions"> {{sortByOption.text}}</mat-chip>
+      </mat-chip-list>
+
+    </div>
+  </mat-card-title>
+  <mat-card-content id="content">
+    <mat-grid-list [cols]="gridColsNumber" rowHeight="256px" gutterSize="16">
+      <mat-grid-tile
+              *ngFor="let product of specialOfferProductList"
+              [colspan]="1"
+              [rowspan]="1">
+
+        <app-product-summary-card
+                [productSummary]="product"
+                [cardType]="ProductSummaryCardTypeEnum.SpecialOfferProduct"
+                [cardLayout]="CardLayoutEnum.Vertical"
+                [fxLayout]="'row'" [fxLayoutAlign]="'center center'"
+        ></app-product-summary-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="page-number-container" [fxLayout]="'row wrap'" [fxLayoutAlign]="'end center'">
+      <button [ngClass]="{'selected-page': selectedPageNumber===pageNumber}" (click)="onPageChange(pageNumber)" mat-icon-button *ngFor="let pageNumber of pageNumberList">{{pageNumber}}</button>
+      <button [disabled]="selectedPageNumber + 1 > pageCount" (click)="nextPage()" mat-icon-button>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+
+    </div>
+  </mat-card-actions>
+</mat-card>

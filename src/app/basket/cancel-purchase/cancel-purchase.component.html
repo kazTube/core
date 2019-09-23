@@ -1,0 +1,42 @@
+<div id="cancel-purchase-container">
+    <div class="content">
+        <mat-icon svgIcon="svg_sad" id="sad-icon"></mat-icon>
+        <div id="question">علت انصراف شما از انجام این خرید چیست؟</div>
+        <form [formGroup]="purchaseCancellationReasonsForm"
+              fxLayout="column nowrap">
+            <div class="predefined-reason" formArrayName="reasons" fxLayout="column nowrap">
+                <ng-container *ngFor="let reason of canceledPreDefinedCommentList; let i=index">
+                    <mat-checkbox [formControlName]="i"
+                                  [value]="reason.predefinedCommentId">{{reason.text}}</mat-checkbox>
+                </ng-container>
+            </div>
+            <div id="other-reasons-text">توضیحات دیگر</div>
+            <mat-form-field appDpFormField appearance="outline" id="other-reasons">
+                    <textarea formControlName="otherReasons" matInput
+                              placeholder="اگر دلیل دیگری به جز موارد بالا دارید در این قسمت وارد کنید"
+                              rows="3"></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="action-bar" fxLayout="row wrap" fxLayoutAlign="center center">
+
+        <button (click)="sendFeedBackInFailure()"
+                [disabled]="isCancelDisabled()"
+                appDpButton="blue"
+                fxFlex="4 0 120px"
+                id="cancel-purchase"
+                mat-raised-button>
+            <span *ngIf="!isCancelingPurchase">انصراف از خرید</span>
+            <mat-spinner *ngIf="isCancelingPurchase" diameter="32" strokeWidth="3"></mat-spinner>
+        </button>
+
+        <button (click)="returnEvent()"
+                [disabled]="isCancelingPurchase"
+                appDpButton="blue-outline"
+                fxFlex="1 0 120px"
+                id="return-to-basket"
+                mat-raised-button>
+            <span>بازگشت</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div id="edit-comment-confirm-popup">
+    <mat-icon id="danger_icon" svgIcon="svg_danger"></mat-icon>
+    <div class="dialog-content" mat-dialog-content>
+        {{data.msg}}
+    </div>
+    <div class="dialog-actions" mat-dialog-actions>
+        <button [mat-dialog-close]="true" cdkFocusInitial class="confirm-button" mat-button>ویرایش نظر</button>
+        <button (click)="cancel()" class="cancel-button" mat-button>انصراف</button>
+    </div>
+</div>

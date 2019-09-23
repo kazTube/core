@@ -1,0 +1,25 @@
+@import "~src/app/core/constants/Colors";
+
+#general-home-page-container {
+  padding-bottom: 96px;
+  background-color: $GRAY_50;
+  height: 100%;
+  position: relative;
+
+  .background-img {
+    width: 100%;
+  }
+
+  .search-component {
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+    position: absolute;
+    top: 200px;
+    z-index: 10;
+  }
+
+  &.top-margin {
+    margin-top: -65px;
+  }
+}

@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~css-star-rating/scss/star-rating';
+@import "app/core/constants/Colors";
+
+
+@font-face {
+  //todo check font version
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url('assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+  url('assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+  url('assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  //todo add font types
+  font-family: 'Yekan';
+  font-style: normal;
+  font-weight: 400;
+  //src: url('../fonts/IRANYekanRegular.eot'); /* For IE6-8 */
+  src: local('IRANYekanRegular'),
+  local('IRANYekanRegular'),
+    //url('../fonts/IRANYekanRegular.woff2') format('woff2'),
+    //url('../fonts/IRANYekanRegular.woff') format('woff'),
+  url('assets/fonts/IRANYekanRegular.ttf') format('truetype');
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 100%;
+}
+
+body * {
+  font-family: Yekan;
+}
+
+// override star-rating styles
+.rating:focus {
+  outline: none;
+}
+
+.star.small, .rating.small .star {
+  width: 12px;
+  height: 12px;
+}
+
+.label-value.small, .rating.small .label-value {
+  font-size: 10px;
+}
+
+.star.medium, .rating.medium .star {
+  width: 16px;
+  height: 16px;
+}
+
+.label-value.medium, .rating.medium .label-value {
+  font-size: 12px;
+}
+
+.star.large, .rating.large .star {
+  width: 20px;
+  height: 20px;
+}
+
+.label-value.large, .rating.large .label-value {
+  font-size: 10px;
+}
+
+.cdk-overlay-container {
+  .mat-menu-item {
+    font-family: Yekan;
+  }
+}
+
+.desktop-header-user-menu {
+  direction: rtl;
+  border-top: 6px solid $BLUE_700;
+
+  .user-menu-btn {
+    text-align: right;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+
+    mat-icon {
+      margin-right: 0;
+      margin-left: 16px;
+    }
+  }
+}
+
+.image-slider-dialog {
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
+
+.pac-container {
+  .pac-item {
+    direction: rtl;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+
+    .pac-icon {
+      margin-left: 3px;
+      margin-right: 3px;
+      margin-top: 11px;
+    }
+
+    .pac-item-query {
+      padding-left: 3px;
+      padding-right: 3px;
+
+    }
+  }
+}

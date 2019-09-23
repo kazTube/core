@@ -1,0 +1,32 @@
+<div id="finalize-purchase-step">
+    <div id="finalize-purchase-text">
+        نهایی کردن خرید
+    </div>
+    <mat-card>
+        <mat-card-content>
+            <div class="text">
+                کلیه سفارشات شما توسط داروخانه تایید شده و آماده ارسال هستند
+            </div>
+            <app-order-provider-card
+                    [pharmacyDescription]="orderDetail.pharmacyDescription"
+                    [pharmacyDistance]="'('+orderDetail.pharmacyDistance+')'"
+                    [pharmacyName]="orderDetail.pharmacyName"></app-order-provider-card>
+            <div *ngFor="let OrderProductSummary of orderDetail.productList">
+                <app-mobile-order-product-summary-card
+                        [OrderProductSummary]="OrderProductSummary"></app-mobile-order-product-summary-card>
+            </div>
+            <app-mobile-bill [orderPrice]="orderDetail.orderPrice" [totalPrice]="orderDetail.totalPrice"
+                             [transportPrice]="orderDetail.transportPrice"></app-mobile-bill>
+        </mat-card-content>
+    </mat-card>
+
+
+    <button
+            [routerLink]="'/basket/purchase/cancel/'+orderDetail.orderId"
+            appDpButton="blue-outline"
+            id="cancel-pay"
+            mat-raised-button>
+        <span>انصراف از خرید</span>
+    </button>
+</div>
+

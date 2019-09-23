@@ -1,0 +1,44 @@
+<div id="add-address-container">
+    <img class="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="add-address-card">
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>{{title}}</mat-card-title>
+            </mat-card-header>
+            <div *ngIf="isRegisterForm" class="add-address-text">
+                <span class="new-address-text">ثبت آدرس جدید</span>
+                <span class="address-step-text">مرحله ۲ از ۲</span>
+            </div>
+            <div *ngIf="!isRegisterForm && !isEditForm"
+                 class="add-address-text">
+                <span class="new-address-text">اطلاعات آدرس</span>
+            </div>
+            <app-address-info-form
+                #addressForm
+                (isValid)="addressFormService.isAddressFormValid=$event"
+                [(address)]="addressFormService.formAddress"
+                [cityList]="addressFormService.cityList"
+                [isEditForm]="isEditForm"
+                [stateList]="addressFormService.stateList"
+                class="address-form"
+            ></app-address-info-form>
+            <div class="action-bar">
+                <button (click)="submitAddressForm(addressForm)"
+                        [appDpButton]="'blue'"
+                        [disabled]="isConfirmButtonDisabled()"
+                        class="done-button"
+                        mat-raised-button>
+                    <span *ngIf="!isLoading">{{submitButtonText}}</span>
+                    <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                </button>
+                <button (click)="navigateToAppropriatePage()"
+                        *ngIf="!isRegisterForm"
+                        [appDpButton]="'blue-outline'"
+                        class="back-button"
+                        mat-raised-button
+                        type="button">بازگشت
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,73 @@
+<mat-card id="product-description-card">
+    <mat-card-title>
+        <app-desktop-breadcrumb [itemList]="breadcrumbModel"></app-desktop-breadcrumb>
+    </mat-card-title>
+    <mat-card-content [fxLayout]="'row wrap'" [fxLayoutGap]="'2%'">
+        <div id="product-image" [fxFlex]="'30%'">
+            <div *ngIf="isProductImageExist" [fxLayoutGap]="'2%'" [fxLayout]="'column'" id="product-image-list">
+                <app-img-with-loading [fxFlex]="'70%'" [src]="productInfo.imageUrlList[0]"></app-img-with-loading>
+                <div id="thumbnail-container" [fxLayout]="'row'" [fxLayoutGap]="'4%'" [fxFlex]="'30%'">
+                    <div id="thumbnail-list" [fxLayout]="'row'" fxFlex [fxLayoutGap]="'4%'">
+                        <app-img-with-loading [fxFlex]="'30%'" *ngFor="let image of thumbnailImageList"
+                                              [src]="image"></app-img-with-loading>
+                    </div>
+                    <div id="image-popup-button-container" [fxFlex]="'52px'" FxLayout="row"
+                         [fxLayoutAlign]="'center center'">
+                        <button mat-mini-fab (click)="openImageSlider()">
+                            <mat-icon>more_horiz</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <mat-icon *ngIf="!isProductImageExist" class="default-image"
+                      svgIcon="svg_default_image"></mat-icon>
+        </div>
+        <div id="content" [fxFlex]="'68%'">
+            <star-rating [labelText]="starRatingLabel" [rating]="productInfo.rate" [starType]="'svg'"
+                         direction="ltr"
+                         hoverEnabled="true"
+                         labelPosition="bottom" readOnly="true" size="large"
+                         staticColor="ok"></star-rating>
+
+            <div class="product-name">{{productInfo.productNameFa}}</div>
+            <div class="product-description">
+                {{productInfo.description}}
+            </div>
+            <div class="price-info-container" [fxLayout]="'column'" [fxLayoutAlign]="'center end'">
+                <div *ngIf="isSpecialOfferProduct" [fxLayoutAlign]="'center center'" [fxLayout]="'column'">
+                    <div class="price">{{productInfo.newPrice | friendlyPrice}}</div>
+                    <div *ngIf="isDiscountPercentageVisible" class="discount-percentage">
+                        تخفیف
+                        {{productInfo.discountPercentage}}
+                        ٪
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="providerName">
+                <div *ngIf="!isSpecialOfferProduct" class="product-provider">
+                <mat-icon svgIcon="svg_producer"></mat-icon>
+                <span>شرکت تولید کننده: </span>
+                    <span>{{providerName}}</span>
+            </div>
+                <div *ngIf="isSpecialOfferProduct" class="product-provider">
+                <mat-icon svgIcon="svg_pharmacy"></mat-icon>
+                <span class="pharmacy">تامین کننده: </span>
+                <span>
+                    {{providerName}}
+                </span>
+            </div>
+            </ng-container>
+            <button
+                    (click)="onAddToBasket()"
+                    [disabled]="isAddingToBasket"
+                    appDpButton="orange"
+                    id="add-to-basket-button"
+                    mat-raised-button>
+                <mat-icon *ngIf="!isAddingToBasket" svgIcon="svg_add_to_basket"></mat-icon>
+                <mat-spinner *ngIf="isAddingToBasket" diameter="32" strokeWidth="3"></mat-spinner>
+                <span *ngIf="!isAddingToBasket">اضافه به سبد خرید</span>
+            </button>
+
+        </div>
+    </mat-card-content>
+</mat-card>

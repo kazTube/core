@@ -1,0 +1,59 @@
+<div id="desktop-insert-comment">
+    <div class="title">{{title}}</div>
+    <div class="comment-form-container">
+
+        <div class="content" fxLayout="row" fxLayoutAlign="space-between start">
+            <app-insert-comment-form #commentForm
+                                     (isValid)="commentFormService.isCommentFormValid=$event"
+                                     class="comment-form"
+                                     [(commentSummary)]="commentFormService.formCommentSummary"
+                                     [isEditForm]="isEditForm"
+                                     fxFlex="0 1 43%"></app-insert-comment-form>
+            <div class="rules" fxFlex="0 1 43%">
+                <div class="rule-header">قوانین ارسال نظر</div>
+                <div class="rules-content">
+                    <p>۱. فارسی بنویسید و از کیبورد فارسی استفاده کنید.</p>
+                    <p>۲. برای نظر یا نقد و بررسی خود عنوانی متناسب با متن
+                        انتخاب کنید. یک عنوان خوب کاربران را برای خواندن نظر شما ترغیب خواهد کرد.</p>
+                    <p>۳. نقد کاربران باید شامل
+                        قوت‌ها و ضعف‌های محصول در استفاده‌ی شخصی باشد و مزایا و معایب به‌صورت خلاصه و تیتروار در محل
+                        تعیین‌شده درج شود.</p>
+                    <p> ۴. کاربران ارسال‌کننده‌ی نظر موظف‌اند از ادبیات محترمانه استفاده کرده و از توهین
+                        به دیگر کاربران یا سایر افراد پرهیز کنند.</p>
+                    <p>۵. در نظرات خود، از بزرگ‌نمایی یا اغراق درباره‌ی قوت‌ها یا
+                        ضعف‌های محصول خودداری کنید. بدیهی است تا حد ممکن هرگونه نظر مبالغه‌آمیز یا به دور از واقعیت
+                        تایید
+                        نخواهد شد.</p>
+                    <p>۶. بهتر است مطالبی در این بخش ثبت شود که برای بازدیدکنندگان سایت مفید باشد؛ لذا از بیان
+                        هرگونه مطالب شخصی، غیرمرتبط یا غیرضروری در این بخش پرهیز کنید.</p>
+                    <p>۷. لازم است نظرات خود را به صورت
+                        نگارشی ثبت کرده و از کوتاه‌کردن کلمات یا استفاده از ادبیات محاوره تا جای ممکن خودداری کنید.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar" fxLayout="row nowrap" fxLayoutAlign="start center">
+            <button
+                    fxFlex="0 0 128px"
+                    (click)="cancelAndReturn()"
+                    class="return-btn"
+                    mat-button>
+                انصراف و بازگشت
+            </button>
+            <button
+                    fxFlex="0 0 100px"
+                    (click)="submitCommit()"
+                    [disabled]="isConfirmButtonDisabled()"
+                    appDpButton="blue"
+                    class="confirm-btn"
+                    mat-raised-button>
+                <span *ngIf="!isLoading">ثبت نظر</span>
+                <mat-spinner *ngIf="isLoading" diameter="24" strokeWidth="3"></mat-spinner>
+            </button>
+            <div class="confirm-msg" fxFlex="1 1 70%">با انتخاب دکمه "ثبت نظر" موافقت خود را با قوانین انتشار محتوا در
+                داروخانه آنلاین
+                اعلام می‌کنم
+            </div>
+        </div>
+    </div>
+</div>

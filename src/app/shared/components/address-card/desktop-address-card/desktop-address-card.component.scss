@@ -1,0 +1,59 @@
+@import "../../../../core/constants/Colors";
+
+#desktop-address-card {
+  border: 1px solid $BLACK_OPACITY_12;
+  border-right: 8px solid $GRAY_400;
+  padding: 8px 0 8px 8px;
+  box-shadow: 0 4px 6px $BLACK_OPACITY_12;
+
+  &.selected {
+    border-right-color: $ORANGE_300 !important;
+  }
+
+  .address-radio-btn {
+    max-width: 24px;
+    margin: auto 8px auto 0;
+  }
+
+  .location-icon {
+    width: 96px;
+
+    mat-icon {
+      width: 100%;
+      min-height: 40px;
+    }
+
+    span {
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+
+  .margin-around {
+    margin: 0 3% !important;
+  }
+
+  .address-info {
+    font-size: 12px;
+
+    .receiver-name {
+      font-weight: bold;
+    }
+
+    .phone {
+      margin-left: 32px;
+    }
+  }
+
+  .action-bar {
+    button {
+      font-size: 12px;
+      height: 32px;
+      line-height: 12px;
+      padding: 4px 8px;
+      border-width: 1px !important;
+      margin: 4px;
+    }
+  }
+}
+

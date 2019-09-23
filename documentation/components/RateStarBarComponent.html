@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>daroopin-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">daroopin-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RateStarBarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">مستند</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">TemplateData</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/rate-star-bar/rate-star-bar.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-rate-star-bar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./rate-star-bar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./rate-star-bar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selectedRate">selectedRate</a>
+                            </li>
+                            <li>
+                                <a href="#starCount">starCount</a>
+                            </li>
+                            <li>
+                                <a href="#unselectAnimationState">unselectAnimationState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onDeselect">onDeselect</a>
+                            </li>
+                            <li>
+                                <a href="#onSelect">onSelect</a>
+                            </li>
+                            <li>
+                                <a href="#setUnselectAnimationState">setUnselectAnimationState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#select">select</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="select"></a>
+                        <b>select</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:51</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeselect"></a>
+                    <span class="name">
+                        <b>
+                            onDeselect
+                        </b>
+                        <a href="#onDeselect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeselect()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelect"></a>
+                    <span class="name">
+                        <b>
+                            onSelect
+                        </b>
+                        <a href="#onSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelect(selection: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selection</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUnselectAnimationState"></a>
+                    <span class="name">
+                        <b>
+                            setUnselectAnimationState
+                        </b>
+                        <a href="#setUnselectAnimationState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUnselectAnimationState(unselectState: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>unselectState</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedRate"></a>
+                        <span class="name">
+                            <b>
+                            selectedRate</b>
+                            <a href="#selectedRate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>-1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="starCount"></a>
+                        <span class="name">
+                            <b>
+                            starCount</b>
+                            <a href="#starCount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unselectAnimationState"></a>
+                        <span class="name">
+                            <b>
+                            unselectAnimationState</b>
+                            <a href="#unselectAnimationState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;init&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/components/rate-star-bar/rate-star-bar.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+    <div class="tab-pane fade active in" id="c-readme">
+        <p><div class="dp-doc-container"">
+
+<div class="dp-doc-tags">
+
+<div class="desktop-version"></div>
+<div class="mobile-version"></div>
+
+
+</div>
+
+<div class="dp-doc-body">
+
+<p>از این کامپوننت برای ثبت امتیاز کاربر  به سرویس دهی داروخانه تامین کننده سفارش و یا یک محصول استفاده شده است.</p>
+</div>
+
+</div> 
+
+
+</p>
+    </div>
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, EventEmitter, Output} from &#x27;@angular/core&#x27;;
+import {animate, query, state, style, transition, trigger} from &#x27;@angular/animations&#x27;;
+
+@Component({
+    selector: &#x27;app-rate-star-bar&#x27;,
+    templateUrl: &#x27;./rate-star-bar.component.html&#x27;,
+    styleUrls: [&#x27;./rate-star-bar.component.scss&#x27;],
+    animations: [
+        trigger(&#x27;rateSelectAnimation&#x27;, [
+            state(&#x27;hide&#x27;, style({
+                opacity: &#x27;0&#x27;,
+                zIndex: -1
+            })),
+            state(&#x27;show&#x27;, style({
+                opacity: &#x27;1&#x27;,
+                zIndex: 1
+            })),
+            transition(&#x27;* &#x3D;&gt; hide&#x27;, [
+                query(&#x27;.star-text&#x27;, style({opacity: &#x27;0&#x27;})),
+                animate(&#x27;0.5s ease&#x27;, style({transform: &#x27;translateX({{xMove}}px) translateY(28px) scale(2.21)&#x27;, opacity: &#x27;0&#x27;}))
+            ]),
+            transition(&#x27;* &#x3D;&gt; show&#x27;, [
+                style({transform: &#x27;translateX({{xMove}}px) translateY(28px) scale(2.21)&#x27;, opacity: &#x27;0&#x27;, zIndex: 1}),
+                animate(&#x27;0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)&#x27;,
+                    style({transform: &#x27;translateX(0px) translateY(0px) scale(1)&#x27;, opacity: &#x27;1&#x27;}))
+            ])
+        ]),
+        trigger(&#x27;rateUnselectAnimation&#x27;, [
+            state(&#x27;init&#x27;, style({
+                opacity: &#x27;0&#x27;,
+                marginTop: &#x27;0px&#x27;
+            })),
+            state(&#x27;start&#x27;, style({
+                opacity: &#x27;1&#x27;,
+                display: &#x27;flex&#x27;
+
+            })),
+            transition(&#x27;* &#x3D;&gt; start&#x27;, [
+                style({opacity: &#x27;0&#x27;, height: &#x27;30px&#x27;}),
+                animate(&#x27;0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)&#x27;, style({opacity: &#x27;1&#x27;, height: &#x27;*&#x27;}))
+            ]),
+            transition(&#x27;:leave&#x27;, [
+                style({opacity: &#x27;1&#x27;, height: &#x27;*&#x27;, marginTop: &#x27;*&#x27;}),
+                animate(&#x27;0.5s ease&#x27;, style({transform: &#x27;scale(0)&#x27;, height: &#x27;0&#x27;, opacity: &#x27;0&#x27;, marginTop: &#x27;0px&#x27;}))
+            ]),
+        ])
+    ]
+})
+export class RateStarBarComponent {
+
+    @Output() select &#x3D; new EventEmitter();
+    selectedRate &#x3D; -1;
+    starCount: number[];
+    unselectAnimationState &#x3D; &#x27;init&#x27;;
+
+    constructor() {
+        this.starCount &#x3D; Array(5).fill(-1).map((x, i) &#x3D;&gt; (i + 1)); // [0,1,2,3,4]
+    }
+
+    setUnselectAnimationState(unselectState: string) {
+        this.unselectAnimationState &#x3D; unselectState;
+    }
+
+    onSelect(selection: number) {
+        this.selectedRate &#x3D; selection;
+        this.select.emit(selection);
+    }
+
+    onDeselect() {
+        this.selectedRate &#x3D; -1;
+        this.select.emit(undefined);
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;rate-star-bar&quot;&gt;
+    &lt;div class&#x3D;&quot;unselected-star-container&quot;&gt;
+        &lt;div (@rateSelectAnimation.start)&#x3D;&quot;setUnselectAnimationState(&#x27;start&#x27;)&quot;
+             *ngFor&#x3D;&quot;let starNumber of starCount&quot;
+             [@rateSelectAnimation]&#x3D;&quot;{value: selectedRate!&#x3D;&#x3D;-1?&#x27;hide&#x27;:&#x27;show&#x27;, params:{xMove: (3-starNumber)*42}}&quot;
+             class&#x3D;&quot;star-container&quot;&gt;
+            &lt;mat-icon
+                    (click)&#x3D;&quot;selectedRate&#x3D;&#x3D;&#x3D;-1?onSelect(starNumber):null&quot;
+                    [svgIcon]&#x3D;&quot;selectedRate&gt;&#x3D;starNumber?&#x27;svg_baseline_star&#x27;:&#x27;svg_outline_star&#x27;&quot;
+                    class&#x3D;&quot;star-icon&quot;
+            &gt;&lt;/mat-icon&gt;
+            &lt;span class&#x3D;&quot;star-text&quot;&gt;{{starNumber}}&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div
+            *ngIf&#x3D;&quot;selectedRate!&#x3D;&#x3D;-1&quot;
+            [@rateUnselectAnimation]&#x3D;&quot;unselectAnimationState&quot;
+            class&#x3D;&quot;selected-star-container&quot;&gt;
+        &lt;mat-icon
+                (click)&#x3D;&quot;onDeselect()&quot;
+                svgIcon&#x3D;&quot;svg_baseline_star&quot;
+                class&#x3D;&quot;selected-star-icon&quot;
+        &gt;&lt;/mat-icon&gt;
+        &lt;span (click)&#x3D;&quot;onDeselect()&quot; class&#x3D;&quot;selected-star-text&quot;&gt;{{selectedRate}}&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="rate-star-bar">    <div class="unselected-star-container">        <div (@rateSelectAnimation.start)="setUnselectAnimationState(\'start\')"             *ngFor="let starNumber of starCount"             [@rateSelectAnimation]="{value: selectedRate!==-1?\'hide\':\'show\', params:{xMove: (3-starNumber)*42}}"             class="star-container">            <mat-icon                    (click)="selectedRate===-1?onSelect(starNumber):null"                    [svgIcon]="selectedRate>=starNumber?\'svg_baseline_star\':\'svg_outline_star\'"                    class="star-icon"            ></mat-icon>            <span class="star-text">{{starNumber}}</span>        </div>    </div>    <div            *ngIf="selectedRate!==-1"            [@rateUnselectAnimation]="unselectAnimationState"            class="selected-star-container">        <mat-icon                (click)="onDeselect()"                svgIcon="svg_baseline_star"                class="selected-star-icon"        ></mat-icon>        <span (click)="onDeselect()" class="selected-star-text">{{selectedRate}}</span>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddNewProductCardComponent', 'selector': 'app-new-product-detail'},{'name': 'AddressInfoFormComponent', 'selector': 'app-address-info-form'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvatarButtonComponent', 'selector': 'app-avatar-button'},{'name': 'AvatarSelectionPopupComponent', 'selector': 'app-avatar-selection-popup'},{'name': 'BaseAddAddressPageComponent', 'selector': ''},{'name': 'BaseAddressCardComponent', 'selector': ''},{'name': 'BaseAddressListComponent', 'selector': ''},{'name': 'BaseBasketItemCardComponent', 'selector': ''},{'name': 'BaseBasketItemListComponent', 'selector': ''},{'name': 'BaseBasketPageComponent', 'selector': ''},{'name': 'BaseFinalizePurchaseComponent', 'selector': ''},{'name': 'BaseFullLayoutComponent', 'selector': ''},{'name': 'BaseGeneralHomePageComponent', 'selector': ''},{'name': 'BaseHeaderComponent', 'selector': ''},{'name': 'BaseInsertCommentComponent', 'selector': ''},{'name': 'BaseMenuComponent', 'selector': ''},{'name': 'BaseOrderDetailCardComponent', 'selector': ''},{'name': 'BaseOrderDetailPageComponent', 'selector': ''},{'name': 'BaseOrderListComponent', 'selector': ''},{'name': 'BaseOrderListSummaryCardComponent', 'selector': ''},{'name': 'BaseOrderProductSummaryCardComponent', 'selector': ''},{'name': 'BasePharmacyPageComponent', 'selector': ''},{'name': 'BaseProductAttributesComponent', 'selector': ''},{'name': 'BaseProductDescriptionCardComponent', 'selector': ''},{'name': 'BaseProductDetailPageComponent', 'selector': ''},{'name': 'BaseProductListPageComponent', 'selector': ''},{'name': 'BaseProfileAddressListComponent', 'selector': ''},{'name': 'BaseProfilePersonalInfoComponent', 'selector': ''},{'name': 'BaseSubMenuComponent', 'selector': ''},{'name': 'BaseUserHomePageComponent', 'selector': ''},{'name': 'BasketStepperControlComponent', 'selector': 'app-basket-stepper-control'},{'name': 'CancelPurchaseComponent', 'selector': 'app-cancel-purchase'},{'name': 'CommentCardComponent', 'selector': 'app-comment-card'},{'name': 'CommentListComponent', 'selector': 'app-comment-list'},{'name': 'ConfirmPopUpComponent', 'selector': 'app-confirm-pop-up'},{'name': 'ContactSupportPageComponent', 'selector': 'app-contact-support-page'},{'name': 'ContactSupportPopUpComponent', 'selector': 'app-contact-support-pop-up'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DesktopAddAddressPageComponent', 'selector': 'app-desktop-add-address-page'},{'name': 'DesktopAddressCardComponent', 'selector': 'app-desktop-address-card'},{'name': 'DesktopAddressListComponent', 'selector': 'app-desktop-address-list'},{'name': 'DesktopBasketItemCardComponent', 'selector': 'app-desktop-basket-item-card'},{'name': 'DesktopBasketItemListComponent', 'selector': 'app-desktop-basket-item-list'},{'name': 'DesktopBasketPageComponent', 'selector': 'app-desktop-basket-stepper'},{'name': 'DesktopBreadcrumbComponent', 'selector': 'app-desktop-breadcrumb'},{'name': 'DesktopCancelPurchasePopupComponent', 'selector': 'app-desktop-cancel-purchase-popup'},{'name': 'DesktopDaroopinVitrinComponent', 'selector': 'app-desktop-daroopin-vitrin'},{'name': 'DesktopFinalizePurchaseComponent', 'selector': 'app-desktop-finalize-purchase'},{'name': 'DesktopFullLayoutComponent', 'selector': 'app-desktop-full-layout'},{'name': 'DesktopGeneralHomePageComponent', 'selector': 'app-desktop-general-home-page'},{'name': 'DesktopHeaderComponent', 'selector': 'app-desktop-header'},{'name': 'DesktopImageSliderPopUpComponent', 'selector': 'app-desktop-image-slider-pop-up'},{'name': 'DesktopInsertCommentComponent', 'selector': 'app-desktop-insert-comment'},{'name': 'DesktopInsertCommentPopupComponent', 'selector': 'app-desktop-insert-comment-popup'},{'name': 'DesktopMenuComponent', 'selector': 'app-desktop-menu'},{'name': 'DesktopOrderDetailCardComponent', 'selector': 'app-desktop-order-detail-card'},{'name': 'DesktopOrderDetailPageComponent', 'selector': 'app-desktop-order-detail-page'},{'name': 'DesktopOrderListComponent', 'selector': 'app-desktop-order-list'},{'name': 'DesktopOrderListSummaryCardComponent', 'selector': 'app-desktop-order-list-summary-card'},{'name': 'DesktopOrderProductSummaryCardComponent', 'selector': 'app-desktop-order-product-summary-card'},{'name': 'DesktopPharmacyPageComponent', 'selector': 'app-desktop-pharmacy-page'},{'name': 'DesktopPharmacySpecialOfferProductListComponent', 'selector': 'app-desktop-pharmacy-special-offer-product-list'},{'name': 'DesktopProductAttributesComponent', 'selector': 'app-desktop-product-attributes'},{'name': 'DesktopProductCategoryTreeComponent', 'selector': 'app-desktop-product-category-tree'},{'name': 'DesktopProductDescriptionCardComponent', 'selector': 'app-desktop-product-description-card'},{'name': 'DesktopProductDetailPageComponent', 'selector': 'app-desktop-product-detail-page'},{'name': 'DesktopProductListPageComponent', 'selector': 'app-desktop-product-list-page'},{'name': 'DesktopProductListResultCardComponent', 'selector': 'app-desktop-product-list-result-card'},{'name': 'DesktopProductSuggestionPageComponent', 'selector': 'app-desktop-product-suggestion-page'},{'name': 'DesktopProfileAddressListComponent', 'selector': 'app-desktop-profile-address-list'},{'name': 'DesktopProfilePageComponent', 'selector': 'app-desktop-profile-page'},{'name': 'DesktopProfilePersonalInfoComponent', 'selector': 'app-desktop-user-profile'},{'name': 'DesktopRegisterPageComponent', 'selector': 'app-desktop-register-page'},{'name': 'DesktopSearchInCategoryComponent', 'selector': 'app-desktop-search-in-category'},{'name': 'DesktopSubMenuComponent', 'selector': 'app-desktop-sub-menu'},{'name': 'DesktopUserHomePageComponent', 'selector': 'app-desktop-user-home-page'},{'name': 'EditCommentConfirmPopUpComponent', 'selector': 'app-edit-comment-confirm-pop-up'},{'name': 'FAQComponent', 'selector': 'app-faq'},{'name': 'FileAComplaintComponent', 'selector': 'app-file-a-complaint'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomePageInfoComponent', 'selector': 'app-home-page-info'},{'name': 'HowToInsertAnOrderComponent', 'selector': 'app-how-to-insert-an-order'},{'name': 'ImgWithLoadingComponent', 'selector': 'app-img-with-loading'},{'name': 'InquiryFromPharmacyComponent', 'selector': 'app-inquiry-from-pharmacy'},{'name': 'InsertCommentFormComponent', 'selector': 'app-insert-comment-form'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapButtonComponent', 'selector': 'app-map-button'},{'name': 'MapPopUpComponent', 'selector': 'app-map-pop-up'},{'name': 'MobileAddAddressPageComponent', 'selector': 'app-mobile-add-address-page'},{'name': 'MobileAddressCardComponent', 'selector': 'app-mobile-address-card'},{'name': 'MobileAddressListComponent', 'selector': 'app-mobile-address-list'},{'name': 'MobileBasketItemCardComponent', 'selector': 'app-mobile-basket-item-card'},{'name': 'MobileBasketItemListComponent', 'selector': 'app-mobile-basket-list'},{'name': 'MobileBasketPageComponent', 'selector': 'app-mobile-basket-stepper'},{'name': 'MobileBillComponent', 'selector': 'app-mobile-bill'},{'name': 'MobileCancelPurchasePageComponent', 'selector': 'app-mobile-cancel-purchase-page'},{'name': 'MobileFinalizePurchaseComponent', 'selector': 'app-mobile-finalize-purchase'},{'name': 'MobileFullLayoutComponent', 'selector': 'app-mobile-full-layout'},{'name': 'MobileGeneralHomePageComponent', 'selector': 'app-mobile-general-home-page'},{'name': 'MobileHeaderComponent', 'selector': 'app-mobile-header'},{'name': 'MobileInsertCommentComponent', 'selector': 'app-mobile-insert-comment'},{'name': 'MobileMenuComponent', 'selector': 'app-mobile-menu'},{'name': 'MobileOrderDetailCardComponent', 'selector': 'app-mobile-order-detail-card'},{'name': 'MobileOrderDetailPageComponent', 'selector': 'app-mobile-order-detail'},{'name': 'MobileOrderListComponent', 'selector': 'app-mobile-order-list'},{'name': 'MobileOrderListSummaryCardComponent', 'selector': 'app-mobile-order-list-summary-card'},{'name': 'MobileOrderProductSummaryCardComponent', 'selector': 'app-mobile-order-product-summary-card'},{'name': 'MobilePharmacyPageComponent', 'selector': 'app-mobile-pharmacy-page'},{'name': 'MobileProductAttributesComponent', 'selector': 'app-mobile-product-attributes'},{'name': 'MobileProductDescriptionCardComponent', 'selector': 'app-mobile-product-description-card'},{'name': 'MobileProductDetailPageComponent', 'selector': 'app-mobile-product-detail-page'},{'name': 'MobileProductListPageComponent', 'selector': 'app-mobile-product-list-page'},{'name': 'MobileProfileAddressListComponent', 'selector': 'app-profile-user-address-list'},{'name': 'MobileProfilePersonalInfoComponent', 'selector': 'app-mobile-user-profile'},{'name': 'MobileRegisterPersonalInfoComponent', 'selector': 'app-mobile-personal-info-form'},{'name': 'MobileSelectSortByPopUpComponent', 'selector': 'app-mobile-select-sort-by-dialog'},{'name': 'MobileSubMenuComponent', 'selector': 'app-mobile-sub-menu'},{'name': 'MobileUserHomePageComponent', 'selector': 'app-mobile-user-home-page'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'OrderProviderCardComponent', 'selector': 'app-order-provider-card'},{'name': 'PersonalInfoFormComponent', 'selector': 'app-personal-info-form'},{'name': 'PharmacyInfoCardComponent', 'selector': 'app-pharmacy-info-card'},{'name': 'ProductCarouselComponent', 'selector': 'app-product-carousel'},{'name': 'ProductOfferCardComponent', 'selector': 'app-product-offer-card'},{'name': 'ProductOfferCarouselComponent', 'selector': 'app-product-offer-carousel'},{'name': 'ProductSummaryCardComponent', 'selector': 'app-product-summary-card'},{'name': 'PurchaseFeedbackComponent', 'selector': 'app-purchase-feedback'},{'name': 'RateStarBarComponent', 'selector': 'app-rate-star-bar'},{'name': 'RulesComponent', 'selector': 'app-rules'},{'name': 'SearchBoxComponent', 'selector': 'app-search-box'},{'name': 'SimpleLayoutComponent', 'selector': 'app-simple-layout'},{'name': 'SubscribeToPharmacyPopUpComponent', 'selector': 'app-subscribe-to-pharmacy-pop-up'},{'name': 'SubscriptionCompletedPageComponent', 'selector': 'app-subscription-completed-page'},{'name': 'UserHasOpenOrderPopUpComponent', 'selector': 'app-open-order-pop-up-component'}];
+    var DIRECTIVES = [{'name': 'CaptureClickEventDirective', 'selector': '[appCaptureClickEvent]'},{'name': 'CaptureScrollEventDirective', 'selector': '[appCaptureScrollEvent]'},{'name': 'CenterMatMenuDirective', 'selector': '[appCenterMatMenu]'},{'name': 'DpButtonDirective', 'selector': '[appDpButton]'},{'name': 'DpFormFieldDirective', 'selector': '[appDpFormField]'},{'name': 'DpSelectDirective', 'selector': '[appDpSelect]'}];
+    var ACTUAL_COMPONENT = {'name': 'RateStarBarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RateStarBarComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

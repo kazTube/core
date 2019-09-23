@@ -1,0 +1,65 @@
+@import "../../../../core/constants/Colors";
+
+#basket-address-list-container {
+  padding: 8px;
+
+  .address-card-container {
+    position: relative;
+
+    .address-card {
+      display: block;
+      margin-bottom: 16px;
+      transition: top 2s;
+    }
+  }
+
+  .list-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 16px 0;
+
+    .address-add-btn {
+      padding-right: 0;
+      padding-left: 8px;
+      border-radius: 4px;
+
+      /deep/ .mat-button-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .address-add-icon {
+        padding: 9px 8px;
+        background-color: $BLUE_700;
+        color: $WHITE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 18px;
+        width: 16px;
+        box-shadow: 0 3px 6px $BLACK_OPACITY_16;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .address-btn-text {
+        flex-grow: 1;
+        margin-right: 8px;
+        font-size: 11px;
+        color: $BLUE_700;
+      }
+    }
+
+    .map-add-btn:not(.mat-elevation-z) {
+      box-shadow: 0 2px 4px $BLACK_OPACITY_16;
+    }
+
+    .title-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: $BLACK_300;
+      flex-grow: 1;
+    }
+  }
+}

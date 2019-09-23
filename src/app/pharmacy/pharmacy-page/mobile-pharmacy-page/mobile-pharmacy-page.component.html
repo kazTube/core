@@ -1,0 +1,79 @@
+<div id="pharmacy-page">
+    <img id="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="pharmacy-page-header">
+        <mat-card-content>
+            <div id="pharmacy-banner">
+                <app-img-with-loading *ngIf="!isPharmacyBannerExist"
+                                      src="assets/images/pharmacy_default_banner.png"></app-img-with-loading>
+                <app-img-with-loading *ngIf="isPharmacyBannerExist"
+                                      [src]="pharmacyInfo.imageBackground"></app-img-with-loading>
+            </div>
+            <div id="pharmacy-thumbnail">
+                <app-img-with-loading *ngIf="!isPharmacyThumbnailExist"
+                                      src="assets/images/pharmacy_default_thumbnail.png"></app-img-with-loading>
+                <app-img-with-loading *ngIf="isPharmacyThumbnailExist"
+                                      [src]="pharmacyInfo.imageBackground"></app-img-with-loading>
+            </div>
+
+            <div *ngIf="isCustomerClubMember" id="club-member-tag">
+                <mat-icon svgIcon="svg_club_member_tag"></mat-icon>
+                <span id="club-member-text">عضو باشگاه این داروخانه هستید</span>
+            </div>
+
+
+
+            <star-rating [labelText]="'امتیاز '+ pharmacyInfo.rate+ ' از '+'۵'" [rating]="pharmacyInfo.rate"
+                         [starType]="'svg'" direction="ltr"
+                         hoverEnabled="true"
+                         id="pharmacy-rating"
+                         labelPosition="left" readOnly="true" size="medium"
+                         staticColor="ok"></star-rating>
+
+            <div *ngIf="pharmacyInfo.name && pharmacyInfo.name.length>0" id="pharmacy-name">
+                {{utilService.normalizePharmacyName(pharmacyInfo.name)}}
+            </div>
+
+            <div *ngIf="pharmacyInfo.manager && pharmacyInfo.manager.length>0" id="pharmacy-manager">
+                مدیریت داروخانه :
+                {{pharmacyInfo.manager}}
+            </div>
+
+            <div id="discount-title">تخفیف های ویژه برای شما</div>
+
+
+            <mat-form-field appearance="outline" id="search-in-pharmacy">
+                <mat-icon id="search-icon" matPrefix>search</mat-icon>
+                <input #pharmacySearchInput [(ngModel)]="searchText" matInput placeholder="جستجو در محصولات داروخانه">
+            </mat-form-field>
+            <div id="product-list">
+                <mat-toolbar (click)="openSortByDialog()" id="sort-product-header">
+                    <mat-icon id="sort-by-icon" svgIcon="svg_sort"></mat-icon>
+                    <div id="sort-by-text">مرتب سازی بر اساس</div>
+                    <div id="sort-by-selected">{{selectedSortBy.text}}</div>
+                </mat-toolbar>
+                <mat-grid-list cols="2" rowHeight="256" gutterSize="8">
+                    <mat-grid-tile *ngFor="let specialOfferProductTile of pharmacySpecialOfferProductList">
+                        <app-product-summary-card [productSummary]="specialOfferProductTile"
+                                                  [cardType]="ProductSummaryCardTypeEnum.SpecialOfferProduct"
+                                                  [cardLayout]="CardLayoutEnum.Vertical"
+
+                        ></app-product-summary-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <app-loading *ngIf="isLoading"></app-loading>
+                <mat-spinner-button (click)="loadMoreProduct()" *ngIf="hasMore" [options]="loadMoreButtonOptions"
+                                    id="load-more"></mat-spinner-button>
+            </div>
+            <button (click)="subscribeToPharmacy()" *ngIf="!isCustomerClubMember" [disabled]=""
+                    id="subscribe-to-pharmacy-button"
+                    mat-raised-button>
+                <mat-spinner *ngIf="isSubscribingToPharmacy" diameter="32" strokeWidth="3"></mat-spinner>
+                <span *ngIf="!isSubscribingToPharmacy">عضویت در باشگاه مشتریان این داروخانه</span>
+            </button>
+        </mat-card-content>
+    </mat-card>
+    <div id="pharmacy-info">
+        <div id="pharmacy-info-label">اطلاعات داروخانه</div>
+        <app-pharmacy-info-card [pharmacyInfo]="pharmacyInfo"></app-pharmacy-info-card>
+    </div>
+</div>

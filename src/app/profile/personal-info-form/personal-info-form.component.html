@@ -1,0 +1,64 @@
+<form [formGroup]="userPersonalInfoForm"
+      dir="rtl"
+      fxLayout="row wrap"
+      fxLayoutAlign="space-between flex-start"
+      id="personal-info-form-field-container">
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>نام</mat-label>
+        <input formControlName="firstName" matInput placeholder="نام خود را وارد کنید">
+        <mat-error *ngIf="firstName.errors && firstName.errors['minlength']">نام باید حداقل شامل ۳ حرف باشد</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>نام خانوادگی</mat-label>
+        <input formControlName="lastName" matInput placeholder="نام خانوادگی خود را وارد کنید">
+        <mat-error *ngIf="lastName.errors && lastName.errors['minlength']">نام خانوادگی باید حداقل شامل ۳ حرف باشد
+        </mat-error>
+    </mat-form-field>
+
+    <div class="form-field" fxFlex="1 0 42%">
+        <mat-form-field appDpFormField appearance="outline" class="full-width">
+            <mat-label>شماره ملی</mat-label>
+            <input [readonly]="isForeignNational.value" formControlName="nationalCode"
+                   matInput
+                   placeholder="شماره ملی خود را وارد کنید">
+            <mat-error *ngIf="nationalCode.errors">فرمت کد
+                ملی نامعتبر است
+            </mat-error>
+        </mat-form-field>
+        <mat-checkbox
+                [formControl]="isForeignNational"
+                class="no-national-code">تبعه خارجی فاقد کد ملی
+        </mat-checkbox>
+    </div>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field" fxFlex="1 0 42%">
+        <mat-label>ایمیل</mat-label>
+        <input formControlName="email" matInput placeholder="آدرس ایمیل  خود را وارد کنید">
+        <mat-error *ngIf="email.errors">فرمت آدرس
+            ایمیل نامعتبر است
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="profileMode"
+                    [fxFlex.lt-sm]="'1 0 42%'"
+                    class="form-field"
+                    appDpFormField
+                    appearance="outline"
+                    fxFlex="0 0 42%">
+        <mat-label>شماره همراه</mat-label>
+        <input [readonly]="true" class="readonly" formControlName="phone" matInput>
+    </mat-form-field>
+
+    <mat-form-field [fxFlex.lt-sm]="'1 0 42%'"
+                    class="form-field"
+                    appDpFormField
+                    appearance="outline"
+                    fxFlex="0 0 42%">
+        <mat-label>کد معرف (اختیاری)</mat-label>
+        <input [readonly]="profileMode"
+               formControlName="invitationCode"
+               matInput
+               placeholder="کد معرف را وارد کنید">
+    </mat-form-field>
+</form>

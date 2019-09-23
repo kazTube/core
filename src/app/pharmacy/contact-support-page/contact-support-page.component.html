@@ -1,0 +1,30 @@
+<div id="contact-support-page" [ngClass.lt-sm]="'small-screen'" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+    <div id="background-image"></div>
+    <mat-card id="contact-support-card-container">
+        <mat-card-content>
+            <mat-card id="contact-support-card">
+                <mat-card-header>
+                    <mat-card-title>تماس با پشتیبانی</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div>
+                        کاربر گرامی، برای ارتباط با پشتیبانی با شماره
+                        <span id="phone-number"> 02175416000</span>
+                        حاصل فرمایید
+                    </div>
+
+
+                </mat-card-content>
+                <mat-card-actions [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+                    <button (click)="disableButton()"
+                            [disabled]="isButtonDisabled"
+                            [routerLink]="'/pharmacy/'+hixCode"
+                            appDpButton="blue"
+                            id="continue-button"
+                            mat-raised-button>ادامه
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-card-content>
+    </mat-card>
+</div>

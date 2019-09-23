@@ -1,0 +1,80 @@
+<mat-card id="order-detail-card">
+    <mat-card-content>
+        <mat-card-header>
+            <mat-card-title>
+                <span>شماره پیگیری: </span>
+                <span>{{orderDetail.orderId}}</span>
+            </mat-card-title>
+        </mat-card-header>
+        <div class="card-text-container">
+            <div *ngIf="orderDetail.createdDateTime">
+                <span>تاریخ ثبت سفارش: </span>
+                <span>{{orderDetail.createdDateTime}}</span>
+            </div>
+            <div>
+                <span>وضعیت پرداخت: </span>
+                <span *ngIf="orderDetail.isPaid" class="is-green">پرداخت موفق</span>
+                <span *ngIf="!orderDetail.isPaid">-</span>
+            </div>
+            <div *ngIf="orderDetail.stateName">
+                <span>وضعیت سفارش: </span>
+                <span [ngClass]="{'is-orange':orderDetail.isPaid || isCancelableOnly, 'is-green':orderDetail.isReadyToPay && orderDetail.isCancelable}">{{orderDetail.stateName}}</span>
+            </div>
+
+            <div id="order-address-detail">
+                <div *ngIf="orderDetail.receiverName">
+                    <span>نام تحویل گیرنده: </span>
+                    <span>{{orderDetail.receiverName}}</span>
+                </div>
+                <div *ngIf="orderDetail.receiverPhone">
+                    <span>شماره تماس: </span>
+                    <span>{{orderDetail.receiverPhone}}</span>
+                </div>
+                <div *ngIf="orderDetail.postalCode">
+                    <span>کد پستی: </span>
+                    <span>{{orderDetail.postalCode}}</span>
+                </div>
+                <div *ngIf="orderDetail.addressText">
+                    <span>آدرس: </span>
+                    <span>{{orderDetail.addressText}}</span>
+                </div>
+                <div *ngIf="orderDetail.plaqueNumber">
+                    <span>پلاک: </span>
+                    <span>{{orderDetail.plaqueNumber}}</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!isCancelableOnly" id="order-detail">
+            <div id="provider-info">
+                <app-order-provider-card [pharmacyDescription]="orderDetail.pharmacyDescription"
+                                         [pharmacyDistance]="'('+orderDetail.pharmacyDistance+')'"
+                                         [pharmacyName]="orderDetail.pharmacyName"></app-order-provider-card>
+            </div>
+
+            <ng-container *ngIf="orderDetail.productList && orderDetail.productList.length>0">
+                <div *ngFor="let OrderProductSummary of orderDetail.productList" class="order-product-summary">
+                    <app-mobile-order-product-summary-card
+                            [OrderProductSummary]="OrderProductSummary"></app-mobile-order-product-summary-card>
+                </div>
+            </ng-container>
+
+            <div class="order-bill">
+                <app-mobile-bill [orderPrice]="orderDetail.orderPrice" [totalPrice]="orderDetail.totalPrice"
+                                 [transportPrice]="orderDetail.transportPrice"></app-mobile-bill>
+            </div>
+
+        </div>
+
+
+    </mat-card-content>
+    <mat-card-actions *ngIf="orderDetail.isCancelable">
+        <button
+                (click)="onCancelOrder()"
+                [disabled]="isCancelling"
+                appDpButton="red-outline"
+                mat-button>
+            <span *ngIf="!isCancelling">لغو سفارش</span>
+            <mat-spinner *ngIf="isCancelling" diameter="32" strokeWidth="3"></mat-spinner>
+        </button>
+    </mat-card-actions>
+</mat-card>

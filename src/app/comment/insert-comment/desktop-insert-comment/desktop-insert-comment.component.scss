@@ -1,0 +1,66 @@
+@import "../../../core/constants/Colors";
+
+#desktop-insert-comment {
+  margin-bottom: 3%;
+
+  .title {
+    margin: 24px 3%;
+    font-size: 16px;
+  }
+
+  .comment-form-container {
+    background-color: $GRAY_150;
+    border-radius: 16px;
+    margin: 0 3%;
+    padding-top: 3%;
+
+    .content {
+      .comment-form {
+        margin: 0 3% 0 4%;
+      }
+
+      .rules {
+        margin: 0 4% 0 3%;
+        font-size: 12px;
+
+        .rule-header {
+          margin-bottom: 16px;
+          font-size: 14px;
+        }
+
+        .rules-content {
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .action-bar {
+      font-size: 12px;
+      padding: 8px;
+      background-color: $BLUE_250;
+      border-radius: 0 0 16px 16px;
+      margin-top: 3%;
+
+      .confirm-btn {
+        height: 36px;
+        line-height: 12px;
+        font-size: 12px;
+        width: 110px;
+      }
+
+      .return-btn {
+        font-size: 12px;
+        color: $GRAY_700;
+      }
+
+      .confirm-msg {
+        font-size: 10px;
+        margin-right: 1%;
+        padding-right: 16px;
+        color: $GRAY_700;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../core/constants/Colors";
+
+/deep/ #sort-by-dialog {
+
+  direction: rtl;
+  font-family: yekan, sans-serif;
+
+  .mat-dialog-title {
+    font-family: yekan, sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .mat-radio-button {
+    margin: 8px 0 8px 8px;
+  }
+
+  .mat-radio-label-content {
+    font-size: 80%;
+    padding-right: 8px;
+  }
+
+  .mat-dialog-content {
+    overflow: hidden;
+    padding-top: 16px;
+  }
+
+  .mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #confirm-button {
+    color: $BLUE_700;
+  }
+}

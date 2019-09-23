@@ -1,0 +1,141 @@
+@import "../../../core/constants/Colors";
+
+#desktop-pharmacy-page-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  #background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../../assets/images/Background_Colorize.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+  }
+
+
+  #desktop-pharmacy-page-card {
+    background: $WHITE_OPACITY_50;
+    margin: 4%;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+
+    #pharmacy-page-header {
+      #pharmacy-banner {
+        width: 100%;
+        max-height: 350px;
+        overflow: hidden;
+
+        /deep/ .fading-img {
+          background-size: cover;
+          border-radius: 8px 8px 0 0;
+
+        }
+      }
+
+      #pharmacy-thumbnail {
+        position: absolute;
+        margin-top: -43px;
+        margin-right: 8px;
+        height: 86px;
+        width: 86px;
+        border-radius: 50%;
+        overflow: hidden;
+        /deep/ .fading-img {
+          background-size: cover;
+        }
+      }
+
+      #club-member-tag {
+        position: absolute;
+        left: 24px;
+        width: 50px;
+        height: 64px;
+
+        mat-icon {
+          width: 50px;
+          height: 64px;
+        }
+
+        #club-member-text {
+          position: absolute;
+          margin-right: -48px;
+          font-size: 8px;
+          color: $WHITE;
+          width: 45px;
+          text-align: center;
+          margin-top: 8px;
+        }
+      }
+
+      #rate-name-container {
+        padding-right: 108px;
+        padding-left: 64px;
+      }
+
+      #pharmacy-name {
+        font-size: 110%;
+        color: $BLUE_800;
+      }
+
+      #pharmacy-manager {
+        font-size: 80%;
+        padding: 4px 108px 4px 4px;
+        color: $BLACK_300;
+        width: fit-content;
+
+      }
+
+      #discount-title {
+        padding: 8px 24px;
+        background-image: linear-gradient(to right, $RED_300, $RED_200);
+        position: relative;
+        border-radius: 24px;
+        display: inline-block;
+        color: $GRAY_50;
+        font-size: 100%;
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+    }
+
+    #subscribe-to-pharmacy-button {
+      margin-right: auto;
+      margin-top: 0;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      border-radius: 24px;
+      background-color: $BLUE_700;
+      color: $WHITE;
+      width: 280px;
+      height: 42px;
+      margin-left: auto;
+
+      :disabled {
+        opacity: 0.5;
+      }
+
+      /deep/ .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: $WHITE;
+      }
+    }
+
+    #pharmacy-info {
+      margin: 0 8px 32px;
+
+      #pharmacy-info-label {
+        font-size: 100%;
+        font-weight: bold;
+        color: $BLUE_800;
+        padding: 16px 8px;
+      }
+    }
+  }
+}

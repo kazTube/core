@@ -1,0 +1,51 @@
+<div id="product-detail-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'" [fxLayoutGap]="'1%'">
+    <app-desktop-product-description-card
+            [productInfo]="product"
+            [commentsCount]="commentsCount"
+            [isSpecialOfferProduct]="isSpecialOfferProduct"
+            [isAddingToBasket]="isAddingToBasket"
+            (addToBasket)="onAddProductToBasket()"
+            [pharmacyName]="pharmacyName"
+            [pharmacyHixCode]="pharmacyHixCode"
+    ></app-desktop-product-description-card>
+
+    <app-product-carousel
+            [productList]="similarProductList"
+            [title]="isSpecialOfferProduct?'دیگر محصولات این داروخانه':'محصولات مشابه'"
+            [cardsType]="isSpecialOfferProduct?ProductSummaryCardTypeEnum.SpecialOfferProduct:ProductSummaryCardTypeEnum.Attribute"
+    ></app-product-carousel>
+    <div #attributeCommentContainer></div>
+    <mat-card id="attribute-comments-card">
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab *ngIf="!isSpecialOfferProduct" label="مشخصات محصول">
+                    <app-desktop-product-attributes
+                            [productAttributeList]="product.attributesList"></app-desktop-product-attributes>
+                </mat-tab>
+                <mat-tab label="نظرات کاربران">
+                    <div id="comment-list-loading" *ngIf="isLoadingComments">
+                        <app-loading></app-loading>
+                    </div>
+                    <app-comment-list
+                            (insertCommentClick)="setInsertComment(true)"
+                            *ngIf="!isLoadingComments && !showInsertComment"
+                            [commentList]="commentList"
+                            [commentsCount]="commentsCount"
+                            [productCode]="product.productCode"
+                            [thisUserComment]="thisUserComment"
+                            [totalRate]="totalRate">
+
+                    </app-comment-list>
+
+                    <app-desktop-insert-comment (cancel)="setInsertComment(false)"
+                                                *ngIf="!isLoadingComments && showInsertComment"
+                                                [commentSummary]="thisUserCommentSummary"
+                                                [isEditForm]="!!this.thisUserComment"
+                    >
+
+                    </app-desktop-insert-comment>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>

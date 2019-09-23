@@ -1,0 +1,118 @@
+@import "./reset.css";
+@import "./bootstrap.min.css";
+@import "./bootstrap-card.css";
+@import "./prism.css";
+@import "./ionicons.min.css";
+@import "./compodoc.css";
+@import "./tablesort.css";
+
+
+@font-face {
+    /*todo add font types*/
+    font-family: 'Yekan';
+    font-style: normal;
+    font-weight: 400;
+    /*src: url('/fonts/IRANYekanRegular.eot'); /* For IE6-8 */
+    src: local('IRANYekanRegular'),
+    local('IRANYekanRegular'),
+        /*url('/fonts/IRANYekanRegular.woff2') format('woff2'),*/ /*url('../fonts/IRANYekanRegular.woff') format('woff'),*/ url('fonts/IRANYekanRegular.ttf') format('truetype');
+}
+
+.dp-doc-container {
+    direction: rtl;
+    text-align: justify;
+}
+
+.dp-doc-container * {
+    font-family: Yekan, serif;
+}
+
+.dp-doc-ltr-container {
+    direction: ltr;
+}
+
+img[src$='#img'] {
+    transform: scale(0.8) translateX(-10%);
+
+}
+
+
+/* start tags */
+.dp-doc-tags .desktop-version {
+    width: fit-content;
+    padding: 4px 18px;
+    background: #00897b;
+    border-radius: 16px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 4px 16px 4px;
+}
+
+.dp-doc-tags .desktop-version::after {
+    content: "نسخه ی دسکتاپ";
+}
+
+.dp-doc-tags .mobile-version {
+    width: fit-content;
+    padding: 4px 18px;
+    background: #0288d1;
+    border-radius: 16px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 4px 16px 4px;
+}
+
+.dp-doc-tags .mobile-version::after {
+    content: "نسخه ی موبایل";
+}
+
+.dp-doc-tags .no-template {
+    width: fit-content;
+    padding: 4px 18px;
+    background: #ff9800;
+    border-radius: 16px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 4px 16px 4px;
+
+}
+
+.dp-doc-tags .no-template::after {
+    content: 'این کامپوننت فاقد template می باشد'
+}
+
+/* end tags */
+
+.dp-doc-body {
+    padding-bottom: 16px;
+}
+
+.dp-doc-body ul {
+    padding-right: 24px;
+}
+
+
+.dp-doc-links {
+    padding: 16px 8px;
+    border-top: 1px solid #ccc;
+}
+
+.dp-doc-links .children {
+    margin: 8px 0
+}
+
+.dp-doc-links .children::after {
+    content: 'فرزندان : '
+}
+
+.dp-doc-links .parent {
+    margin: 8px 0
+}
+
+.dp-doc-links .parent::after {
+    content: 'پدر : '
+}
+
+.dp-doc-links ul {
+    padding-right: 24px;
+}

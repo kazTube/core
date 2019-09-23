@@ -1,0 +1,75 @@
+@import "../../../core/constants/Colors";
+
+#user-home-page-container {
+  background-color: $GRAY_50;
+  height: 100%;
+  position: relative;
+
+  #top-area {
+    margin: 16px;
+    position: relative;
+    min-height: calc(100vh - 192px);
+
+    #background-image {
+      background-image: url("../../../../assets/images/Background_Colorize.jpg");
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: calc(100% + 32px);
+      width: calc(100% + 32px);
+      top: -16px;
+      right: -16px;
+      filter: blur(8px);
+
+    }
+
+    #right-side {
+      #search-component {
+        padding: 24px;
+        z-index: 1;
+        background: $WHITE_OPACITY_50;
+      }
+
+      app-desktop-daroopin-vitrin {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  app-home-page-info {
+    position: relative;
+  }
+
+  #offers-card {
+    width: 100%;
+    box-shadow: none;
+    background-color: $WHITE_OPACITY_50;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+
+    #discount-title {
+      padding: 8px 24px;
+      background-image: linear-gradient(to right, $CYAN_400, $CYAN_700);
+      position: relative;
+      border-radius: 24px;
+      display: inline-block;
+      color: $GRAY_50;
+      font-size: 14px;
+      margin-right: 16px;
+    }
+
+    #discount-subtitle {
+      position: relative;
+      display: block;
+      margin: 4px 16px 16px;
+      font-size: 12px;
+      color: $GRAY_700;
+      padding-right: 16px;
+    }
+
+
+  }
+}

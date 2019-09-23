@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 26">
+    <defs>
+        <style>.a{fill:none;}.b{fill:#f76b3b;font-size:12px;font-family:IRANYekanWeb-Bold,
+            IRANYekanWeb;font-weight:700;}.c{fill:#27528d;}
+        </style>
+    </defs>
+    <g transform="translate(-41 -18)">
+        <rect class="a" width="24" height="24" transform="translate(41 20)"/>
+        <path class="a" d="M0,0H19V19H0Z" transform="translate(44.001 23)"/>
+        <path class="c"
+              d="M6.193,16.68a1.693,1.693,0,1,0,1.731,1.692A1.709,1.709,0,0,0,6.193,16.68Zm8.655,0a1.693,1.693,0,1,0,1.731,1.692A1.709,1.709,0,0,0,14.847,16.68Zm-7.7-4.23h6.448a1.729,1.729,0,0,0,1.515-.871l3.341-5.931-1.506-.812-3.349,5.922H7.517L3.83,3.143H1V4.835H2.731l3.116,6.422L4.678,13.321a1.7,1.7,0,0,0,1.515,2.513H16.578V14.141H6.193Z"
+              transform="translate(43.405 21.128)"/>
+    </g>
+</svg>

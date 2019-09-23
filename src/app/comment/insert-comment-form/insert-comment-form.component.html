@@ -1,0 +1,81 @@
+<form [formGroup]="commentForm"
+      id="insert-comment-form"
+      dir="rtl">
+    <div>
+        <div *ngIf="isEditForm" class="rating-text">
+            امتیاز قبلی شما:
+            {{initCommentRate}}
+        </div>
+        <div class="rating-text">امتیاز شما به این محصول</div>
+        <app-rate-star-bar (select)="setRate($event)"></app-rate-star-bar>
+    </div>
+
+    <div class="input-label add-top-margin">
+        عنوان نظر
+        <span>*</span>
+    </div>
+    <mat-form-field appDpFormField appearance="outline" class="form-field">
+        <mat-label>عنوان نظر خود را وارد کنید</mat-label>
+        <input formControlName="title" matInput>
+    </mat-form-field>
+
+    <div class="input-label">
+        متن نظر شما
+        <span>*</span>
+    </div>
+    <mat-form-field appDpFormField appearance="outline" class="form-field">
+        <mat-label>متن نظر خود را وارد کنید</mat-label>
+        <textarea formControlName="message" matInput></textarea>
+    </mat-form-field>
+
+    <div class="input-label">
+        نقاط قوت
+    </div>
+
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field">
+        <mat-label>این محصول چه نقاط قوتی دارد؟</mat-label>
+        <mat-chip-list #positiveChipList>
+            <mat-chip
+                    *ngFor="let opinion of commentForm.get('positiveOpinion').value; let i=index"
+                    (removed)="removeOpinion('positiveOpinion',i)"
+                    [removable]='true'
+                    [selectable]="true"
+                    class="opinion-chip">
+                {{opinion}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input
+                    (matChipInputTokenEnd)="addOpinion('positiveOpinion',$event)"
+                    [matChipInputAddOnBlur]="true"
+                    [matChipInputFor]="positiveChipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    matInput>
+        </mat-chip-list>
+    </mat-form-field>
+
+    <div class="input-label">
+        نقاط ضعف
+    </div>
+
+    <mat-form-field appDpFormField appearance="outline" class="form-field">
+        <mat-label>این محصول چه نقاط ضعفی دارد؟</mat-label>
+        <mat-chip-list #negativeChipList>
+            <mat-chip
+                    (removed)="removeOpinion('negativeOpinion',i)"
+                    *ngFor="let opinion of commentForm.get('negativeOpinion').value; let i=index"
+                    [removable]='true'
+                    [selectable]="true"
+                    class="opinion-chip">
+                {{opinion}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input
+                    (matChipInputTokenEnd)="addOpinion('negativeOpinion',$event)"
+                    [matChipInputAddOnBlur]="true"
+                    [matChipInputFor]="negativeChipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    matInput>
+        </mat-chip-list>
+    </mat-form-field>
+</form>

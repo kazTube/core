@@ -1,0 +1,41 @@
+<div id="user-info-form-container">
+    <img class="background-img" src="assets/images/Image_background.png"/>
+    <mat-card id="user-info-form-card">
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>تکمیل اطلاعات کاربری</mat-card-title>
+            </mat-card-header>
+
+
+            <div class="section-title">مشخصات فردی کاربر</div>
+            <app-personal-info-form
+                    (isValid)="personalInfoFormService.isPersonalFormValid=$event"
+                    [(personalInfo)]="personalInfoFormService.formPersonalInfo"
+            ></app-personal-info-form>
+            <div class="section-title border-top">ثبت آدرس جدید</div>
+            <app-address-info-form
+                    (isValid)="addressFormService.isAddressFormValid=$event"
+                    [(address)]="addressFormService.formAddress"
+                    [cityList]="addressFormService.cityList"
+                    [stateList]="addressFormService.stateList"
+            ></app-address-info-form>
+
+            <div class="border-top" id="rule-confirm">
+                <mat-checkbox [(ngModel)]="isRuleConfirmed"></mat-checkbox>
+                <span>
+                <span [routerLink]="'rules'" class="link">حریم خصوصی و شرایط و قوانین </span>
+                <span>استفاده از سرویس های داروپین را مطالعه کردم و با کلیه موارد آن موافقم</span>
+                </span>
+            </div>
+
+            <button (click)="submitUserInfo()"
+                    [disabled]="isConfirmButtonDisabled()"
+                    appDpButton="blue"
+                    class="confirm-button"
+                    mat-raised-button>
+                <span *ngIf="!isLoading">ثبت اطلاعات</span>
+                <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+            </button>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,32 @@
+<div id="profile-add-address">
+    <div class="header">{{title}}</div>
+    <mat-card class="profile-add-address-card">
+        <mat-card-content>
+            <app-address-info-form
+                #addressForm
+                (isValid)="addressFormService.isAddressFormValid=$event"
+                [(address)]="addressFormService.formAddress"
+                [cityList]="addressFormService.cityList"
+                [isEditForm]="isEditForm"
+                [stateList]="addressFormService.stateList"
+            ></app-address-info-form>
+            <div class="action-bar">
+                <button (click)="submitAddressForm(addressForm)"
+                        [disabled]="isConfirmButtonDisabled()"
+                        appDpButton="blue"
+                        class="done-button"
+                        mat-raised-button>
+                    <span *ngIf="!isLoading">{{submitButtonText}}</span>
+                    <mat-spinner *ngIf="isLoading" diameter="32" strokeWidth="3"></mat-spinner>
+                </button>
+                <button (click)="navigateToAppropriatePage()"
+                        *ngIf="!isRegisterForm"
+                        [appDpButton]="'blue-outline'"
+                        class="back-button"
+                        mat-raised-button
+                        type="button">انصراف و بازگشت
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

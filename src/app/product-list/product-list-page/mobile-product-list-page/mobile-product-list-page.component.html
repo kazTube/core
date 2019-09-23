@@ -1,0 +1,24 @@
+<div id="product-list">
+    <mat-toolbar (click)="openSortByDialog()" id="sort-product-header">
+        <mat-icon id="sort-by-icon" svgIcon="svg_sort"></mat-icon>
+        <div id="sort-by-text">مرتب سازی بر اساس</div>
+        <div id="sort-by-selected">{{selectedSortBy.text}}</div>
+    </mat-toolbar>
+
+    <div *ngIf="productList.length>0" [fxLayout]="'column'" [fxLayoutGap]="'1px'" id="product-list-container">
+        <ng-container *ngFor="let product of productList">
+            <app-product-summary-card [productSummary]="product"
+                                      [cardType]="ProductSummaryCardTypeEnum.Summary"
+                                      [cardLayout]="CardLayoutEnum.Horizontal"
+                                      [routerLink]="'/product/detail/'+product.productCode"></app-product-summary-card>
+        </ng-container>
+        <mat-spinner-button *ngIf="hasMore" (click)="loadMoreProduct()" [options]="loadMoreButtonOptions"
+                            id="load-more"></mat-spinner-button>
+    </div>
+    <app-loading *ngIf="isLoading" [hasFixedPosition]="true"></app-loading>
+    <div *ngIf="productList.length==0" id="no-product">
+        محصولی در این دسته بندی وجود ندارد
+    </div>
+    <app-product-carousel [productList]="relatedProductList" id="related-product-list"
+                          title="محصولات مرتبط"></app-product-carousel>
+</div>

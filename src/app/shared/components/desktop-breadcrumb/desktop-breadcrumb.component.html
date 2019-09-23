@@ -1,0 +1,8 @@
+<div id="breadcrumb-container" *ngIf="itemList && itemList.length>0" [fxLayout]="'row wrap'">
+    <ng-container *ngFor="let item of itemList; let index=index">
+        <div *ngIf="item && item.text && item.text.length>0" class="item-container" [fxLayout]="'row'" [fxLayoutAlign]="'center center'">
+            <button [disabled]="!item.link" mat-button [routerLink]="item.link">{{item.text}}</button>
+            <mat-icon *ngIf="index!=itemList.length-1">keyboard_arrow_left</mat-icon>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,57 @@
+@import "../../core/constants/Colors";
+
+.map-add-button {
+  padding-right: 0;
+  padding-left: 0;
+  border: 1px solid $BLUE_700;
+  border-radius: 4px;
+  width: 100%;
+
+  /deep/ .mat-button-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .map-add-icon {
+    padding: 11px 8px;
+    background-color: $BLUE_700;
+    color: $WHITE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    min-width: 16px;
+  }
+
+  .map-button-text {
+    flex-grow: 1;
+    //margin-right: 16px;
+    font-size: 11px;
+    color: $BLUE_700;
+  }
+}
+
+.map-green-button {
+  border: 1px solid $GREEN_200 !important;
+
+  .map-button-text {
+    color: $GREEN_500 !important;
+  }
+
+  .map-add-icon {
+    background-color: $GREEN_200;
+  }
+}
+
+.map-red-button {
+  border: 1px solid $RED_700 !important;
+
+  .map-button-text {
+    color: $RED_700 !important;
+  }
+
+  .map-add-icon {
+    background-color: $RED_700;
+  }
+}

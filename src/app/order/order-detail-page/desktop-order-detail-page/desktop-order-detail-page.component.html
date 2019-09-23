@@ -1,0 +1,20 @@
+<div id="order-detail-page">
+    <mat-card class="order-detail-container-card">
+        <mat-card-content>
+            <mat-card-title class="card-title">
+                <span>سفارش شماره</span>
+                <span>{{orderDetail.orderId}}</span>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+            <button (click)="routingService.navigateBack()" class="return-btn" mat-button>
+                بازگشت
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <app-desktop-order-detail-card
+                    [orderDetail]="orderDetail"
+                    class="desktop-order-detail"
+            ></app-desktop-order-detail-card>
+        </mat-card-content>
+    </mat-card>
+</div>
+

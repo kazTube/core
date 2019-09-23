@@ -1,0 +1,42 @@
+<div id="product-list-container" [fxLayout]="'column'" [fxLayoutAlign]="'center center'" [fxLayoutGap]="'1%'">
+    <mat-card id="product-list-card" [fxLayout]="'column'">
+        <mat-card-title>
+            <mat-card-header class="product-list-header">نتایج جستجو</mat-card-header>
+        </mat-card-title>
+
+        <mat-card-content [fxLayout]="'row'" [fxLayoutAlign]="'space-between start'" [fxLayoutGap]="'2%'"
+                          [fxLayout.lt-sm]="'column'"
+        >
+            <div id="side-bar" fxFlex="30%" [fxLayout]="'column'" [fxLayoutGap]="'2%'">
+                <app-desktop-product-category-tree [category]="rootCategory"></app-desktop-product-category-tree>
+                <app-desktop-search-in-category
+                        [searchText]="searchText"
+                        (searchInCategory)="onSearchInCategory($event)">
+                </app-desktop-search-in-category>
+                <app-new-product-detail type="simple"></app-new-product-detail>
+            </div>
+            <div id="result-container" fxFlex="70%" [fxLayout]="'column'" [fxLayoutGap]="'2%'">
+                <div [fxLayout]="'row wrap'" [fxLayoutAlign]="'space-between center'">
+                    <app-desktop-breadcrumb fxFlex [itemList]="breadcrumbModel"></app-desktop-breadcrumb>
+                    <div id="items-count">{{productList.length}}  کالا  </div>
+
+                </div>
+                <app-desktop-product-list-result-card
+                        [isLoading]="isLoading"
+                        [productList]="productList"
+                        [totalPageCount]="totalPageCount"
+                        [selectedSortByOption]="selectedSortBy"
+                        [selectedPageNumber]="currentPage"
+                        (sortByChange)="onSortChange($event)"
+                        (pageChange)="onPageChange($event)"
+
+                ></app-desktop-product-list-result-card>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+    <app-product-carousel [productList]="relatedProductList"
+                          [title]="'محصولات مرتبط'"
+                          [cardsType]="ProductSummaryCardTypeEnum.Attribute"
+    ></app-product-carousel>
+</div>

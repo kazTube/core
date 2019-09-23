@@ -1,0 +1,24 @@
+<mat-toolbar class="mat-elevation-z2"
+             id="mobile-header">
+    <mat-icon *ngIf="loginService.isUserLoggedIn()"
+              routerLink="/profile/personal-info"
+              class="user-is-logged-in user-icon"
+              svgIcon="svg_user"></mat-icon>
+    <mat-icon *ngIf="!loginService.isUserLoggedIn()"
+              [routerLink]="'/login'"
+              class="user-icon"
+              svgIcon="svg_user"></mat-icon>
+    <div [ngClass]="{'rotate':isBasketRotating}" [routerLink]="'/basket'" id="basket-container">
+        <mat-icon id="basket-icon" svgIcon="svg_basket"></mat-icon>
+        <span id="basket-items-count">{{basketItemsCount}}</span>
+    </div>
+    <mat-icon [routerLink]="'/home'" id="logo-in-header" svgIcon="svg_logo"></mat-icon>
+
+
+    <div (click)="onMenuClick()" [ngClass]="{'open':isMenuOpen}" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</mat-toolbar>
+

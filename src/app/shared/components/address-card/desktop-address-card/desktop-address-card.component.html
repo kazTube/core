@@ -1,0 +1,63 @@
+<mat-card
+        [ngClass]="{'selected': isSelected}"
+        id="desktop-address-card">
+    <mat-card-content>
+        <div fxLayout="row nowrap" fxLayoutAlign="start stretch" fxLayoutGap="8px">
+            <mat-radio-button
+                    *ngIf="!readonly"
+                    (change)="onSelect($event)"
+                    [checked]="isSelected"
+                    class="address-radio-btn"
+                    fxFlex="0 1 calc(10% - 8px)"
+                    name="address-option"></mat-radio-button>
+            <div
+                    [ngClass]="readonly?'location-icon margin-around':'location-icon'"
+                    fxLayout="column"
+                    fxLayoutAlign="center center"
+                    fxLayoutGap="8px"
+            >
+                <mat-icon [svgIcon]="(isSelected)?'svg_selected_address_map':'svg_address_map'"
+                          fxFlex="0 1 calc(40% - 8px)"></mat-icon>
+                <span *ngIf="isSelected" fxFlex="0 1 calc(40% - 8px)">سفارش به این آدرس ارسال می شود</span>
+                <span *ngIf="!isSelected" fxFlex="0 1 calc(40% - 8px)">ارسال سفارش به این آدرس</span>
+            </div>
+            <div [fxFlex]="readonly?'0 1 calc(64% - 8px)':'0 1 calc(50% - 8px)'"
+                 class="address-info"
+                 fxLayout="row wrap"
+                 fxLayoutAlign="flex-start space-around">
+                <div class="receiver-name" fxFlex="1 0 100%">
+                    <span>نام تحویل گیرنده: </span>
+                    <span>{{address.receiverName}}</span>
+                </div>
+                <div class="phone">
+                    <span>شماره تماس: </span>
+                    <span>{{address.receiverPhone}}</span>
+                </div>
+                <div class="postal-code">
+                    <span>کد پستی: </span>
+                    <span>{{address.postalCode}}</span>
+                </div>
+                <div fxFlex="1 0 100%">
+                    <span>آدرس: </span>
+                    <span>{{address.addressText}}</span>
+                </div>
+            </div>
+            <div class="action-bar"
+                 *ngIf="!readonly"
+                 fxFlex="1 0 calc(20% - 8px)"
+                 fxLayout="row wrap"
+                 fxLayoutAlign="flex-end flex-start">
+                <button (click)="onEdit()"
+                        appDpButton="gray-outline"
+                        mat-button>
+                    اصلاح آدرس
+                </button>
+                <button (click)="onDelete()"
+                        appDpButton="red-outline"
+                        mat-button>
+                    حذف
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
